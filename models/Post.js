@@ -1,6 +1,26 @@
 const mongoose = require('mongoose')
 
 const PostSchema = new mongoose.Schema({
+    menu:{
+        type:String,
+        required:true,
+    },
+    section:{
+        type:String,
+        required:true,
+    },
+    price:{
+        type:String,
+        required:true,
+    },
+    allergies:{
+        type:String,
+        required:true,
+    },
+    sequence:{
+        type:String,
+        required:true,
+    },
     title:{
         type:String,
         required:true,
