@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    #wrapper{
+        display:flex;
+        flex-direction:column;
+        min-height:100vh;
+        padding: 0 5px;
+    }
+    header,main,footer{
+        background:white;
+    }
+    header{
+        height:3em;
+    }
+    h1{
+        text-align:center;
+    }
+    footer{
+        margin-top:auto;
+        text-align:center;
+        height: 2em;
+    }
+    button, .button{
+        font-size:1rem;
+        font-family:sans-serif;
+        display: inline-block;
+        background:blue;
+        color:white;
+        padding: 0.5em 1em;
+        border-radius: 15px;
+        box-shadow: 10px 5px 5px grey; 
+        margin: 2em 3em;
+    }

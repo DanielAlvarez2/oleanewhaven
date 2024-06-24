@@ -1,0 +1,52 @@
+<%- include('partials/head') %>
+
+main{
+    display:grid;
+    place-content:center;
+    min-height: calc(100vh - 5em)
+}
+
+<%- include('partials/header') %>
+
+    <main>
+        <div>
+            <section>
+                <% if(locals.messages.errors) {%>
+                    <% messages.errors.forEach(el=>{ %>
+                        <div><%= el.msg %></div>
+                    <% }) %>
+                <%}%>
+                <% if(locals.messages.info) {%>
+                    <% messages.info.forEach(el=>{ %>
+                        <div><%= el.msg %></div>
+                    <% }) %>
+                <%}%>
+
+                <form action='/signup' method='POST'>
+                    <div>
+                        <label for='userName'>User Name</label><br>
+                        <input type='text' id='userName' name='userName'>
+                    </div><br><br>
+
+                    <div>
+                        <label for='exampleInputEmail1'>Email Address</label><br>
+                        <input type='email' id='exampleInputEmail1' name='email'>
+                    </div><br><br>
+
+                    <div>
+                        <label for='password'>Password</label><br>
+                        <input type='password' id='password' name='password'>
+                    </div><br><br>
+
+                    <div>
+                        <label for='confirmPassword'>Confirm Password</label><br>
+                        <input type='password' id='confirmPassword' name='confirmPassword'>
+                    </div><br><br>
+
+                    <button type='submit'>Submit</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+<%- include('partials/footer') %>

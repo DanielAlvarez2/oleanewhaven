@@ -1,0 +1,47 @@
+<%- include('partials/head') %>
+
+main{
+    display:grid;
+    place-content:center;
+    min-height: calc(100vh - 5em)
+}
+
+<%- include('partials/header') %>
+
+<main>
+    <div id='login'>
+        <section>
+            <% if(locals.messages.errors) {
+                messages.errors.forEach(el=>{ %>
+                    <div>
+                        <%= el.msg %>
+                    </div>
+               <% })
+            } %>
+            <% if(locals.messages.info) {
+                messages.info.forEach(el=>{ %>
+                    <div>
+                        <%= el.msg %>
+                    </div>
+               <% })
+            } %>
+            <form action='/login' method='POST'>
+                <div>
+                    <label for='exampleInputEmail1'>
+                        Email Address
+                    </label><br>
+                    <input type='email' id='exampleInputEmail1' name='email'>
+                </div><br><br>
+
+                <div>
+                    <label for='exampleInputPassword1'>Password</label><br>
+                    <input type='password' id='exampleInputPassword1' name='password'>
+                </div><br><br>
+
+                <button type='submit'>Submit</button>
+            </form>
+        </section>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

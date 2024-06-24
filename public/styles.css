@@ -1,0 +1,19 @@
+
+.container{
+    background:red;
+}
+#wrapper{
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+.button{
+    background:gray;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+}
+footer{
+    margin-top: auto;
+    text-align: center;
+}
