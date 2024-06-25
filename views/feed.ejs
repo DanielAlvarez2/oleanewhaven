@@ -10,7 +10,14 @@
                 <% for(let i=0;i<posts.length;i++) { %>
                     <li>
                         <a href="/post/<%= posts[i]._id %>">
-                            <img src="<%= posts[i].image %>">
+                            <img src="<%= posts[i].image %>"><br>
+                            <%= posts[i].menu %><br>
+                            <%= posts[i].section %><br>
+                            <strong><%= posts[i].title %></strong><br>
+                            <%= posts[i].caption %><br>
+                            <%= posts[i].price %><br>
+                            <%= posts[i].allergies %><br>
+                            <%= posts[i].sequence %><br>
                         </a>
                     </li>
                 <%}%>
