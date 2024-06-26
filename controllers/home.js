@@ -6,8 +6,18 @@ module.exports={
             return res.redirect('/feed')
         }
         const charcuterie = await Post.find({section:'charcuterie'}).sort({sequence:'asc'})
-        const appetizers = await Post.find({section:'appetizers'}).sort({sequence:'asc'})
-        const entrees = await Post.find({section:'entrees'}).sort({sequence:'asc'})
+        const appetizers = await Post.find({
+            $and: [
+                {menu:'dinner'},
+                {section:'appetizers'}
+            ]
+            }).sort({sequence:'asc'})
+        const entrees = await Post.find({
+            $and: [
+                {menu:'dinner'},
+                {section:'entrees'}
+            ]
+            }).sort({sequence:'asc'})
         const sides = await Post.find({section:'sides'}).sort({sequence:'asc'})
         res.render('index.ejs',{title:'HOME PAGE', 
                                 charcuterie:charcuterie, 
@@ -32,5 +42,12 @@ module.exports={
                     {title:'SPECIALS',
                     appetizers:appetizers,
                     entrees:entrees})
+    },
+    getDesserts: async(req,res)=>{
+        const desserts = await Post.find({
+            $and: [
+
+            ]
+        })
     }
 }
