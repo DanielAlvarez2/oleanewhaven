@@ -46,8 +46,11 @@ module.exports={
     getDesserts: async(req,res)=>{
         const desserts = await Post.find({
             $and: [
-
-            ]
-        })
+                    {menu:'dessert'},
+                    {section:'desserts'}
+            ],
+        }).sort({sequence:'asc'})
+        res.render('dessert.ejs',{title:'DESSERTS',
+                                  desserts:desserts})
     }
 }
