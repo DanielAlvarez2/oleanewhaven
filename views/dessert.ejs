@@ -1,0 +1,183 @@
+<%- include('partials/head') %>
+
+
+h2{
+    font-family: futura light;
+    font-weight:900;
+    font-size:2rem;
+}
+#modal img{
+    max-width:95vw;
+    max-height:75vh;
+    border-radius:25px;
+}
+.name, #modal-name{
+    font-weight:900;
+    font-size:1.3rem;
+    font-family: futura light;
+}
+main{
+    font-family:serif;
+    display:grid;
+    place-content:center;
+    min-height:calc(100vh - 5.5em);
+}
+#specials-menu{
+    max-width:4.25in;
+    min-height:5.5in;
+    border:1px solid red;
+    position:relative;
+    padding:10px;
+}
+.price, #modal-price{
+    font-weight:900;
+    font-size:1.2rem;
+}
+.allergies, #modal-allergies{
+    font-family:sans-serif;
+    color:red;
+    font-size:0.9rem;
+}
+
+#modal{
+    width:100vw;
+    min-height:100vh;
+    background: #888888ee;
+    position: fixed;
+    inset:0;
+    display:none;
+    place-content:center;
+    padding:10px;
+}
+#close-modal-button{
+    font-size:60px;
+    position:absolute;
+    top:5px;
+    right:5px;
+    cursor:pointer;
+    font-weight:900;
+}
+figure{
+    display:table;
+}
+figcaption{
+    background:#ccc;
+    padding:10px;
+    border-radius:25px;
+    display:table-caption;
+    caption-side:bottom;
+}
+
+@media(min-width:8.5in){
+    #dinner-menu{
+        padding:0.5in;
+    }
+    #top-left, #bottom-left{
+        padding-right:0.25in;
+    }
+    #top-right, #bottom-right{
+        padding-left:0.25in;
+    }
+}
+main h1{
+    text-align:left;
+    font-family:futura light;
+    font-size:3rem;
+}
+
+nav{
+    width:100vw;
+    background:#ccc;
+    position:fixed;
+    left:0;
+    display:flex;
+    justify-content:space-around;
+}
+nav a{
+    text-decoration:none;
+}
+
+
+
+<%- include('partials/header') %>
+
+<main>
+<nav>
+    <a href='#'>dinner</a>
+    <a href='/specials'>specials</a>
+    <a href='/dessert'>dessert</a>
+    <a href='/wine'>wine</a>
+    <a href='/drinks'>drinks</a>
+</nav>
+<div id='specials-menu'>
+            <h2>appetizers</h2>
+            <ul>
+                <% for (let i=0;i<appetizers.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
+                        <span class='name'><%= appetizers[i].title %></span><br>
+                        <%- appetizers[i].caption %>
+                        &nbsp; 
+                        <span class='price'><%= appetizers[i].price %></span><br>
+                        <span class='allergies'><%- appetizers[i].allergies %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+
+            <h2>entrées</h2>
+            <ul>
+                <% for (let i=0;i<entrees.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
+                        <span class='name'><%= entrees[i].title %></span><br>
+                        <%- entrees[i].caption %>
+                        &nbsp; 
+                        <span class='price'><%= entrees[i].price %></span><br>
+                        <span class='allergies'><%- entrees[i].allergies %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+
+   
+
+    <div id='modal'>
+        <i class='fa-solid fa-square-xmark x'
+           id='close-modal-button'
+           onclick='closeModal()'></i>
+        <div id='modal-item'>
+            <figure>
+                <img src='' id='modal-image'>
+                <figcaption>
+                    <div id='modal-text'>
+                        <span id='modal-name'></span><br>
+                        <span id='modal-description'></span>&nbsp;
+                        <span id='modal-price'></span><br>
+                        <span id='modal-allergies'></span>
+                    </div>
+                </figcaption>
+            </figure>
+        </div><!--#modal-item-->
+    </div><!--#modal-->
+</div><!--#specials-menu-->
+</main>
+
+<script>
+    const modal = document.querySelector('#modal')
+    const modalImage = document.querySelector('#modal-image')
+    const modalName = document.querySelector('#modal-name')
+    const modalDescription = document.querySelector('#modal-description')
+    const modalPrice = document.querySelector('#modal-price')
+    const modalAllergies = document.querySelector('#modal-allergies')
+
+    function showModal(item){
+        console.log(item)
+        modalImage.src=item.image
+        modalName.innerHTML = item.title
+        modalDescription.innerHTML = item.caption
+        modalPrice.innerHTML = item.price
+        modalAllergies.innerHTML = item.allergies
+        modal.style.display = 'grid'
+    }
+    function closeModal(){
+        modal.style.display = 'none'
+    }
+</script>
+<%- include('partials/footer') %>
