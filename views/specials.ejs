@@ -1,18 +1,10 @@
 <%- include('partials/head') %>
 
-#top,#bottom,#legal{
-    display:flex;
-}
-#top-left, #top-right, 
-#bottom-left, #bottom-right,
-#legal-left, #legal-right{
-    width:50%;
-}
+
 h2{
     font-family: futura light;
     font-weight:900;
     font-size:2rem;
-    margin-top:2em;
 }
 #modal img{
     max-width:95vw;
@@ -30,10 +22,12 @@ main{
     place-content:center;
     min-height:calc(100vh - 5.5em);
 }
-#dinner-menu{
-    max-width:8.5in;
-    min-height:14in;
+#specials-menu{
+    max-width:4.25in;
+    min-height:5.5in;
     border:1px solid red;
+    position:relative;
+    padding:10px;
 }
 .price, #modal-price{
     font-weight:900;
@@ -44,9 +38,7 @@ main{
     color:red;
     font-size:0.9rem;
 }
-body{
-    position:relative;
-}
+
 #modal{
     width:100vw;
     min-height:100vh;
@@ -92,14 +84,7 @@ main h1{
     font-family:futura light;
     font-size:3rem;
 }
-#legal-left{
-    font-family:futura light;
-    font-weight:900;
-    font-size:1.5rem;
-}
-#legal-right{
-    font-size:0.7rem;
-}
+
 nav{
     width:100vw;
     background:#ccc;
@@ -113,6 +98,7 @@ nav a{
 }
 
 
+
 <%- include('partials/header') %>
 
 <main>
@@ -123,103 +109,34 @@ nav a{
     <a href='/wine'>wine</a>
     <a href='/drinks'>drinks</a>
 </nav>
-<div id='dinner-menu'>
-    <h1>olea</h1>
-    <hr>
-    <div id="top">
-        <div id='top-left'>
-            <ul>
-                <% for (let i=0;i<charcuterie.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(charcuterie[i]) %>)'>
-                        <span class='name'><%= charcuterie[i].title %></span><br>
-                        <%- charcuterie[i].caption %>
-                        &nbsp; 
-                        <span class='price'><%= charcuterie[i].price %></span><br>
-                        <span class='allergies'><%- charcuterie[i].allergies %></span><br>
-                    </li>
-                <%}%>
-            </ul>
-
+<div id='specials-menu'>
+            <h2>appetizers</h2>
             <ul>
                 <% for (let i=0;i<appetizers.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
                         <span class='name'><%= appetizers[i].title %></span><br>
                         <%- appetizers[i].caption %>
-                        &nbsp;
+                        &nbsp; 
                         <span class='price'><%= appetizers[i].price %></span><br>
                         <span class='allergies'><%- appetizers[i].allergies %></span><br>
                     </li>
                 <%}%>
             </ul>
-        </div><!--#top-left-->
 
-        <div id='top-right'>
+            <h2>entrées</h2>
             <ul>
                 <% for (let i=0;i<entrees.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
                         <span class='name'><%= entrees[i].title %></span><br>
                         <%- entrees[i].caption %>
-                        &nbsp;
+                        &nbsp; 
                         <span class='price'><%= entrees[i].price %></span><br>
                         <span class='allergies'><%- entrees[i].allergies %></span><br>
                     </li>
                 <%}%>
-                    <li>
-                        <span class='name'>chef's tasting menu</span> <span class='price'>98</span> / person<br>
-                        six courses<br>
-                        no modifications<br>
-                        full table participation<br>
-                        reservation required<br>
-                        tuesday through thursday<br>
-                        <span style='font-style:italic;'>optional wine pairing <span class='price'>52</span> / person</span>
-                    </li>
             </ul>
-        
-        </div><!--#top-right-->
-    </div><!--#top-->
 
-    <h2>sides</h2>
-    <div id='bottom'>
-        <div id='bottom-left'>
-            <ul>
-                <% for (let i=0;i<2;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
-                        <span class='name'><%= sides[i].title %></span><br>
-                        <%= sides[i].caption %>
-                        &nbsp;
-                        <span class='price'><%= sides[i].price %></span><br>
-                        <span class='allergies'><%- sides[i].allergies %></span><br>
-                    </li>
-                <%}%>
-            </ul>
-        </div><!--#bottom-left-->
-        
-        <div id='bottom-right'>
-            <ul>
-                <% for (let i=2;i<sides.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
-                        <span class='name'><%= sides[i].title %></span><br>
-                        <%= sides[i].caption %>
-                        &nbsp;
-                        <span class='price'><%= sides[i].price %></span><br>
-                        <span class='allergies'><%- sides[i].allergies %></span><br>
-                    </li>
-                <%}%>
-            </ul>
-        
-        </div><!--#bottom-right-->
-    </div><!--#bottom-->
-
-    <div id='legal'>
-        <div id='legal-left'>manuel romero, chef</div>
-        <div id='legal-right'>
-            consumer advisory: consumption of undercooked meat, poultry, eggs, 
-            or seafood may increase the risk of food-borne illnesses<br>
-            please alert your server if you have special dietary requirements<br>
-            all menu items are subject to change according to seasonality
-            and availability
-        </div>
-    </div><!--#legal-->
+   
 
     <div id='modal'>
         <i class='fa-solid fa-square-xmark x'
@@ -239,7 +156,7 @@ nav a{
             </figure>
         </div><!--#modal-item-->
     </div><!--#modal-->
-</div><!--#dinner-menu-->
+</div><!--#specials-menu-->
 </main>
 
 <script>

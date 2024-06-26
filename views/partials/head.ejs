@@ -4,27 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
-    
+    <script src="https://kit.fontawesome.com/21ef82ed30.js" crossorigin="anonymous"></script>
+
     <style>
     *{
         margin:0;
         padding:0;
         box-sizing: border-box;
     }
+    @font-face{
+        font-family: "futura light";
+        src: url("FuturaLight.otf") format("opentype");
+    }
+    h1,footer{
+        font-family: futura light;
+    }
     #wrapper{
         display:flex;
         flex-direction:column;
         min-height:100vh;
-        padding: 0 5px;
+        padding: 0 6px;
     }
     header,main,footer{
         background:white;
     }
     header{
-        height:3em;
+        height:3.5em;
     }
     h1{
         text-align:center;
+    }
+    h1>a,
+    h1>a:visited,
+    h1>a:hover,
+    h1>a:active{
+        color:black;
+        text-decoration:none;
+        font-size:3rem;
+        font-weight:100;
+
     }
     footer{
         margin-top:auto;
@@ -45,4 +63,7 @@
     }
     input,textarea{
         padding-left:2px;
+    }
+    ul{
+        list-style-type:none;
     }
