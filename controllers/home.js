@@ -52,5 +52,5 @@ module.exports={
         }).sort({sequence:'asc'})
         res.render('dessert.ejs',{title:'DESSERTS',
                                   desserts:desserts})
-    }
+    },
 }
