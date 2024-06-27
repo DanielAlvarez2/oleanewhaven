@@ -53,4 +53,8 @@ module.exports={
         res.render('dessert.ejs',{title:'DESSERTS',
                                   desserts:desserts})
     },
+    getDrinks: async(req,res)=>{
+        const drinks = await Post.find({section:'cocktails'}).sort({sequence:'asc'})
+        res.render('drinks.ejs',{title:'COCKTAILS',drinks:drinks})
+    }
 }
