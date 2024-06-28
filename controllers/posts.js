@@ -62,7 +62,7 @@ module.exports = {
                 menu:req.body.menu,
                 section:req.body.section,
                 grapes:req.body.grapes,
-                name:name,
+                name:req.body.name,
                 vintage:req.body.vintage,
                 description:req.body.description,
                 price:req.body.price,
