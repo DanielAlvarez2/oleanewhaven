@@ -1,4 +1,5 @@
 const Post = require('../models/Post')
+const Wine = require('../models/Wine')
 
 module.exports={
     getIndex:async(req,res)=>{
@@ -56,5 +57,9 @@ module.exports={
     getDrinks: async(req,res)=>{
         const drinks = await Post.find({section:'cocktails'}).sort({sequence:'asc'})
         res.render('drinks.ejs',{title:'COCKTAILS',drinks:drinks})
+    },
+    getWine: async(req,res)=>{
+        const btgCava = await Wine.find({section:'btg cava'}).sort({sequence:'asc'})
+        res.render('wine.ejs',{title:'WINE',btgCava:btgCava})
     }
 }

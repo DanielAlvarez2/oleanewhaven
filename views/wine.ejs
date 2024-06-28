@@ -112,13 +112,14 @@ nav a{
 <div id='dessert-menu'>
            
             <ul>
-                <% for (let i=0;i<desserts.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(desserts[i]) %>)'>
-                        <span class='name'><%= desserts[i].title %></span><br>
-                        <%- desserts[i].caption %>
+                <% for (let i=0;i<btgCava.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(btgCava[i]) %>)'>
+                        <span><%= btgCava[i].grapes %></span><br>
+                        <span class='name'><%= btgCava[i].name %></span><br>
+                        <span><%= btgCava[i].vintage %></span><br>
+                        <%- btgCava[i].description %>
                         &nbsp; 
-                        <span class='price'><%= desserts[i].price %></span><br>
-                        <span class='allergies'><%- desserts[i].allergies %></span><br>
+                        <span class='price'><%= btgCava[i].price %></span><br>
                     </li>
                 <%}%>
             </ul>
