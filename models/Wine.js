@@ -22,3 +22,5 @@ const WineSchema = new mongoose.Schema({
         required:true,
     }
     })
+
+    module.exports = mongoose.model('Wine',WineSchema)
