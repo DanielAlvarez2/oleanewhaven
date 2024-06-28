@@ -12,6 +12,7 @@
                 <p><strong>Email</strong>: <%= user.email %></p>
                 <a href='/logout'><span class='button'>Logout</span></a>
             </div>
+
             <div>
                 <h2>Add a post</h2><br>
                 <form action='/post/createPost' enctype='multipart/form-data' method='POST'>
@@ -52,6 +53,48 @@
                     <button type='submit' value='upload'>Submit</button>
                 </form>
             </div>
+
+            <div>
+                <h2>Add a wine</h2><br>
+                <form action='/post/createWine' method='POST'>
+                    <div>
+                        <label for='menu'>Menu</label><br>
+                        <input type='text' id='menu' name='menu'>
+                    </div><br>
+                    <div>
+                        <label for='section'>Section</label><br>
+                        <input type='text' id='section' name='section'>
+                    </div><br>
+                    <div>
+                        <label for='grapes'>Grapes</label><br>
+                        <input type='text' id='grapes' name='grapes'>
+                    </div><br>
+                    <div>
+                        <label for='name'>Name</label><br>
+                        <input type='text' id='name' name='name'>
+                    </div><br>
+                    <div>
+                        <label for='vintage'>Vintage</label><br>
+                        <input type='text' id='vintage' name='vintage'>
+                    </div><br>
+                    <div>
+                        <label for='description'>Description</label><br>
+                        <textarea rows='7' cols='30' id='description' name='description'></textarea>
+                    </div><br>
+                    <div>
+                        <label for='price'>Price</label><br>
+                        <input type='text' size='5' id='price' name='price'>
+                    </div><br>
+                    <div>
+                        <label for='sequence'>Sequence</label><br>
+                        <input type='text' size='5' id='sequence' name='sequence'>
+                    </div><br>
+                    
+                    <button type='submit' value='upload'>Submit</button>
+                </form>
+            </div>
+
+
         </div>
         <div>
             <ul>

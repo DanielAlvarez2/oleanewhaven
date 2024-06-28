@@ -28,6 +28,10 @@ const WineSchema = new mongoose.Schema({
     price:{
         type:String,
         required:true,
+    },
+    sequence:{
+        type:String,
+        required:true,
     }
     })
 
