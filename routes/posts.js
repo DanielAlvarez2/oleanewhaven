@@ -8,6 +8,7 @@ const {ensureAuth,ensureGuest} = require('../middleware/auth')
 router.get('/:id',ensureAuth,postsController.getPost)
 
 router.post('/createPost',upload.single('file'),postsController.createPost)
+router.post('/createWine',postsController.createWine)
 
 router.put('/likePost/:id',postsController.likePost)
 
