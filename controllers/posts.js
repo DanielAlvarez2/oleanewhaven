@@ -56,6 +56,24 @@ module.exports = {
             console.log(err)
         }
     },
+    createWine: async(req,res)=>{
+        try{
+            await Wine.create({
+                menu:req.body.menu,
+                section:req.body.section,
+                grapes:req.body.grapes,
+                name:name,
+                vintage:req.body.vintage,
+                description:req.body.description,
+                price:req.body.price,
+                sequence:req.body.sequence,
+            })
+            console.log('Wine has been created!')
+            res.redirect('/profile')
+        }catch(err){
+            console.log(err)
+        }
+    },
     likePost: async(req,res)=>{
         try{
             await Post.findOneAndUpdate(
