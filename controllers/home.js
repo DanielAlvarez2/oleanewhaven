@@ -3,9 +3,6 @@ const Wine = require('../models/Wine')
 
 module.exports={
     getIndex:async(req,res)=>{
-        if(req.user){
-            return res.redirect('/feed')
-        }
         const charcuterie = await Post.find({section:'charcuterie'}).sort({sequence:'asc'})
         const appetizers = await Post.find({
             $and: [
