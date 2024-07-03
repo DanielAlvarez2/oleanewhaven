@@ -7,6 +7,7 @@ const {ensureAuth, ensureGuest} = require('../middleware/auth')
 
 
 router.get('/',homeController.getIndex)
+router.get('/dinner',homeController.getIndex)
 router.get('/specials',homeController.getSpecials)
 router.get('/dessert',homeController.getDesserts)
 router.get('/wine',homeController.getWine)
