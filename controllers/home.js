@@ -66,6 +66,7 @@ module.exports={
         res.render('wine.ejs',{title:'WINE',
                                btgCava:btgCava,
                                btgWhites:btgWhites,
-                               btgRose:btgRose,})
+                               btgRose:btgRose,
+                               btgReds:btgReds,})
     }
 }
