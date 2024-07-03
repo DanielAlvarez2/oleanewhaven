@@ -154,6 +154,19 @@ nav a{
                 <%}%>
             </ul>
    
+            <ul>
+                <% for (let i=0;i<btgReds.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(btgReds[i]) %>)'>
+                        <span><%= btgReds[i].grapes %></span><br>
+                        <span class='name'><%= btgReds[i].name %></span><br>
+                        <span><%= btgReds[i].vintage %></span><br>
+                        <%- btgReds[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgReds[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+   
 
     <div id='modal'>
         <i class='fa-solid fa-square-xmark x'
