@@ -60,6 +60,7 @@ module.exports={
     },
     getWine: async(req,res)=>{
         const btgCava = await Wine.find({section:'btg cava'}).sort({sequence:'asc'})
-        res.render('wine.ejs',{title:'WINE',btgCava:btgCava})
+        const btgWhites = await Wine.find({section:'btg whites'}).sort({sequence:'asc'})
+        res.render('wine.ejs',{title:'WINE',btgCava:btgCava,btgWhites:btgWhites})
     }
 }
