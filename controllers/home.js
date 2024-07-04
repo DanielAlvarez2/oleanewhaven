@@ -17,7 +17,8 @@ module.exports={
             ]
             }).sort({sequence:'asc'})
         const sides = await Post.find({section:'sides'}).sort({sequence:'asc'})
-        res.render('index.ejs',{title:'HOME PAGE', 
+        res.render('index.ejs',{req:req,
+                                title:'HOME PAGE', 
                                 charcuterie:charcuterie, 
                                 appetizers:appetizers,
                                 entrees:entrees,
