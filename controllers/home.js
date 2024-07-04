@@ -55,7 +55,9 @@ module.exports={
     },
     getDrinks: async(req,res)=>{
         const drinks = await Post.find({section:'cocktails'}).sort({sequence:'asc'})
-        res.render('drinks.ejs',{title:'COCKTAILS',drinks:drinks})
+        res.render('drinks.ejs',{title:'COCKTAILS',
+                                 drinks:drinks,
+                                 req:req})
     },
     getWine: async(req,res)=>{
         const btgCava = await Wine.find({section:'btg cava'}).sort({sequence:'asc'})
