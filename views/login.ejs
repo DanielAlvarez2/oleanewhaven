@@ -5,10 +5,30 @@ main{
     place-content:center;
     min-height: calc(100vh - 5em)
 }
+nav{
+    width:100vw;
+    background:#ccc;
+    position:fixed;
+    left:0;
+    display:flex;
+    justify-content:space-around;
+}
+nav a{
+    text-decoration:none;
+}
 
 <%- include('partials/header') %>
 
 <main>
+<nav>
+    <a href='/dinner'>dinner</a>
+    <a href='/specials'>specials</a>
+    <a href='/dessert'>dessert</a>
+    <a href='/wine'>wine</a>
+    <a href='/drinks'>drinks</a>
+</nav>
+
+
     <div id='login'>
         <section>
             <% if(locals.messages.errors) {
