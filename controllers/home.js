@@ -40,7 +40,8 @@ module.exports={
         res.render('specials.ejs', 
                     {title:'SPECIALS',
                     appetizers:appetizers,
-                    entrees:entrees})
+                    entrees:entrees,
+                    req:req,})
     },
     getDesserts: async(req,res)=>{
         const desserts = await Post.find({
