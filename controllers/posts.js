@@ -103,7 +103,7 @@ module.exports = {
 
             await cloudinary.uploader.destroy(post.cloudinaryId)
 
-            await Post.remove({_id:req.params.id})
+            await Post.deleteOne({_id:req.params.id})
             console.log('Deleted Post')
             res.redirect(req.get('referer'))
         }catch(err){
