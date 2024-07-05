@@ -177,9 +177,11 @@ form{
                         <span class='price'><%= appetizers[i].price %></span><br>
                         <span class='allergies'><%- appetizers[i].allergies %></span><br>
                     
-                        <i class="fa-solid fa-pen"></i>
-                        <span class='edit-text'>Edit</span>
-                    
+                        <button>
+                            <i class="fa-solid fa-pen"></i>
+                            <span class='edit-text'>Edit</span>
+                        </button>
+
                         <form method='POST' action='../post/deletePost/<%= appetizers[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
