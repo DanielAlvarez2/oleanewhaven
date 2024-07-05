@@ -32,7 +32,10 @@ module.exports = {
             console.log('req.params.id: '+req.params.id)
             console.log('req.params._id: '+req.params._id)
             const post = await Post.findById(req.params.id)
-            res.render('post.ejs',{post:post,user:req.user,title:'View Post'})
+            res.render('post.ejs',{post:post,
+                                   user:req.user,
+                                   title:'View Post',
+                                   req:req})
         }catch(err){
             console.log(err)
         }
@@ -102,9 +105,9 @@ module.exports = {
 
             await Post.remove({_id:req.params.id})
             console.log('Deleted Post')
-            res.redirect('/profile')
+            res.redirect(req.get('referer'))
         }catch(err){
-            res.redirect('/profile')
+            res.redirect(req.get('referer'))
         }
     },
 }

@@ -114,7 +114,6 @@ nav a{
 }
 .fa-trash{
     color:#9f000f;
-    margin-left:1em;
 }
 .fa-pen{
     color:#ffae42;
@@ -164,7 +163,7 @@ nav a{
                         <i class="fa-solid fa-pen"></i>
                         <span class='edit-text'>Edit</span>
                     
-                        <form action="../post/deletePost/<%= appetizers[i].id %>?_method='DELETE' method='POST'">
+                        <form method='POST' action='../post/deletePost/<%= appetizers[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -184,10 +183,10 @@ nav a{
                         &nbsp;
                         <span class='price'><%= entrees[i].price %></span><br>
                         <span class='allergies'><%- entrees[i].allergies %></span><br>
-                    <i class="fa-solid fa-pen"></i>
-                    <span class='edit-text'>Edit</span>
-                    <i class="fa-solid fa-trash"></i>
-                    <span class='delete-text'>Delete</span>
+                        <i class="fa-solid fa-pen"></i>
+                        <span class='edit-text'>Edit</span>
+                            <i class="fa-solid fa-trash"></i>
+                            <span class='delete-text'>Delete</span>
                     </li>
                 <%}%>
                     <li>
