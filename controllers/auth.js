@@ -6,7 +6,7 @@ exports.getLogin = (req,res)=>{
     if(req.user){
         return res.redirect('/profile')
     }
-    res.render('login.ejs', {title:'Login'})
+    res.render('login.ejs', {title:'Login',req:req})
 }
 
 
