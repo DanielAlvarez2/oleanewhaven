@@ -23,5 +23,26 @@ module.exports={
                                      entrees:entrees,
                                      sides:sides,
                                      title:'EDIT DINNER MENU'})
+    },
+    updateItem: async (req,res)=>{
+        try{
+            const item = await Post.findById(req.params.id)
+            res.render('updateItem.ejs',{req:req,
+                                         item:item,
+                                         title:'UPDATE ITEM'
+            })
+        }catch(err){
+            console.log(err)
+        }
+    },
+    saveChanges: async(req,res)=>{
+        try{
+            console.log(req.params.id)
+            console.log(req.body)
+            await Post.findByIdAndUpdate(req.params.id,req.body)
+            res.redirect('/')
+        }catch(err){
+            console.log(err)
+        }
     }
 }

@@ -122,6 +122,7 @@ button{
     background:darkblue;
     display:inline-block;
     margin:0;
+    padding:0.5em;
 }
 form{
     display:inline-block;
@@ -138,7 +139,16 @@ form{
     <a href='/wine'>wine</a>
     <a href='/drinks'>drinks</a>
 </nav>
+
+
 <div id='dinner-menu'>
+
+<a href='/profile'>
+<button style='margin:0 auto;display:block;'>
+    <i class="fa-solid fa-circle-plus"></i>
+    Add New Item
+</button>
+</a>
     <h1>olea</h1>
     <hr>
     <div id="top">
@@ -152,10 +162,12 @@ form{
                         <span class='price'><%= charcuterie[i].price %></span><br>
                         <span class='allergies'><%- charcuterie[i].allergies %></span><br>
                         
-                        <button>
-                            <i class="fa-solid fa-pen"></i>
-                            <span class='edit-text'>Edit</span>
-                        </button>
+                        <a href='/edit/updateItem/<%= charcuterie[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
 
                         <form method='POST'
                             action='../post/deletePost/<%= charcuterie[i].id %>?_method=DELETE'>
@@ -242,15 +254,19 @@ form{
                         &nbsp;
                         <span class='price'><%= sides[i].price %></span><br>
                         <span class='allergies'><%- sides[i].allergies %></span><br>
-                    <i class="fa-solid fa-pen"></i>
-                    <span class='edit-text'>Edit</span>
-                    <form method='POST'
-                          action='../post/deletePost/<%= sides[i].id %>?_method=DELETE'>
+
                         <button>
-                            <i class="fa-solid fa-trash"></i>
-                            <span class='delete-text'>Delete</span>
+                            <i class="fa-solid fa-pen"></i>
+                            <span class='edit-text'>Edit</span>
                         </button>
-                    </form>
+                    
+                        <form method='POST'
+                            action='../post/deletePost/<%= sides[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
                     </li>
                 <%}%>
             </ul>
@@ -265,15 +281,19 @@ form{
                         &nbsp;
                         <span class='price'><%= sides[i].price %></span><br>
                         <span class='allergies'><%- sides[i].allergies %></span><br>
-                    <i class="fa-solid fa-pen"></i>
-                    <span class='edit-text'>Edit</span>
-                    <form method='POST'
-                          action='../post/deletePost/<%= sides[i].id %>?_method=DELETE'>
+          
                         <button>
-                            <i class="fa-solid fa-trash"></i>
-                            <span class='delete-text'>Delete</span>
+                            <i class="fa-solid fa-pen"></i>
+                            <span class='edit-text'>Edit</span>
                         </button>
-                    </form>
+          
+                        <form method='POST'
+                            action='../post/deletePost/<%= sides[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
                     </li>
                 <%}%>
             </ul>
@@ -292,6 +312,12 @@ form{
         </div>
     </div><!--#legal-->
 
+<a href='/profile'>    
+<button style='margin:0 auto;display:block;margin-top:1em;'>
+    <i class="fa-solid fa-circle-plus"></i>
+    Add New Item
+</button>
+</a>
     <div id='modal'>
         <i class='fa-solid fa-square-xmark x'
            id='close-modal-button'
@@ -310,7 +336,10 @@ form{
             </figure>
         </div><!--#modal-item-->
     </div><!--#modal-->
+
 </div><!--#dinner-menu-->
+
+
 </main>
 
 <script>

@@ -1,0 +1,41 @@
+<% console.log(req.params) %>
+<% console.log(item) %>
+
+<form method='POST'
+      action='/edit/saveChanges/<%= req.params.id %>?_method=PUT'>
+
+    Item ID:<br>
+    <%= req.params.id %><br><br>
+
+    Menu: <%= item.menu %><br><br>
+    <input type='hidden' id='menu' name='menu' value='<%= item.menu %>'>
+
+    Section: <%= item.section %><br><br>
+    <input type='hidden' id='section' name='section' value='<%= item.section %>'>
+
+    Name:<br> 
+    <input type='text' id='title' name='title' value='<%= item.title %>'>
+    <br><br>
+
+    Description:<br> 
+    <textarea id='caption' name='caption'><%= item.caption %></textarea>
+    <br><br>
+
+    Price:<br> 
+    <input type='text' id='price' name='price' value='<%= item.price %>'>
+    <br><br>
+
+    Allergies:<br>
+    <input type='text' id='allergies' name='allergies' value='<%= item.allergies %>'>
+    <br><br>
+
+    Sequence:<br> 
+    <input type='text' id='sequence' name='sequence' value='<%= item.sequence %>'>
+    <br><br>
+
+    Current Pic:<br>
+    <img src='<%= item.image%>'>
+    <br><br>
+
+    <button>Save Changes</button>
+</form>
