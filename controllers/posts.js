@@ -17,7 +17,9 @@ module.exports = {
     getFeed: async (req,res)=>{
         try{ 
             const posts = await Post.find().sort({createdAt:'desc'}).lean()
-            res.render('feed.ejs',{posts:posts,title:'Feed'})
+            res.render('feed.ejs',{posts:posts,
+                                   title:'Feed',
+                                   req:req})
         }catch(err){
             console.log(err)
         }

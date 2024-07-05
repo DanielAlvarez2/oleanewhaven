@@ -160,10 +160,16 @@ nav a{
                         &nbsp;
                         <span class='price'><%= appetizers[i].price %></span><br>
                         <span class='allergies'><%- appetizers[i].allergies %></span><br>
-                    <i class="fa-solid fa-pen"></i>
-                    <span class='edit-text'>Edit</span>
-                    <i class="fa-solid fa-trash"></i>
-                    <span class='delete-text'>Delete</span>
+                    
+                        <i class="fa-solid fa-pen"></i>
+                        <span class='edit-text'>Edit</span>
+                    
+                        <form action="../post/deletePost/<%= appetizers[i].id %>?_method='DELETE' method='POST'">
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
                     </li>
                 <%}%>
             </ul>
