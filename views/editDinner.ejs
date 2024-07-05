@@ -146,15 +146,19 @@ button{
                         &nbsp; 
                         <span class='price'><%= charcuterie[i].price %></span><br>
                         <span class='allergies'><%- charcuterie[i].allergies %></span><br>
-                    <i class="fa-solid fa-pen"></i>
-                    <span class='edit-text'>Edit</span>
-                    <form method='POST'
-                          action='../post/deletePost/<%= charcuterie[i].id %>?_method=DELETE'>
+                        
                         <button>
-                            <i class="fa-solid fa-trash"></i>
-                            <span class='delete-text'>Delete</span>
+                            <i class="fa-solid fa-pen"></i>
+                            <span class='edit-text'>Edit</span>
                         </button>
-                    </form>
+
+                        <form method='POST'
+                            action='../post/deletePost/<%= charcuterie[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
                     </li>
                 <%}%>
             </ul>
