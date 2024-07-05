@@ -186,7 +186,8 @@ nav a{
                         <i class="fa-solid fa-pen"></i>
                         <span class='edit-text'>Edit</span>
 
-                        <form method='POST' action='../post/deletePost/<%= entrees[i].id %>?_method=DELETE'>
+                        <form method='POST' 
+                              action='../post/deletePost/<%= entrees[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -221,8 +222,13 @@ nav a{
                         <span class='allergies'><%- sides[i].allergies %></span><br>
                     <i class="fa-solid fa-pen"></i>
                     <span class='edit-text'>Edit</span>
-                    <i class="fa-solid fa-trash"></i>
-                    <span class='delete-text'>Delete</span>
+                    <form method='POST'
+                          action='../post/deletePost/<%= sides[i].id %>?_method=DELETE'>
+                        <button>
+                            <i class="fa-solid fa-trash"></i>
+                            <span class='delete-text'>Delete</span>
+                        </button>
+                    </form>
                     </li>
                 <%}%>
             </ul>
@@ -239,8 +245,13 @@ nav a{
                         <span class='allergies'><%- sides[i].allergies %></span><br>
                     <i class="fa-solid fa-pen"></i>
                     <span class='edit-text'>Edit</span>
-                    <i class="fa-solid fa-trash"></i>
-                    <span class='delete-text'>Delete</span>
+                    <form method='POST'
+                          action='../post/deletePost/<%= sides[i].id %>?_method=DELETE'>
+                        <button>
+                            <i class="fa-solid fa-trash"></i>
+                            <span class='delete-text'>Delete</span>
+                        </button>
+                    </form>
                     </li>
                 <%}%>
             </ul>
