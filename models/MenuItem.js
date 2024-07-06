@@ -20,6 +20,9 @@ const MenuItemSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
+    vintage:{
+        type:String
+    },
     grapes:{
         type:String,
     },

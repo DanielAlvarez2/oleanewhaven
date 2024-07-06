@@ -15,10 +15,10 @@
 
             <div>
                 <h2>Add a New Menu Item</h2><br>
-                <form action='/post/createPost' enctype='multipart/form-data' method='POST'>
+                <form action='/menuItem/create' enctype='multipart/form-data' method='POST'>
 
                     <div>
-                        <label for='menu'>Menu</label><br>
+                        <label for='menu'>Menu:</label><br>
                         <select id='menu' name='menu' required>
                             <option disabled selected value>Select a Menu...</option>
                             <option value='dinner'>Dinner</option>
@@ -30,7 +30,7 @@
                     </div><br>
 
                     <div>
-                        <label for='section'>Section</label><br>
+                        <label for='section'>Section:</label><br>
                         <select id='section-placeholder'>
                             <option disabled selected value>Select a Section...</option>
                         </select>
@@ -67,32 +67,47 @@
                         </select>
                     </div><br>
 
-                    <div>
-                        <label for='title'>Title</label><br>
-                        <input type='text' id='title' name='title'>
+                    <div id='grapes-input' style='visibility:hidden;'>
+                        <label for='grapes'>Grapes:</label><br>
+                        <input type='text' id='grapes' name='grapes'>
                     </div><br>
-                    <div>
-                        <label for='caption'>Caption</label><br>
-                        <textarea rows='7' cols='30' id='caption' name='caption'></textarea>
+
+                    <div id='vintage-input' style='visibility:hidden;'>
+                        <label for='vintage'>Vintage:</label><br>
+                        <input type='text' id='vintage' name='vintage'>
                     </div><br>
+
                     <div>
-                        <label for='price'>Price</label><br>
+                        <label for='name'>Name:</label><br>
+                        <input type='text' id='name' name='name'>
+                    </div><br>
+                    
+                    <div>
+                        <label for='description'>Description:</label><br>
+                        <textarea rows='7' cols='30' id='description' name='description'></textarea>
+                    </div><br>
+                    
+                    <div>
+                        <label for='price'>Price:</label><br>
                         <input type='text' size='5' id='price' name='price'>
                     </div><br>
+                    
                     <div>
-                        <label for='allergies'>Allergies</label><br>
+                        <label for='allergies'>Allergies:</label><br>
                         <input type='text' id='allergies' name='allergies'>
                     </div><br>
+                    
                     <div>
-                        <label for='sequence'>Sequence</label><br>
+                        <label for='sequence'>Sequence:</label><br>
                         <input type='text' size='5' id='sequence' name='sequence'>
                     </div><br>
                     
-
                     <div>
-                        <label for='imgUpload'>Image</label>
-                        <input type='file' id='imageUpload' name='file'>
+                        <label for='imgUpload'>Image:</label><br>
+                        <input type='file' id='imageUpload' name='file'><br>
+                        (optional)<br>
                     </div>
+                    
                     <button type='submit' value='upload'>Submit</button>
                 </form>
             </div>
@@ -105,6 +120,8 @@
 </main>
 
 <script>
+    const menu = document.querySelector('#menu')
+    menu.addEventListener("change", displaySectionMenu)
     function displaySectionMenu(){
         const sectionPlaceholder = document.querySelector('#section-placeholder')
         const sectionDinner = document.querySelector('#section-dinner')
@@ -112,12 +129,23 @@
         const sectionDessert = document.querySelector('#section-dessert')
         const sectionWine = document.querySelector('#section-wine')
         const sectionDrinks = document.querySelector('#section-drinks')
-        sectionPlaceholer.style.display = 'none'
+        const grapesInput = document.querySelector('#grapes-input')
+        const vintageInput = document.querySelector('#vintage-input')
+        sectionPlaceholder.style.display = 'none'
         sectionDinner.style.display = 'none'
         sectionSpecials.style.display = 'none'
         sectionDessert.style.display = 'none'
         sectionWine.style.display = 'none'
         sectionDrinks.style.display = 'none'
+        grapesInput.style.visibility = 'hidden'
+        vintageInput.style.visibility = 'hidden'
+        if (menu.value == 'dinner') sectionDinner.style.display = 'block'
+        if (menu.value == 'specials') sectionSpecials.style.display = 'block'
+        if (menu.value == 'dessert') sectionDessert.style.display = 'block'
+        if (menu.value == 'wine') sectionWine.style.display = 'block'
+        if (menu.value == 'wine') grapesInput.style.visibility = 'visible'
+        if (menu.value == 'wine') vintageInput.style.visibility = 'visible'
+        if (menu.value == 'drinks') sectionDrinks.style.display = 'block'
     }
 </script>
 
