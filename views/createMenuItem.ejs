@@ -1,0 +1,109 @@
+<%- include('partials/head') %>
+
+
+
+<%- include('partials/header') %>
+
+<main>
+    <div>
+        <div>
+            <div>
+                <p><strong>User Name</strong>: <%= user.userName %></p>
+                <p><strong>Email</strong>: <%= user.email %></p>
+                <a href='/logout'><span class='button'>Logout</span></a>
+            </div>
+
+            <div>
+                <h2>Add a New Menu Item</h2><br>
+                <form action='/post/createPost' enctype='multipart/form-data' method='POST'>
+
+                    <div>
+                        <label for='menu'>Menu</label><br>
+                        <select id='menu' name='menu' required>
+                            <option disabled selected value>Select a Menu...</option>
+                            <option value='dinner'>Dinner</option>
+                            <option value='specials'>Specials</option>
+                            <option value='dessert'>Dessert</option>
+                            <option value='wine'>Wine</option>
+                            <option value='drinks'>Drinks</option>
+                        </select>
+                    </div><br>
+
+                    <div>
+                        <label for='section'>Section</label><br>
+                        <select id='section-placeholder'>
+                            <option disabled selected value>Select a Section...</option>
+                        </select>
+                        <select id='section-dinner'>
+                            <option>Select a Section...</option>
+                            <option>Charcuterie</option>
+                            <option>Appetizers</option>
+                            <option>Entrees</option>
+                            <option>Sides</option>
+                        </select>
+                        <select id='section-specials' style='display:none;'>
+                            <option>Select a Section...</option>
+                            <option>Appetizers</option>
+                            <option>Entrees</option>
+                            <option>Desserts</option>
+                        </select>
+                        <select id='section-dessert'>
+                            <option selected>Desserts</option>
+                        </select>
+                        <select id='section-wine'>
+                            <option>Select a Section...</option>
+                            <option>BTG Cava</option>
+                            <option>BTG Whites</option>
+                            <option>BTG Rose</option>
+                            <option>BTG Red</option>
+                        </select>
+                        <select id='section-drinks'>
+                            <option>Select a Section...</option>
+                            <option>Craft Drinks</option>
+                            <option>Sangria</option>
+                            <option>Non-Alcoholic</option>
+                            <option>Beer Can</option>
+                            <option>Beer Draft</option>
+                        </select>
+                    </div><br>
+
+                    <div>
+                        <label for='title'>Title</label><br>
+                        <input type='text' id='title' name='title'>
+                    </div><br>
+                    <div>
+                        <label for='caption'>Caption</label><br>
+                        <textarea rows='7' cols='30' id='caption' name='caption'></textarea>
+                    </div><br>
+                    <div>
+                        <label for='price'>Price</label><br>
+                        <input type='text' size='5' id='price' name='price'>
+                    </div><br>
+                    <div>
+                        <label for='allergies'>Allergies</label><br>
+                        <input type='text' id='allergies' name='allergies'>
+                    </div><br>
+                    <div>
+                        <label for='sequence'>Sequence</label><br>
+                        <input type='text' size='5' id='sequence' name='sequence'>
+                    </div><br>
+                    
+
+                    <div>
+                        <label for='imgUpload'>Image</label>
+                        <input type='file' id='imageUpload' name='file'>
+                    </div>
+                    <button type='submit' value='upload'>Submit</button>
+                </form>
+            </div>
+
+
+
+        </div>
+        
+    </div>
+</main>
+<script>
+
+</script>
+<%- include('partials/footer') %>

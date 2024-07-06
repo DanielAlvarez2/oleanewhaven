@@ -1,5 +1,6 @@
 const Post = require('../models/Post')
 const Wine = require('../models/Wine')
+const MenuItem = require('../models/MenuItem')
 
 module.exports={
     getIndex:async(req,res)=>{

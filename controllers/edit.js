@@ -1,5 +1,6 @@
 const Post = require('../models/Post')
 const Wine = require('../models/Wine')
+const MenuItem = require('../models/MenuItem')
 
 module.exports={
     getDinner: async (req,res)=>{
@@ -41,6 +42,15 @@ module.exports={
             console.log(req.body)
             await Post.findByIdAndUpdate(req.params.id,req.body)
             res.redirect('/')
+        }catch(err){
+            console.log(err)
+        }
+    },
+    createMenuItem: (req,res)=>{
+        try{
+            res.render('createMenuItem.ejs',{title:'CREATE MENU ITEM',
+                                             req:req,
+                                             user:req.user})
         }catch(err){
             console.log(err)
         }
