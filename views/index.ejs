@@ -133,7 +133,7 @@ nav a{
                 <% for (let i=0;i<charcuterie.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(charcuterie[i]) %>)'>
                         <span class='name'><%= charcuterie[i].name %></span><br>
-                        <%- charcuterie[i].caption %>
+                        <%- charcuterie[i].description %>
                         &nbsp; 
                         <span class='price'><%= charcuterie[i].price %></span><br>
                         <span class='allergies'><%- charcuterie[i].allergies %></span><br>
