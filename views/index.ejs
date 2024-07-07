@@ -159,7 +159,7 @@ nav a{
                 <% for (let i=0;i<entrees.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
                         <span class='name'><%= entrees[i].name %></span><br>
-                        <%- entrees[i].caption %>
+                        <%- entrees[i].description %>
                         &nbsp;
                         <span class='price'><%= entrees[i].price %></span><br>
                         <span class='allergies'><%- entrees[i].allergies %></span><br>
