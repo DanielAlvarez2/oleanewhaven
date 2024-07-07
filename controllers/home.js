@@ -14,7 +14,7 @@ module.exports={
         const entrees = await MenuItem.find({
             $and: [
                 {menu:'dinner'},
-                {section:'entrees'}
+                {section:'Entrees'}
             ]
             }).sort({sequence:'asc'})
         const sides = await Post.find({section:'sides'}).sort({sequence:'asc'})
