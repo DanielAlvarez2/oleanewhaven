@@ -17,7 +17,7 @@ module.exports={
                 {section:'Entrees'}
             ]
             }).sort({sequence:'asc'})
-        const sides = await Post.find({section:'sides'}).sort({sequence:'asc'})
+        const sides = await MenuItem.find({section:'sides'}).sort({sequence:'asc'})
         res.render('index.ejs',{req:req,
                                 title:'HOME PAGE', 
                                 charcuterie:charcuterie, 
