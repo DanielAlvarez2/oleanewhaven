@@ -110,8 +110,7 @@
                         (optional)<br>
                     </div>
                     
-                    <button type='submit'>no pic</button>
-                    <button type='submit' formaction='/menuItem/createWpic'>w pic</button>
+                    <button type='submit'>Submit</button>
                 </form>
             </div>
 
@@ -175,8 +174,8 @@
         console.log('uploadItem()')
         const imageFile = document.querySelector('#image-file').value
         if(imageFile){
-            document.querySelector('#item-form').action = '/menuItem/createWpic'
             document.querySelector('#item-form').enctype = 'multipart/form-data'
+            document.querySelector('#item-form').action = '/menuItem/createWpic'
         }else{
             document.querySelector('#item-form').action = '/menuItem/createNOpic'
         }
