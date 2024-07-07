@@ -185,8 +185,8 @@ nav a{
             <ul>
                 <% for (let i=0;i<2;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
-                        <span class='name'><%= sides[i].title %></span><br>
-                        <%= sides[i].caption %>
+                        <span class='name'><%= sides[i].name %></span><br>
+                        <%= sides[i].description %>
                         &nbsp;
                         <span class='price'><%= sides[i].price %></span><br>
                         <span class='allergies'><%- sides[i].allergies %></span><br>
@@ -199,8 +199,8 @@ nav a{
             <ul>
                 <% for (let i=2;i<sides.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
-                        <span class='name'><%= sides[i].title %></span><br>
-                        <%= sides[i].caption %>
+                        <span class='name'><%= sides[i].name %></span><br>
+                        <%= sides[i].description %>
                         &nbsp;
                         <span class='price'><%= sides[i].price %></span><br>
                         <span class='allergies'><%- sides[i].allergies %></span><br>
@@ -254,8 +254,8 @@ nav a{
     function showModal(item){
         console.log(item)
         modalImage.src=item.image
-        modalName.innerHTML = item.title
-        modalDescription.innerHTML = item.caption
+        modalName.innerHTML = item.name
+        modalDescription.innerHTML = item.description
         modalPrice.innerHTML = item.price
         modalAllergies.innerHTML = item.allergies
         modal.style.display = 'grid'

@@ -10,5 +10,6 @@ router.get('/dinner', editController.getDinner)
 router.get('/createMenuItem', editController.createMenuItem)
 router.get('/updateItem/:id', editController.updateItem)
 router.put('/saveChanges/:id', editController.saveChanges)
+router.delete('/deleteMenuItem/:id', editController.deleteMenuItem)
 
 module.exports = router

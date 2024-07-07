@@ -143,7 +143,7 @@ form{
 
 <div id='dinner-menu'>
 
-<a href='/profile'>
+<a href='/edit/createMenuItem'>
 <button style='margin:0 auto;display:block;'>
     <i class="fa-solid fa-circle-plus"></i>
     Add New Item
@@ -156,8 +156,8 @@ form{
             <ul>
                 <% for (let i=0;i<charcuterie.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(charcuterie[i]) %>)'>
-                        <span class='name'><%= charcuterie[i].title %></span><br>
-                        <%- charcuterie[i].caption %>
+                        <span class='name'><%= charcuterie[i].name %></span><br>
+                        <%- charcuterie[i].description %>
                         &nbsp; 
                         <span class='price'><%= charcuterie[i].price %></span><br>
                         <span class='allergies'><%- charcuterie[i].allergies %></span><br>
@@ -170,7 +170,7 @@ form{
                         </a>
 
                         <form method='POST'
-                            action='../post/deletePost/<%= charcuterie[i].id %>?_method=DELETE'>
+                            action='../edit/deleteMenuItem/<%= charcuterie[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -183,8 +183,8 @@ form{
             <ul>
                 <% for (let i=0;i<appetizers.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
-                        <span class='name'><%= appetizers[i].title %></span><br>
-                        <%- appetizers[i].caption %>
+                        <span class='name'><%= appetizers[i].name %></span><br>
+                        <%- appetizers[i].description %>
                         &nbsp;
                         <span class='price'><%= appetizers[i].price %></span><br>
                         <span class='allergies'><%- appetizers[i].allergies %></span><br>
@@ -194,7 +194,7 @@ form{
                             <span class='edit-text'>Edit</span>
                         </button>
 
-                        <form method='POST' action='../post/deletePost/<%= appetizers[i].id %>?_method=DELETE'>
+                        <form method='POST' action='../edit/deleteMenuItem/<%= appetizers[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -209,8 +209,8 @@ form{
             <ul>
                 <% for (let i=0;i<entrees.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
-                        <span class='name'><%= entrees[i].title %></span><br>
-                        <%- entrees[i].caption %>
+                        <span class='name'><%= entrees[i].name %></span><br>
+                        <%- entrees[i].description %>
                         &nbsp;
                         <span class='price'><%= entrees[i].price %></span><br>
                         <span class='allergies'><%- entrees[i].allergies %></span><br>
@@ -221,7 +221,7 @@ form{
                         </button>
 
                         <form method='POST' 
-                              action='../post/deletePost/<%= entrees[i].id %>?_method=DELETE'>
+                              action='../edit/deleteMenuItem/<%= entrees[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -249,8 +249,8 @@ form{
             <ul>
                 <% for (let i=0;i<2;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
-                        <span class='name'><%= sides[i].title %></span><br>
-                        <%= sides[i].caption %>
+                        <span class='name'><%= sides[i].name %></span><br>
+                        <%= sides[i].description %>
                         &nbsp;
                         <span class='price'><%= sides[i].price %></span><br>
                         <span class='allergies'><%- sides[i].allergies %></span><br>
@@ -261,7 +261,7 @@ form{
                         </button>
                     
                         <form method='POST'
-                            action='../post/deletePost/<%= sides[i].id %>?_method=DELETE'>
+                            action='../edit/deleteMenuItem/<%= sides[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -276,8 +276,8 @@ form{
             <ul>
                 <% for (let i=2;i<sides.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
-                        <span class='name'><%= sides[i].title %></span><br>
-                        <%= sides[i].caption %>
+                        <span class='name'><%= sides[i].name %></span><br>
+                        <%= sides[i].description %>
                         &nbsp;
                         <span class='price'><%= sides[i].price %></span><br>
                         <span class='allergies'><%- sides[i].allergies %></span><br>
@@ -288,7 +288,7 @@ form{
                         </button>
           
                         <form method='POST'
-                            action='../post/deletePost/<%= sides[i].id %>?_method=DELETE'>
+                            action='../edit/deleteMenuItem/<%= sides[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -312,7 +312,7 @@ form{
         </div>
     </div><!--#legal-->
 
-<a href='/profile'>    
+<a href='/edit/createMenuItem'>    
 <button style='margin:0 auto;display:block;margin-top:1em;'>
     <i class="fa-solid fa-circle-plus"></i>
     Add New Item
