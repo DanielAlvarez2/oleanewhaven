@@ -4,7 +4,7 @@ const MenuItem = require('../models/MenuItem')
 
 module.exports={
     getIndex:async(req,res)=>{
-        const charcuterie = await Post.find({section:'charcuterie'}).sort({sequence:'asc'})
+        const charcuterie = await MenuItem.find({section:'Charcuterie'}).sort({sequence:'asc'})
         const appetizers = await Post.find({
             $and: [
                 {menu:'dinner'},
