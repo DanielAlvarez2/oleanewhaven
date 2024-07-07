@@ -4,6 +4,7 @@ const upload = require('../middleware/multer')
 const menuItemController = require('../controllers/menuItem')
 const {ensureAuth} = require('../middleware/auth')
 
-router.post('/create', upload.single('file'), menuItemController.create)
+router.post('/createWpic', upload.single('file'), menuItemController.createWpic)
+router.post('/createNOpic', menuItemController.createNOpic)
 
 module.exports = router

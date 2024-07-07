@@ -15,7 +15,9 @@
 
             <div>
                 <h2>Add a New Menu Item</h2><br>
-                <form action='/menuItem/create' enctype='multipart/form-data' method='POST'>
+                <form id='item-form' 
+                      onsubmit='uploadItem()'
+                      method='POST'>
 
                     <div>
                         <label for='menu'>Menu:</label><br>
@@ -34,30 +36,30 @@
                         <select id='section-placeholder'>
                             <option disabled selected value>Select a Section...</option>
                         </select>
-                        <select id='section-dinner' style='display:none;'>
+                        <select id='section-dinner' name='section' style='display:none;'>
                             <option>Select a Section...</option>
                             <option>Charcuterie</option>
                             <option>Appetizers</option>
                             <option>Entrees</option>
                             <option>Sides</option>
                         </select>
-                        <select id='section-specials' style='display:none;'>
+                        <select id='section-specials' name='section' style='display:none;'>
                             <option>Select a Section...</option>
                             <option>Appetizers</option>
                             <option>Entrees</option>
                             <option>Desserts</option>
                         </select>
-                        <select id='section-dessert' style='display:none;'>
+                        <select id='section-dessert' name='section' style='display:none;'>
                             <option selected>Desserts</option>
                         </select>
-                        <select id='section-wine' style='display:none;'>
+                        <select id='section-wine' name='section' style='display:none;'>
                             <option>Select a Section...</option>
                             <option>BTG Cava</option>
                             <option>BTG Whites</option>
                             <option>BTG Rose</option>
                             <option>BTG Red</option>
                         </select>
-                        <select id='section-drinks' style='display:none;'>
+                        <select id='section-drinks' name='section' style='display:none;'>
                             <option>Select a Section...</option>
                             <option>Craft Drinks</option>
                             <option>Sangria</option>
@@ -103,12 +105,13 @@
                     </div><br>
                     
                     <div>
-                        <label for='imgUpload'>Image:</label><br>
-                        <input type='file' id='imageUpload' name='file'><br>
+                        <label for='image-file'>Image:</label><br>
+                        <input type='file' id='image-file' name='file'><br>
                         (optional)<br>
                     </div>
                     
-                    <button type='submit' value='upload'>Submit</button>
+                    <button type='submit'>no pic</button>
+                    <button type='submit' formaction='/menuItem/createWpic'>w pic</button>
                 </form>
             </div>
 
@@ -132,20 +135,52 @@
         const grapesInput = document.querySelector('#grapes-input')
         const vintageInput = document.querySelector('#vintage-input')
         sectionPlaceholder.style.display = 'none'
+        sectionPlaceholder.name = ''
         sectionDinner.style.display = 'none'
+        sectionDinner.name = ''
         sectionSpecials.style.display = 'none'
+        sectionSpecials.name = ''
         sectionDessert.style.display = 'none'
+        sectionDessert.name = ''
         sectionWine.style.display = 'none'
+        sectionWine.name = ''
         sectionDrinks.style.display = 'none'
+        sectionDrinks.name = ''
         grapesInput.style.visibility = 'hidden'
         vintageInput.style.visibility = 'hidden'
-        if (menu.value == 'dinner') sectionDinner.style.display = 'block'
-        if (menu.value == 'specials') sectionSpecials.style.display = 'block'
-        if (menu.value == 'dessert') sectionDessert.style.display = 'block'
-        if (menu.value == 'wine') sectionWine.style.display = 'block'
-        if (menu.value == 'wine') grapesInput.style.visibility = 'visible'
-        if (menu.value == 'wine') vintageInput.style.visibility = 'visible'
-        if (menu.value == 'drinks') sectionDrinks.style.display = 'block'
+        if (menu.value == 'dinner'){
+            sectionDinner.style.display = 'block'
+            sectionDinner.name = 'section'
+        }
+        if (menu.value == 'specials'){
+            sectionSpecials.style.display = 'block'
+            sectionSpecials.name = 'section'
+        }
+        if (menu.value == 'dessert'){
+            sectionDessert.style.display = 'block'
+            sectionDessert.name = 'section'
+        } 
+        if (menu.value == 'wine'){
+            grapesInput.style.visibility = 'visible'
+            sectionWine.style.display = 'block'
+            sectionWine.name = 'section'
+            vintageInput.style.visibility = 'visible'
+        }
+        if (menu.value == 'drinks'){
+            sectionDrinks.style.display = 'block'
+            sectionDrinks.name = 'section'
+        } 
+    }
+    function uploadItem(){
+        console.log('uploadItem()')
+        const imageFile = document.querySelector('#image-file').value
+        if(imageFile){
+            document.querySelector('#item-form').action = '/menuItem/createWpic'
+            document.querySelector('#item-form').enctype = 'multipart/form-data'
+        }else{
+            document.querySelector('#item-form').action = '/menuItem/createNOpic'
+        }
+        return true;
     }
 </script>
 
