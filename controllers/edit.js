@@ -5,20 +5,20 @@ const MenuItem = require('../models/MenuItem')
 
 module.exports={
     getDinner: async (req,res)=>{
-        const charcuterie = await MenuItem.find({section:'Charcuterie'}).sort({sequence:'asc'})
+        const charcuterie = await MenuItem.find({section:'charcuterie'}).sort({sequence:'asc'})
         const appetizers = await MenuItem.find({
             $and:[
                 {menu:'dinner'},
-                {section:'Appetizers'}
+                {section:'appetizers'}
             ]
         }).sort({sequence:'asc'})
         const entrees = await MenuItem.find({
             $and:[
                 {menu:'dinner'},
-                {section:'Entrees'}
+                {section:'entrees'}
             ]
         }).sort({sequence:'asc'})
-        const sides = await MenuItem.find({section:'Sides'}).sort({sequence:'asc'})
+        const sides = await MenuItem.find({section:'sides'}).sort({sequence:'asc'})
         res.render('editDinner.ejs',{req:req,
                                      charcuterie:charcuterie,
                                      appetizers:appetizers,
@@ -28,7 +28,7 @@ module.exports={
     },
     updateItem: async (req,res)=>{
         try{
-            const item = await Post.findById(req.params.id)
+            const item = await MenuItem.findById(req.params.id)
             res.render('updateItem.ejs',{req:req,
                                          item:item,
                                          title:'UPDATE ITEM'
@@ -41,7 +41,28 @@ module.exports={
         try{
             console.log(req.params.id)
             console.log(req.body)
-            await Post.findByIdAndUpdate(req.params.id,req.body)
+            await MenuItem.findByIdAndUpdate(req.params.id,req.body)
+            res.redirect('/')
+        }catch(err){
+            console.log(err)
+        }
+    },
+    saveChangesWpic: async(req,res)=>{
+        try{
+            console.log(req.params.id)
+            console.log(req.body)
+
+            const result = await cloudinary.uploader.upload(req.file.path)
+
+            await MenuItem.findByIdAndUpdate(req.params.id,{
+                name:req.body.name,
+                description:req.body.description,
+                price:req.body.price,
+                allergies:req.body.alergies,
+                sequence:req.body.sequence,
+                image:result.secure_url,
+                cloudinaryId:result.public_id
+            })
             res.redirect('/')
         }catch(err){
             console.log(err)

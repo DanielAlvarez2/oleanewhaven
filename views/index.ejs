@@ -253,7 +253,8 @@ nav a{
 
     function showModal(item){
         console.log(item)
-        modalImage.src=item.image
+        modalImage.src= item.image
+        modalImage.alt = item.name
         modalName.innerHTML = item.name
         modalDescription.innerHTML = item.description
         modalPrice.innerHTML = item.price

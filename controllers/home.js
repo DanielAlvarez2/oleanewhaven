@@ -4,20 +4,20 @@ const MenuItem = require('../models/MenuItem')
 
 module.exports={
     getIndex:async(req,res)=>{
-        const charcuterie = await MenuItem.find({section:'Charcuterie'}).sort({sequence:'asc'})
+        const charcuterie = await MenuItem.find({section:'charcuterie'}).sort({sequence:'asc'})
         const appetizers = await MenuItem.find({
             $and: [
                 {menu:'dinner'},
-                {section:'Appetizers'}
+                {section:'appetizers'}
             ]
             }).sort({sequence:'asc'})
         const entrees = await MenuItem.find({
             $and: [
                 {menu:'dinner'},
-                {section:'Entrees'}
+                {section:'entrees'}
             ]
             }).sort({sequence:'asc'})
-        const sides = await MenuItem.find({section:'Sides'}).sort({sequence:'asc'})
+        const sides = await MenuItem.find({section:'sides'}).sort({sequence:'asc'})
         res.render('index.ejs',{req:req,
                                 title:'HOME PAGE', 
                                 charcuterie:charcuterie, 

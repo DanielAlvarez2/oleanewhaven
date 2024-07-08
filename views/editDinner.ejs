@@ -188,11 +188,13 @@ form{
                         &nbsp;
                         <span class='price'><%= appetizers[i].price %></span><br>
                         <span class='allergies'><%- appetizers[i].allergies %></span><br>
-                    
-                        <button>
-                            <i class="fa-solid fa-pen"></i>
-                            <span class='edit-text'>Edit</span>
-                        </button>
+
+                        <a href='/edit/updateItem/<%= appetizers[i].id %>'>                    
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
 
                         <form method='POST' action='../edit/deleteMenuItem/<%= appetizers[i].id %>?_method=DELETE'>
                             <button>
@@ -215,10 +217,12 @@ form{
                         <span class='price'><%= entrees[i].price %></span><br>
                         <span class='allergies'><%- entrees[i].allergies %></span><br>
                         
-                        <button>
-                            <i class="fa-solid fa-pen"></i>
-                            <span class='edit-text'>Edit</span>
-                        </button>
+                        <a href='/edit/updateItem/<%= entrees[i].id %>'>                        
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
 
                         <form method='POST' 
                               action='../edit/deleteMenuItem/<%= entrees[i].id %>?_method=DELETE'>
@@ -255,11 +259,13 @@ form{
                         <span class='price'><%= sides[i].price %></span><br>
                         <span class='allergies'><%- sides[i].allergies %></span><br>
 
-                        <button>
-                            <i class="fa-solid fa-pen"></i>
-                            <span class='edit-text'>Edit</span>
-                        </button>
-                    
+                        <a href='/edit/updateItem/<%= sides[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+
                         <form method='POST'
                             action='../edit/deleteMenuItem/<%= sides[i].id %>?_method=DELETE'>
                             <button>
@@ -282,11 +288,13 @@ form{
                         <span class='price'><%= sides[i].price %></span><br>
                         <span class='allergies'><%- sides[i].allergies %></span><br>
           
-                        <button>
-                            <i class="fa-solid fa-pen"></i>
-                            <span class='edit-text'>Edit</span>
-                        </button>
-          
+                        <a href='/edit/updateItem/<%= sides[i].id %>'>          
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+                        
                         <form method='POST'
                             action='../edit/deleteMenuItem/<%= sides[i].id %>?_method=DELETE'>
                             <button>
