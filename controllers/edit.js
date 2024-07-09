@@ -75,6 +75,7 @@ module.exports={
         const whiteFrance = await MenuItem.find({section:'white france'}).sort({sequence:'asc'})
         const whiteItaly = await MenuItem.find({section:'white italy'}).sort({sequence:'asc'})
         const whiteGermany = await MenuItem.find({section:'white germany'}).sort({sequence:'asc'})
+        const redSpain = await MenuItem.find({section:'red spain'}).sort({sequence:'asc'})
         res.render('editWine.ejs',{title:'EDIT WINE',
                                    req,req,
                                    btgCava:btgCava,
@@ -87,7 +88,8 @@ module.exports={
                                    whiteSpain:whiteSpain,
                                    whiteFrance:whiteFrance,
                                    whiteItaly:whiteItaly,
-                                   whiteGermany:whiteGermany})
+                                   whiteGermany:whiteGermany,
+                                   redSpain:redSpain})
     },
     getDrinks: async(req,res)=>{
         const craftDrinks = await MenuItem.find({section:'craft drinks'}).sort({sequence:'asc'})

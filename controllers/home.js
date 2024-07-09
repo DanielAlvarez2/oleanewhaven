@@ -88,6 +88,7 @@ module.exports={
         const whiteFrance = await MenuItem.find({section:'white france'}).sort({sequence:'asc'})
         const whiteItaly = await MenuItem.find({section:'white italy'}).sort({sequence:'asc'})
         const whiteGermany = await MenuItem.find({section:'white germany'}).sort({sequence:'asc'})
+        const redSpain = await MenuItem.find({section:'red spain'}).sort({sequence:'asc'})
         res.render('wine.ejs',{title:'WINE',
                                btgCava:btgCava,
                                btgWhites:btgWhites,
@@ -100,6 +101,7 @@ module.exports={
                                whiteFrance:whiteFrance,
                                whiteItaly:whiteItaly,
                                whiteGermany:whiteGermany,
+                               redSpain:redSpain,
                                req:req})
     }
 }

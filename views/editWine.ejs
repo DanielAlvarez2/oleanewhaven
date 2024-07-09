@@ -450,6 +450,36 @@ form{
 
 
 
+        <h3>red</h3>
+
+        <h4>Spain</h4>
+            <ul>
+                <% for (let i=0;i<redSpain.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(redSpain[i]) %>)'>
+                        <%= redSpain[i].grapes %><br>
+                        <span class='name'><%= redSpain[i].name %></span><br>
+                        <%= redSpain[i].vintage %><br>
+                        <%- redSpain[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= redSpain[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= redSpain[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+                            
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= redSpain[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
 
 
 

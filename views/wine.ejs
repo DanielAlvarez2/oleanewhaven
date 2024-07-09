@@ -280,6 +280,22 @@ nav a{
                     </li>
                 <%}%>
             </ul>
+
+            <h3>red</h3>
+
+            <h4>Spain</h4>          
+            <ul>
+                <% for (let i=0;i<redSpain.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(redSpain[i]) %>)'>
+                        <span><%= redSpain[i].grapes %></span><br>
+                        <span class='name'><%= redSpain[i].name %></span><br>
+                        <span><%= redSpain[i].vintage %></span><br>
+                        <%- redSpain[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= redSpain[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
             
 
 
