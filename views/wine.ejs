@@ -223,6 +223,64 @@ nav a{
                 <%}%>
             </ul>
             
+            <h3>white</h3>
+
+            <h4>Spain</h4>          
+            <ul>
+                <% for (let i=0;i<whiteSpain.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(whiteSpain[i]) %>)'>
+                        <span><%= whiteSpain[i].grapes %></span><br>
+                        <span class='name'><%= whiteSpain[i].name %></span><br>
+                        <span><%= whiteSpain[i].vintage %></span><br>
+                        <%- whiteSpain[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteSpain[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h4>France</h4>          
+            <ul>
+                <% for (let i=0;i<whiteFrance.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(whiteFrance[i]) %>)'>
+                        <span><%= whiteFrance[i].grapes %></span><br>
+                        <span class='name'><%= whiteFrance[i].name %></span><br>
+                        <span><%= whiteFrance[i].vintage %></span><br>
+                        <%- whiteFrance[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteFrance[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h4>Italy</h4>          
+            <ul>
+                <% for (let i=0;i<whiteItaly.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(whiteItaly[i]) %>)'>
+                        <span><%= whiteItaly[i].grapes %></span><br>
+                        <span class='name'><%= whiteItaly[i].name %></span><br>
+                        <span><%= whiteItaly[i].vintage %></span><br>
+                        <%- whiteItaly[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteItaly[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h4>Germany</h4>          
+            <ul>
+                <% for (let i=0;i<whiteGermany.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(whiteGermany[i]) %>)'>
+                        <span><%= whiteGermany[i].grapes %></span><br>
+                        <span class='name'><%= whiteGermany[i].name %></span><br>
+                        <span><%= whiteGermany[i].vintage %></span><br>
+                        <%- whiteGermany[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteGermany[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
 
 
 

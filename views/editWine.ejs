@@ -317,6 +317,8 @@ form{
                                 <i class="fa-solid fa-pen"></i>
                                 <span class='edit-text'>Edit</span>
                             </button>
+                        </a>
+
                         <form method='POST'
                             action='../edit/deleteMenuItem/<%= rose[i].id %>?_method=DELETE'>
                             <button>
@@ -327,6 +329,137 @@ form{
                     </li>
                 <%}%>
             </ul>
+
+        <h3>white</h3>
+
+        <h4>Spain</h4>
+            <ul>
+                <% for (let i=0;i<whiteSpain.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(whiteSpain[i]) %>)'>
+                        <%= whiteSpain[i].grapes %><br>
+                        <span class='name'><%= whiteSpain[i].name %></span><br>
+                        <%= whiteSpain[i].vintage %><br>
+                        <%- whiteSpain[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteSpain[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= whiteSpain[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+                            
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= whiteSpain[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
+        <h4>France</h4>
+            <ul>
+                <% for (let i=0;i<whiteFrance.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(whiteFrance[i]) %>)'>
+                        <%= whiteFrance[i].grapes %><br>
+                        <span class='name'><%= whiteFrance[i].name %></span><br>
+                        <%= whiteFrance[i].vintage %><br>
+                        <%- whiteFrance[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteFrance[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= whiteFrance[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+                            
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= whiteFrance[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
+        <h4>Italy</h4>
+            <ul>
+                <% for (let i=0;i<whiteItaly.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(whiteItaly[i]) %>)'>
+                        <%= whiteItaly[i].grapes %><br>
+                        <span class='name'><%= whiteItaly[i].name %></span><br>
+                        <%= whiteItaly[i].vintage %><br>
+                        <%- whiteItaly[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteItaly[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= whiteItaly[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+                            
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= whiteItaly[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
+        <h4>Germany</h4>
+            <ul>
+                <% for (let i=0;i<whiteGermany.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(whiteGermany[i]) %>)'>
+                        <%= whiteGermany[i].grapes %><br>
+                        <span class='name'><%= whiteGermany[i].name %></span><br>
+                        <%= whiteGermany[i].vintage %><br>
+                        <%- whiteGermany[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteGermany[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= whiteGermany[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+                            
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= whiteGermany[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
