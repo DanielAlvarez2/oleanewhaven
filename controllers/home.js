@@ -63,9 +63,17 @@ module.exports={
                                   req:req})
     },
     getDrinks: async(req,res)=>{
-        const drinks = await Post.find({section:'cocktails'}).sort({sequence:'asc'})
+        const craftDrinks = await MenuItem.find({section:'craft drinks'}).sort({sequence:'asc'})
+        const sangria = await MenuItem.find({section:'sangria'}).sort({sequence:'asc'})
+        const nonAlcoholic = await MenuItem.find({section:'non-alcoholic'}).sort({sequence:'asc'})
+        const beerCans = await MenuItem.find({section:'beer can'}).sort({sequence:'asc'})
+        const beerDrafts = await MenuItem.find({section:'beer draft'}).sort({sequence:'asc'})
         res.render('drinks.ejs',{title:'COCKTAILS',
-                                 drinks:drinks,
+                                 craftDrinks:craftDrinks,
+                                 sangria:sangria,
+                                 nonAlcoholic:nonAlcoholic,
+                                 beerCans:beerCans,
+                                 beerDrafts:beerDrafts,
                                  req:req})
     },
     getWine: async(req,res)=>{

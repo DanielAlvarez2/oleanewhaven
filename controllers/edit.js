@@ -77,6 +77,20 @@ module.exports={
                                    btgReds:btgReds,
                                    btgSherries:btgSherries})
     },
+    getDrinks: async(req,res)=>{
+        const craftDrinks = await MenuItem.find({section:'craft drinks'}).sort({sequence:'asc'})
+        const sangria = await MenuItem.find({section:'sangria'}).sort({sequence:'asc'})
+        const nonAlcoholic = await MenuItem.find({section:'non-alcoholic'}).sort({sequence:'asc'})
+        const beerCans = await MenuItem.find({section:'beer can'}).sort({sequence:'asc'})
+        const beerDrafts = await MenuItem.find({section:'beer draft'}).sort({sequence:'asc'})
+        res.render('editDrinks.ejs',{title:'EDIT DRINKS',
+                                     req:req,
+                                     craftDrinks:craftDrinks,
+                                     sangria:sangria,
+                                     nonAlcoholic:nonAlcoholic,
+                                     beerCans:beerCans,
+                                     beerDrafts:beerDrafts})
+    },
     updateItem: async (req,res)=>{
         try{
             const item = await MenuItem.findById(req.params.id)
