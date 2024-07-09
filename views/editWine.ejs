@@ -27,9 +27,9 @@ main{
     place-content:center;
     min-height:calc(100vh - 5.5em);
 }
-#specials-menu{
-    max-width:4.25in;
-    min-height:5.5in;
+#wine-btg{
+    max-width:7in;
+    min-height:8.5in;
     border:1px solid red;
     background: white;
 }
@@ -106,14 +106,14 @@ form{
 <main>
 <nav>
     <a href='/edit/dinner'>dinner</a>
-    <a class='active-page'>specials</a>
+    <a href='/edit/specials'>specials</a>
     <a href='/edit/dessert'>dessert</a>
-    <a href='/edit/wine'>wine</a>
+    <a class='active-page'>wine</a>
     <a href='/drinks'>drinks</a>
 </nav>
 
 
-<div id='specials-menu'>
+<div id='wine-btg'>
 
 <a href='/edit/createMenuItem'>
 <button style='margin:0 auto;display:block;'>
@@ -121,22 +121,21 @@ form{
     Add New Item
 </button>
 </a>
-    <h2>today's specials</h2><br><br>
+    <h1>olea</h1>
+    <hr>
 
-        <% if(appetizers.length>0){ %>
-            <h3>appetizers</h3>
-        <% } %>
+    <h2>wine by the glass</h2>
 
+        <h3>Cava</h3>
             <ul>
-                <% for (let i=0;i<appetizers.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
-                        <span class='name'><%= appetizers[i].name %></span><br>
-                        <%- appetizers[i].description %>
+                <% for (let i=0;i<btgCava.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(btgCava[i]) %>)'>
+                        <span class='name'><%= btgCava[i].name %></span><br>
+                        <%- btgCava[i].description %>
                         &nbsp; 
-                        <span class='price'><%= appetizers[i].price %></span><br>
-                        <span class='allergies'><%- appetizers[i].allergies %></span><br>
+                        <span class='price'><%= btgCava[i].price %></span><br>
                         
-                        <a href='/edit/updateItem/<%= appetizers[i].id %>'>
+                        <a href='/edit/updateItem/<%= btgCava[i].id %>'>
                             <button>
                                 <i class="fa-solid fa-pen"></i>
                                 <span class='edit-text'>Edit</span>
@@ -144,7 +143,7 @@ form{
                         </a>
 
                         <form method='POST'
-                            action='../edit/deleteMenuItem/<%= appetizers[i].id %>?_method=DELETE'>
+                            action='../edit/deleteMenuItem/<%= btgCava[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -154,52 +153,16 @@ form{
                 <%}%>
             </ul>
 
-
-    <% if(entrees.length>0){ %>
-        <h3>entrees</h3>
-    <% } %>
-
+        <h3>White</h3>
             <ul>
-                <% for (let i=0;i<entrees.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
-                        <span class='name'><%= entrees[i].name %></span><br>
-                        <%- entrees[i].description %>
-                        &nbsp;
-                        <span class='price'><%= entrees[i].price %></span><br>
-                        <span class='allergies'><%- entrees[i].allergies %></span><br>
+                <% for (let i=0;i<btgWhites.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(btgWhites[i]) %>)'>
+                        <span class='name'><%= btgWhites[i].name %></span><br>
+                        <%- btgWhites[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgWhites[i].price %></span><br>
                         
-                        <a href='/edit/updateItem/<%= entrees[i].id %>'>                        
-                            <button>
-                                <i class="fa-solid fa-pen"></i>
-                                <span class='edit-text'>Edit</span>
-                            </button>
-                        </a>
-
-                        <form method='POST' 
-                              action='../edit/deleteMenuItem/<%= entrees[i].id %>?_method=DELETE'>
-                            <button>
-                                <i class="fa-solid fa-trash"></i>
-                                <span class='delete-text'>Delete</span>
-                            </button>
-                        </form>
-                    </li>
-                <%}%>
-            </ul>
-    <% if(desserts.length>0){ %>
-        <h3>desserts</h3>
-    <% } %>
-
-        
-            <ul>
-                <% for (let i=0;i<desserts.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(desserts[i]) %>)'>
-                        <span class='name'><%= desserts[i].name %></span><br>
-                        <%= desserts[i].description %>
-                        &nbsp;
-                        <span class='price'><%= desserts[i].price %></span><br>
-                        <span class='allergies'><%- desserts[i].allergies %></span><br>
-
-                        <a href='/edit/updateItem/<%= desserts[i].id %>'>
+                        <a href='/edit/updateItem/<%= btgWhites[i].id %>'>
                             <button>
                                 <i class="fa-solid fa-pen"></i>
                                 <span class='edit-text'>Edit</span>
@@ -207,7 +170,7 @@ form{
                         </a>
 
                         <form method='POST'
-                            action='../edit/deleteMenuItem/<%= desserts[i].id %>?_method=DELETE'>
+                            action='../edit/deleteMenuItem/<%= btgWhites[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -217,13 +180,88 @@ form{
                 <%}%>
             </ul>
 
-    <div id='legal'>
-            consumer advisory: consumption of undercooked meat, poultry, eggs, 
-            or seafood may increase the risk of food-borne illnesses<br>
-            please alert your server if you have special dietary requirements<br>
-            all menu items are subject to change according to seasonality
-            and availability
-    </div><!--#legal-->
+        <h3>Rosé</h3>
+            <ul>
+                <% for (let i=0;i<btgRose.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(btgRose[i]) %>)'>
+                        <span class='name'><%= btgRose[i].name %></span><br>
+                        <%- btgRose[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgRose[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= btgRose[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= btgRose[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
+        <h3>Red</h3>
+            <ul>
+                <% for (let i=0;i<btgReds.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(btgReds[i]) %>)'>
+                        <span class='name'><%= btgReds[i].name %></span><br>
+                        <%- btgReds[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgReds[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= btgReds[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= btgReds[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
+        <h3>Sherries</h3>
+            <ul>
+                <% for (let i=0;i<btgSherries.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(btgSherries[i]) %>)'>
+                        <span class='name'><%= btgSherries[i].name %></span><br>
+                        <%- btgSherries[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgSherries[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= btgSherries[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= btgSherries[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
+
 
 <a href='/edit/createMenuItem'>    
 <button style='margin:0 auto;display:block;margin-top:1em;'>

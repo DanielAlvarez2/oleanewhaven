@@ -58,6 +58,7 @@
                             <option value='btg whites'>BTG Whites</option>
                             <option value='btg rose'>BTG Rose</option>
                             <option value='btg reds'>BTG Reds</option>
+                            <option value='btg sherries'>BTG Sherries</option>
                         </select>
                         <select id='section-drinks' name='section' style='display:none;'>
                             <option>Select a Section...</option>
@@ -94,7 +95,7 @@
                         <input type='text' size='5' id='price' name='price'>
                     </div><br>
                     
-                    <div>
+                    <div id='allergies-input'>
                         <label for='allergies'>Allergies:</label><br>
                         <input type='text' id='allergies' name='allergies'>
                     </div><br>
@@ -124,15 +125,23 @@
 <script>
     const menu = document.querySelector('#menu')
     menu.addEventListener("change", displaySectionMenu)
+    const sectionWine = document.querySelector('#section-wine')
+    sectionWine.addEventListener("change", hideVintageInput)
+    const vintageInput = document.querySelector('#vintage-input')
+    function hideVintageInput(){
+        if (sectionWine.value == 'btg sherries'){
+            vintageInput.style.visibility = 'hidden'
+        }else{
+            vintageInput.style.visibility = 'visible'
+        }
+    }
     function displaySectionMenu(){
         const sectionPlaceholder = document.querySelector('#section-placeholder')
         const sectionDinner = document.querySelector('#section-dinner')
         const sectionSpecials = document.querySelector('#section-specials')
         const sectionDessert = document.querySelector('#section-dessert')
-        const sectionWine = document.querySelector('#section-wine')
         const sectionDrinks = document.querySelector('#section-drinks')
         const grapesInput = document.querySelector('#grapes-input')
-        const vintageInput = document.querySelector('#vintage-input')
         sectionPlaceholder.style.display = 'none'
         sectionPlaceholder.name = ''
         sectionDinner.style.display = 'none'
@@ -164,10 +173,12 @@
             sectionWine.style.display = 'block'
             sectionWine.name = 'section'
             vintageInput.style.visibility = 'visible'
+            document.querySelector('#allergies-input').style.visibility = 'hidden'
         }
         if (menu.value == 'drinks'){
             sectionDrinks.style.display = 'block'
             sectionDrinks.name = 'section'
+            document.querySelector('#allergies-input').style.visibility = 'hidden'
         } 
     }
     function uploadItem(){

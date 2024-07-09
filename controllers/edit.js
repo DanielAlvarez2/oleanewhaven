@@ -63,6 +63,20 @@ module.exports={
                                       desserts:desserts})
         
     },
+    getWine: async(req,res)=>{
+        const btgCava = await MenuItem.find({section:'btg cava'}).sort({sequence:'asc'})
+        const btgWhites = await MenuItem.find({section:'btg whites'}).sort({sequence:'asc'})
+        const btgRose = await MenuItem.find({section:'btg rose'}).sort({sequence:'asc'})
+        const btgReds = await MenuItem.find({section:'btg reds'}).sort({sequence:'asc'})
+        const btgSherries = await MenuItem.find({section:'btg sherries'}).sort({sequence:'asc'})
+        res.render('editWine.ejs',{title:'EDIT WINE',
+                                   req,req,
+                                   btgCava:btgCava,
+                                   btgWhites:btgWhites,
+                                   btgRose:btgRose,
+                                   btgReds:btgReds,
+                                   btgSherries:btgSherries})
+    },
     updateItem: async (req,res)=>{
         try{
             const item = await MenuItem.findById(req.params.id)

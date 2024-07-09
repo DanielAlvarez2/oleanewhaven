@@ -69,15 +69,17 @@ module.exports={
                                  req:req})
     },
     getWine: async(req,res)=>{
-        const btgCava = await Wine.find({section:'btg cava'}).sort({sequence:'asc'})
-        const btgWhites = await Wine.find({section:'btg whites'}).sort({sequence:'asc'})
-        const btgRose = await Wine.find({section:'btg rose'}).sort({sequence:'asc'})
-        const btgReds = await Wine.find({section:'btg reds'}).sort({sequence:'asc'})
+        const btgCava = await MenuItem.find({section:'btg cava'}).sort({sequence:'asc'})
+        const btgWhites = await MenuItem.find({section:'btg whites'}).sort({sequence:'asc'})
+        const btgRose = await MenuItem.find({section:'btg rose'}).sort({sequence:'asc'})
+        const btgReds = await MenuItem.find({section:'btg reds'}).sort({sequence:'asc'})
+        const btgSherries = await MenuItem.find({section:'btg sherries'}).sort({sequence:'asc'})
         res.render('wine.ejs',{title:'WINE',
                                btgCava:btgCava,
                                btgWhites:btgWhites,
                                btgRose:btgRose,
                                btgReds:btgReds,
+                               btgSherries:btgSherries,
                                req:req})
     }
 }
