@@ -69,13 +69,15 @@ module.exports={
         const btgRose = await MenuItem.find({section:'btg rose'}).sort({sequence:'asc'})
         const btgReds = await MenuItem.find({section:'btg reds'}).sort({sequence:'asc'})
         const btgSherries = await MenuItem.find({section:'btg sherries'}).sort({sequence:'asc'})
+        const cavaChampagne = await MenuItem.find({section:'cava champagne'}).sort({sequence:'asc'})
         res.render('editWine.ejs',{title:'EDIT WINE',
                                    req,req,
                                    btgCava:btgCava,
                                    btgWhites:btgWhites,
                                    btgRose:btgRose,
                                    btgReds:btgReds,
-                                   btgSherries:btgSherries})
+                                   btgSherries:btgSherries,
+                                   cavaChampagne:cavaChampagne})
     },
     getDrinks: async(req,res)=>{
         const craftDrinks = await MenuItem.find({section:'craft drinks'}).sort({sequence:'asc'})

@@ -261,6 +261,35 @@ form{
                 <%}%>
             </ul>
 
+    <h2>wine by the bottle</h2>
+
+        <h3>cava & champagne</h3>
+            <ul>
+                <% for (let i=0;i<cavaChampagne.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(cavaChampagne[i]) %>)'>
+                        <span class='name'><%= cavaChampagne[i].name %></span><br>
+                        <%- cavaChampagne[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= cavaChampagne[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= cavaChampagne[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= cavaChampagne[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
 
 
 <a href='/edit/createMenuItem'>    

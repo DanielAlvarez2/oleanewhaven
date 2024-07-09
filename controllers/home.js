@@ -82,12 +82,14 @@ module.exports={
         const btgRose = await MenuItem.find({section:'btg rose'}).sort({sequence:'asc'})
         const btgReds = await MenuItem.find({section:'btg reds'}).sort({sequence:'asc'})
         const btgSherries = await MenuItem.find({section:'btg sherries'}).sort({sequence:'asc'})
+        const cavaChampagne = await MenuItem.find({section:'cava champagne'}).sort({sequence:'asc'})
         res.render('wine.ejs',{title:'WINE',
                                btgCava:btgCava,
                                btgWhites:btgWhites,
                                btgRose:btgRose,
                                btgReds:btgReds,
                                btgSherries:btgSherries,
+                               cavaChampagne:cavaChampagne,
                                req:req})
     }
 }

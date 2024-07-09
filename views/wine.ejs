@@ -193,16 +193,16 @@ nav a{
             <hr>
 
             <h2>wine by the bottle</h2> 
-            <h3>Cava</h3>          
+            <h3>cava & champagne</h3>          
             <ul>
-                <% for (let i=0;i<btgCava.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(btgCava[i]) %>)'>
-                        <span><%= btgCava[i].grapes %></span><br>
-                        <span class='name'><%= btgCava[i].name %></span><br>
-                        <span><%= btgCava[i].vintage %></span><br>
-                        <%- btgCava[i].description %>
+                <% for (let i=0;i<cavaChampagne.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(cavaChampagne[i]) %>)'>
+                        <span><%= cavaChampagne[i].grapes %></span><br>
+                        <span class='name'><%= cavaChampagne[i].name %></span><br>
+                        <span><%= cavaChampagne[i].vintage %></span><br>
+                        <%- cavaChampagne[i].description %>
                         &nbsp; 
-                        <span class='price'><%= btgCava[i].price %></span><br>
+                        <span class='price'><%= cavaChampagne[i].price %></span><br>
                     </li>
                 <%}%>
             </ul>
