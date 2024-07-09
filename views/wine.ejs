@@ -209,6 +209,29 @@ nav a{
                 <%}%>
             </ul>
             
+            <h3>rosé</h3>          
+            <ul>
+                <% for (let i=0;i<rose.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(rose[i]) %>)'>
+                        <span><%= rose[i].grapes %></span><br>
+                        <span class='name'><%= rose[i].name %></span><br>
+                        <span><%= rose[i].vintage %></span><br>
+                        <%- rose[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= rose[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+
+
+
+
+
+
+
+
+            
 </div><!--#btb-menu-->
 
     <div id='modal'>

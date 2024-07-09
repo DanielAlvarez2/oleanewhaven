@@ -301,6 +301,33 @@ form{
                 <%}%>
             </ul>
 
+        <h3>rosé</h3>
+            <ul>
+                <% for (let i=0;i<rose.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(rose[i]) %>)'>
+                        <%= rose[i].grapes %><br>
+                        <span class='name'><%= rose[i].name %></span><br>
+                        <%= rose[i].vintage %><br>
+                        <%- rose[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= rose[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= rose[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= rose[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
 
 
 <a href='/edit/createMenuItem'>    
