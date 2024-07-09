@@ -297,6 +297,34 @@ nav a{
                 <%}%>
             </ul>
             
+            <h4>France</h4>          
+            <ul>
+                <% for (let i=0;i<redFrance.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(redFrance[i]) %>)'>
+                        <span><%= redFrance[i].grapes %></span><br>
+                        <span class='name'><%= redFrance[i].name %></span><br>
+                        <span><%= redFrance[i].vintage %></span><br>
+                        <%- redFrance[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= redFrance[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h4>Italy</h4>          
+            <ul>
+                <% for (let i=0;i<redItaly.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(redItaly[i]) %>)'>
+                        <span><%= redItaly[i].grapes %></span><br>
+                        <span class='name'><%= redItaly[i].name %></span><br>
+                        <span><%= redItaly[i].vintage %></span><br>
+                        <%- redItaly[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= redItaly[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
 
 
 

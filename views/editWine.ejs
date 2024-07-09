@@ -481,6 +481,64 @@ form{
                 <%}%>
             </ul>
 
+        <h4>France</h4>
+            <ul>
+                <% for (let i=0;i<redFrance.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(redFrance[i]) %>)'>
+                        <%= redFrance[i].grapes %><br>
+                        <span class='name'><%= redFrance[i].name %></span><br>
+                        <%= redFrance[i].vintage %><br>
+                        <%- redFrance[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= redFrance[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= redFrance[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+                            
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= redFrance[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
+        <h4>Italy</h4>
+            <ul>
+                <% for (let i=0;i<redItaly.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(redItaly[i]) %>)'>
+                        <%= redItaly[i].grapes %><br>
+                        <span class='name'><%= redItaly[i].name %></span><br>
+                        <%= redItaly[i].vintage %><br>
+                        <%- redItaly[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= redItaly[i].price %></span><br>
+                        
+                        <a href='/edit/updateItem/<%= redItaly[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+                            
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= redItaly[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+                    </li>
+                <%}%>
+            </ul>
+
 
 
 
