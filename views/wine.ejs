@@ -22,7 +22,7 @@ main{
     place-content:center;
     min-height:calc(100vh - 5.5em);
 }
-#dessert-menu{
+#btg-menu{
     max-width:5.5in;
     min-height:8.5in;
     border:1px solid red;
@@ -109,7 +109,8 @@ nav a{
     <a class='active-page'>wine</a>
     <a href='/drinks'>drinks</a>
 </nav>
-<div id='dessert-menu'>
+
+<div id='btg-menu'>
 
             <h1>olea</h1>
             <hr>
@@ -184,6 +185,29 @@ nav a{
                 <%}%>
             </ul>
    
+</div><!--#btg-menu-->
+
+<div id='btb-menu'>
+
+            <h1>olea</h1>
+            <hr>
+
+            <h2>wine by the bottle</h2> 
+            <h3>Cava</h3>          
+            <ul>
+                <% for (let i=0;i<btgCava.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(btgCava[i]) %>)'>
+                        <span><%= btgCava[i].grapes %></span><br>
+                        <span class='name'><%= btgCava[i].name %></span><br>
+                        <span><%= btgCava[i].vintage %></span><br>
+                        <%- btgCava[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgCava[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+</div><!--#btb-menu-->
 
     <div id='modal'>
         <i class='fa-solid fa-square-xmark x'
@@ -203,7 +227,6 @@ nav a{
             </figure>
         </div><!--#modal-item-->
     </div><!--#modal-->
-</div><!--#specials-menu-->
 </main>
 
 <script>
