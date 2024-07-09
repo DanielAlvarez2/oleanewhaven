@@ -113,12 +113,15 @@ nav a{
 
             <h2>today's specials</h2>
 
-            <h2>appetizers</h2>
+            <% if(appetizers.length>0){ %>
+                <h2>appetizers</h2>
+            <% } %>
+
             <ul>
                 <% for (let i=0;i<appetizers.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
-                        <span class='name'><%= appetizers[i].title %></span><br>
-                        <%- appetizers[i].caption %>
+                        <span class='name'><%= appetizers[i].name %></span><br>
+                        <%- appetizers[i].description %>
                         &nbsp; 
                         <span class='price'><%= appetizers[i].price %></span><br>
                         <span class='allergies'><%- appetizers[i].allergies %></span><br>
@@ -126,15 +129,32 @@ nav a{
                 <%}%>
             </ul>
 
-            <h2>entrées</h2>
+            <% if(entrees.length>0){ %>
+                <h2>entrées</h2>
+            <% } %>
             <ul>
                 <% for (let i=0;i<entrees.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
-                        <span class='name'><%= entrees[i].title %></span><br>
-                        <%- entrees[i].caption %>
+                        <span class='name'><%= entrees[i].name %></span><br>
+                        <%- entrees[i].description %>
                         &nbsp; 
                         <span class='price'><%= entrees[i].price %></span><br>
                         <span class='allergies'><%- entrees[i].allergies %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+
+            <% if(desserts.length>0){ %>
+                <h2>desserts</h2>
+            <% } %>
+            <ul>
+                <% for (let i=0;i<desserts.length;i++){ %>
+                    <li onclick='showModal(<%= JSON.stringify(desserts[i]) %>)'>
+                        <span class='name'><%= desserts[i].name %></span><br>
+                        <%- desserts[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= desserts[i].price %></span><br>
+                        <span class='allergies'><%- desserts[i].allergies %></span><br>
                     </li>
                 <%}%>
             </ul>

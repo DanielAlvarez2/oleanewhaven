@@ -26,22 +26,29 @@ module.exports={
                                 sides:sides})
     },
     getSpecials: async(req,res)=>{
-        const appetizers = await Post.find({
+        const appetizers = await MenuItem.find({
             $and: [
                     {menu:'specials'},
                     {section:'appetizers'},   
                   ],
                 }).sort({sequence:'asc'})
-        const entrees = await Post.find({
+        const entrees = await MenuItem.find({
             $and: [
                     {menu:'specials'},
                     {section:'entrees'},
                   ],
-                }).sort({sequence:'asc'})        
+                }).sort({sequence:'asc'})
+        const desserts = await MenuItem.find({
+            $and:[
+                {menu:'specials'},
+                {section:'desserts'}
+            ]
+        }).sort({sequence:'asc'})        
         res.render('specials.ejs', 
                     {title:'SPECIALS',
                     appetizers:appetizers,
                     entrees:entrees,
+                    desserts:desserts,
                     req:req,})
     },
     getDesserts: async(req,res)=>{

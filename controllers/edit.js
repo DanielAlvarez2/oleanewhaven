@@ -26,6 +26,31 @@ module.exports={
                                      sides:sides,
                                      title:'EDIT DINNER MENU'})
     },
+    getSpecials: async (req,res)=>{
+        const appetizers = await MenuItem.find({
+            $and:[
+                {menu:'specials'},
+                {section:'appetizers'}
+            ]
+        }).sort({sequence:'asc'})
+        const entrees = await MenuItem.find({
+            $and:[
+                {menu:'specials'},
+                {section:'entrees'}
+            ]
+        }).sort({sequence:'asc'})
+        const desserts = await MenuItem.find({
+            $and:[
+                {menu:'specials'},
+                {section:'desserts'}
+            ]
+        }).sort({sequence:'asc'})
+        res.render('editSpecials.ejs',{title:'EDIT SPECIALS',
+                                       req:req,
+                                       appetizers:appetizers,
+                                       entrees:entrees,
+                                       desserts:desserts})
+    },
     updateItem: async (req,res)=>{
         try{
             const item = await MenuItem.findById(req.params.id)
@@ -51,7 +76,8 @@ module.exports={
         try{
             console.log(req.params.id)
             console.log(req.body)
-
+            console.log('cloudinaryId: '+req.body.cloudinaryId)
+            await cloudinary.uploader.destroy(req.body.cloudinaryId)
             const result = await cloudinary.uploader.upload(req.file.path)
 
             await MenuItem.findByIdAndUpdate(req.params.id,{
