@@ -130,8 +130,9 @@ form{
             <ul>
                 <% for (let i=0;i<btgCava.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(btgCava[i]) %>)'>
+                        <%= btgCava[i].grapes %><br>
                         <span class='name'><%= btgCava[i].name %></span><br>
-                        <%= btgCava[i].vintage %>
+                        <%= btgCava[i].vintage %><br>
                         <%- btgCava[i].description %>
                         &nbsp; 
                         <span class='price'><%= btgCava[i].price %></span><br>
