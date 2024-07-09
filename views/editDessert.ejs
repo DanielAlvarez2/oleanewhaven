@@ -27,11 +27,11 @@ main{
     place-content:center;
     min-height:calc(100vh - 5.5em);
 }
-#specials-menu{
-    max-width:4.25in;
-    min-height:5.5in;
+#dessert-menu{
+    max-width:5.5in;
+    min-height:8.5in;
     border:1px solid red;
-    background: white;
+    background-image: url(menu-background.jpg);
 }
 .price, #modal-price{
     font-weight:900;
@@ -106,14 +106,14 @@ form{
 <main>
 <nav>
     <a href='/edit/dinner'>dinner</a>
-    <a class='active-page'>specials</a>
-    <a href='/edit/dessert'>dessert</a>
+    <a href='/edit/specials'>specials</a>
+    <a class='active-page'>dessert</a>
     <a href='/wine'>wine</a>
     <a href='/drinks'>drinks</a>
 </nav>
 
 
-<div id='specials-menu'>
+<div id='dessert-menu'>
 
 <a href='/edit/createMenuItem'>
 <button style='margin:0 auto;display:block;'>
@@ -121,84 +121,19 @@ form{
     Add New Item
 </button>
 </a>
-    <h2>today's specials</h2><br><br>
-
-        <% if(appetizers.length>0){ %>
-            <h3>appetizers</h3>
-        <% } %>
-
-            <ul>
-                <% for (let i=0;i<appetizers.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
-                        <span class='name'><%= appetizers[i].name %></span><br>
-                        <%- appetizers[i].description %>
-                        &nbsp; 
-                        <span class='price'><%= appetizers[i].price %></span><br>
-                        <span class='allergies'><%- appetizers[i].allergies %></span><br>
-                        
-                        <a href='/edit/updateItem/<%= appetizers[i].id %>'>
-                            <button>
-                                <i class="fa-solid fa-pen"></i>
-                                <span class='edit-text'>Edit</span>
-                            </button>
-                        </a>
-
-                        <form method='POST'
-                            action='../edit/deleteMenuItem/<%= appetizers[i].id %>?_method=DELETE'>
-                            <button>
-                                <i class="fa-solid fa-trash"></i>
-                                <span class='delete-text'>Delete</span>
-                            </button>
-                        </form>
-                    </li>
-                <%}%>
-            </ul>
+    <h1>olea</h1>
+    <hr>
 
 
-    <% if(entrees.length>0){ %>
-        <h3>entrees</h3>
-    <% } %>
-
-            <ul>
-                <% for (let i=0;i<entrees.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
-                        <span class='name'><%= entrees[i].name %></span><br>
-                        <%- entrees[i].description %>
-                        &nbsp;
-                        <span class='price'><%= entrees[i].price %></span><br>
-                        <span class='allergies'><%- entrees[i].allergies %></span><br>
-                        
-                        <a href='/edit/updateItem/<%= entrees[i].id %>'>                        
-                            <button>
-                                <i class="fa-solid fa-pen"></i>
-                                <span class='edit-text'>Edit</span>
-                            </button>
-                        </a>
-
-                        <form method='POST' 
-                              action='../edit/deleteMenuItem/<%= entrees[i].id %>?_method=DELETE'>
-                            <button>
-                                <i class="fa-solid fa-trash"></i>
-                                <span class='delete-text'>Delete</span>
-                            </button>
-                        </form>
-                    </li>
-                <%}%>
-            </ul>
-    <% if(desserts.length>0){ %>
-        <h3>desserts</h3>
-    <% } %>
-
-        
             <ul>
                 <% for (let i=0;i<desserts.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(desserts[i]) %>)'>
                         <span class='name'><%= desserts[i].name %></span><br>
-                        <%= desserts[i].description %>
-                        &nbsp;
+                        <%- desserts[i].description %>
+                        &nbsp; 
                         <span class='price'><%= desserts[i].price %></span><br>
                         <span class='allergies'><%- desserts[i].allergies %></span><br>
-
+                        
                         <a href='/edit/updateItem/<%= desserts[i].id %>'>
                             <button>
                                 <i class="fa-solid fa-pen"></i>
@@ -216,6 +151,7 @@ form{
                     </li>
                 <%}%>
             </ul>
+
 
     <div id='legal'>
             consumer advisory: consumption of undercooked meat, poultry, eggs, 

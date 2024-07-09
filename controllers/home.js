@@ -52,7 +52,7 @@ module.exports={
                     req:req,})
     },
     getDesserts: async(req,res)=>{
-        const desserts = await Post.find({
+        const desserts = await MenuItem.find({
             $and: [
                     {menu:'dessert'},
                     {section:'desserts'}

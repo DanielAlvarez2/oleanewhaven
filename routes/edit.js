@@ -9,6 +9,7 @@ const {ensureAuth} = require('../middleware/auth')
 
 router.get('/dinner', editController.getDinner)
 router.get('/specials', editController.getSpecials)
+router.get('/dessert', editController.getDessert)
 router.get('/createMenuItem', editController.createMenuItem)
 router.get('/updateItem/:id', editController.updateItem)
 router.put('/saveChanges/:id', editController.saveChanges)

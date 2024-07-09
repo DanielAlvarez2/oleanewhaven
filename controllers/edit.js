@@ -51,6 +51,18 @@ module.exports={
                                        entrees:entrees,
                                        desserts:desserts})
     },
+    getDessert: async(req,res)=>{
+        const desserts = await MenuItem.find({
+            $and:[
+                {menu:'dessert'},
+                {section:'desserts'}
+            ]
+        }).sort({sequence:'asc'})
+        res.render('editDessert.ejs',{req:req,
+                                      title:'EDIT DESSERTS',
+                                      desserts:desserts})
+        
+    },
     updateItem: async (req,res)=>{
         try{
             const item = await MenuItem.findById(req.params.id)
@@ -77,7 +89,9 @@ module.exports={
             console.log(req.params.id)
             console.log(req.body)
             console.log('cloudinaryId: '+req.body.cloudinaryId)
-            await cloudinary.uploader.destroy(req.body.cloudinaryId)
+            if(req.body.cloudinaryId){
+                await cloudinary.uploader.destroy(req.body.cloudinaryId)
+            }
             const result = await cloudinary.uploader.upload(req.file.path)
 
             await MenuItem.findByIdAndUpdate(req.params.id,{
