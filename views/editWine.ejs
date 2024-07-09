@@ -246,6 +246,7 @@ form{
             <ul>
                 <% for (let i=0;i<btgSherries.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(btgSherries[i]) %>)'>
+                        <%= btgSherries[i].grapes %><br>
                         <span class='name'><%= btgSherries[i].name %></span><br>
                         <%- btgSherries[i].description %>
                         &nbsp; 
@@ -275,7 +276,9 @@ form{
             <ul>
                 <% for (let i=0;i<cavaChampagne.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(cavaChampagne[i]) %>)'>
+                        <%= cavaChampagne[i].grapes %><br>
                         <span class='name'><%= cavaChampagne[i].name %></span><br>
+                        <%= cavaChampagne[i].vintage %><br>
                         <%- cavaChampagne[i].description %>
                         &nbsp; 
                         <span class='price'><%= cavaChampagne[i].price %></span><br>
