@@ -188,6 +188,7 @@ form{
             <ul>
                 <% for (let i=0;i<btgRose.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(btgRose[i]) %>)'>
+                        <%= btgRose[i].grapes %><br>
                         <span class='name'><%= btgRose[i].name %></span><br>
                         <%- btgRose[i].description %>
                         &nbsp; 
