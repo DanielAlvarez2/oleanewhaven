@@ -173,5 +173,51 @@ module.exports={
         }catch(err){
             console.log(err)
         }
+    },
+    moveUp: async(req,res)=>{
+        try{
+            const currentItem = await MenuItem.findById(req.params.id)
+            const itemAbove = await MenuItem.findOne({
+                $and:[
+                    {sequence:currentItem.sequence-1},
+                    {menu:currentItem.menu},
+                    {section:currentItem.section}
+                ]
+            })
+            await MenuItem.findByIdAndUpdate(
+                {_id:req.params.id},
+                {sequence:currentItem.sequence-1}
+            )
+            await MenuItem.findByIdAndUpdate(
+                {_id:itemAbove.id},
+                {sequence:currentItem.sequence}
+            )
+            res.redirect(req.get('referer'))
+        }catch(err){
+            console.log(err)
+        }
+    },
+    moveDown: async(req,res)=>{
+        try{
+            const currentItem = await MenuItem.findById(req.params.id)
+            const itemBelow = await MenuItem.findOne({
+                $and:[
+                    {sequence:currentItem.sequence+1},
+                    {menu:currentItem.menu},
+                    {section:currentItem.section}
+                ]
+            })
+            await MenuItem.findByIdAndUpdate(
+                {_id:req.params.id},
+                {sequence:currentItem.sequence+1}
+            )
+            await MenuItem.findByIdAndUpdate(
+                {_id:itemBelow.id},
+                {sequence:currentItem.sequence}
+            )
+            res.redirect(req.get('referer'))
+        }catch(err){
+            console.log(err)
+        }
     }
 }

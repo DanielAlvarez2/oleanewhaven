@@ -17,5 +17,6 @@ router.get('/updateItem/:id', editController.updateItem)
 router.put('/saveChanges/:id', editController.saveChanges)
 router.put('/saveChangesWpic/:id', upload.single('file'), editController.saveChangesWpic)
 router.delete('/deleteMenuItem/:id', editController.deleteMenuItem)
-
+router.get('/moveUp/:id', editController.moveUp)
+router.get('/moveDown/:id', editController.moveDown)
 module.exports = router
