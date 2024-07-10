@@ -16,12 +16,7 @@ h2{
     font-size:1.3rem;
     font-family: futura light;
 }
-main{
-    font-family:serif;
-    display:grid;
-    place-content:center;
-    min-height:calc(100vh - 5.5em);
-}
+
 #specials-menu{
     max-width:4.25in;
     min-height:5.5in;
@@ -85,24 +80,13 @@ main h1{
     font-size:3rem;
 }
 
-nav{
-    width:100vw;
-    background:#ccc;
-    position:fixed;
-    left:0;
-    display:flex;
-    justify-content:space-around;
-}
-nav a{
-    text-decoration:none;
-}
 
 
 
 <%- include('partials/header') %>
 
 <main>
-<nav>
+<nav id='nav-top'>
     <a href='/dinner'>dinner</a>
     <a class='active-page'>specials</a>
     <a href='/dessert'>dessert</a>
