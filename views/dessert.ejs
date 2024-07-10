@@ -80,24 +80,13 @@ main h1{
     font-size:3rem;
 }
 
-nav{
-    width:100vw;
-    background:#ccc;
-    position:fixed;
-    left:0;
-    display:flex;
-    justify-content:space-around;
-}
-nav a{
-    text-decoration:none;
-}
 
 
 
 <%- include('partials/header') %>
 
 <main>
-<nav>
+<nav id='nav-top'>
     <a href='/dinner'>dinner</a>
     <a href='/specials'>specials</a>
     <a class='active-page'>dessert</a>
