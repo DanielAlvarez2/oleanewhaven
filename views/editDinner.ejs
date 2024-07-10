@@ -122,14 +122,33 @@ form{
 </nav>
 
 
+
+<div id='edit-menu'>
+    <a href='/'>
+        <button>
+            <i class="fa-solid fa-eye"></i>
+            Live Website
+        </button>
+    </a>
+
+    <a href='/edit/createMenuItem'>
+        <button style='margin:0 auto;display:block;'>
+            <i class="fa-solid fa-circle-plus"></i>
+            Add New Item
+        </button>
+    </a>
+
+    <a href='/edit/archives'>
+        <button>
+            <i class="fa-regular fa-folder-open"></i>
+            Archives
+        </button>
+    </a>
+</div><!--#edit-menu-->
+
 <div id='dinner-menu'>
 
-<a href='/edit/createMenuItem'>
-<button style='margin:0 auto;display:block;'>
-    <i class="fa-solid fa-circle-plus"></i>
-    Add New Item
-</button>
-</a>
+
     <h1>olea</h1>
     <hr>
     <div id="top">
@@ -163,6 +182,15 @@ form{
                                 <span class='delete-text'>Delete</span>
                             </button>
                         </form>
+
+                        <form method='POST'
+                            action='../edit/archiveMenuItem/<%= charcuterie[i].id %>?_method=PUT'>
+                            <button>
+                                <i class="fa-solid fa-folder-plus"></i>
+                                <span class='archive-text'>Archive</span>
+                            </button>
+                        </form>
+                        
                         <% if(i!=charcuterie.length-1){ %>
                             <a href='/edit/moveDown/<%= charcuterie[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        

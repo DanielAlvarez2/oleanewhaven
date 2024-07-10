@@ -4,7 +4,12 @@ const MenuItem = require('../models/MenuItem')
 
 module.exports={
     getIndex:async(req,res)=>{
-        const charcuterie = await MenuItem.find({section:'charcuterie'}).sort({sequence:'asc'})
+        const charcuterie = await MenuItem.find({
+            $and:[
+                {section:'charcuterie'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
         const appetizers = await MenuItem.find({
             $and: [
                 {menu:'dinner'},

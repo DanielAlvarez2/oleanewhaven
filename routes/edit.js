@@ -7,6 +7,7 @@ const postsController = require('../controllers/posts')
 const editController = require('../controllers/edit')
 const {ensureAuth} = require('../middleware/auth')
 
+router.get('/archives', editController.getArchives)
 router.get('/dinner', editController.getDinner)
 router.get('/specials', editController.getSpecials)
 router.get('/dessert', editController.getDessert)
@@ -19,4 +20,6 @@ router.put('/saveChangesWpic/:id', upload.single('file'), editController.saveCha
 router.delete('/deleteMenuItem/:id', editController.deleteMenuItem)
 router.get('/moveUp/:id', editController.moveUp)
 router.get('/moveDown/:id', editController.moveDown)
+router.put('/archiveMenuItem/:id', editController.archiveMenuItem)
+router.put('/unarchiveMenuItem/:id', editController.unarchiveItem)
 module.exports = router

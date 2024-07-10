@@ -5,7 +5,12 @@ const MenuItem = require('../models/MenuItem')
 
 module.exports={
     getDinner: async (req,res)=>{
-        const charcuterie = await MenuItem.find({section:'charcuterie'}).sort({sequence:'asc'})
+        const charcuterie = await MenuItem.find({
+            $and:[
+                {section:'charcuterie'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
         const appetizers = await MenuItem.find({
             $and:[
                 {menu:'dinner'},
@@ -219,5 +224,51 @@ module.exports={
         }catch(err){
             console.log(err)
         }
+    },
+    getArchives: async(req,res)=>{
+        try{
+            const archives = await MenuItem.find({archived:true})
+            res.render('archives.ejs',{title:'ARCHIVES',
+                                       archives:archives,
+                                       req:req})
+
+        }catch(err){
+            console.log(err)
+        }
+    },
+    archiveMenuItem: async(req,res)=>{
+        try{
+            await MenuItem.findByIdAndUpdate(
+                {_id:req.params.id},
+                {archived:true}
+            )
+            res.redirect(req.get('referer'))
+        }catch(err){
+            console.log(err)
+        }
+    },
+    unarchiveItem: async(req,res)=>{
+        try{
+            console.log(req.params.id)
+            const currentItem = await MenuItem.findById(req.params.id)
+            console.log(currentItem.sequence)
+            const sectionItems = await MenuItem.find({
+                $and:[
+                    {menu:currentItem.menu},
+                    {section:currentItem.section},
+                    {archived:false}
+                ]
+            })
+            console.log('length: '+sectionItems.length)
+            await MenuItem.findByIdAndUpdate(
+                {_id:req.params.id},
+                {archived:false},
+                {sequence:sectionItems.length+1}
+            )
+            res.redirect(req.get('referer'))
+        }catch(err){
+            console.log(err)
+        }
     }
+
 }
