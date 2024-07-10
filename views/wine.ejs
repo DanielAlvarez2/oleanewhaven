@@ -132,28 +132,28 @@ main h1{
                     </li>
                 <%}%>
             </ul>
-   
-            <h3>Rose</h3>
+            <br><br>
+            <h3>Rosé</h3>
             <ul>
                 <% for (let i=0;i<btgRose.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(btgRose[i]) %>)'>
-                        <span><%= btgRose[i].grapes %></span><br>
-                        <span class='name'><%= btgRose[i].name %></span><br>
-                        <span><%= btgRose[i].vintage %></span><br>
+                        <span><%= btgRose[i].grapes %></span>, 
+                        <span class='name'><%= btgRose[i].name %></span>, 
+                        <span><%= btgRose[i].vintage %></span>, 
                         <%- btgRose[i].description %>
                         &nbsp; 
                         <span class='price'><%= btgRose[i].price %></span><br>
                     </li>
                 <%}%>
             </ul>
-   
+            <br><br>
             <h3>Red</h3>
             <ul>
                 <% for (let i=0;i<btgReds.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(btgReds[i]) %>)'>
-                        <span><%= btgReds[i].grapes %></span><br>
-                        <span class='name'><%= btgReds[i].name %></span><br>
-                        <span><%= btgReds[i].vintage %></span><br>
+                        <span><%= btgReds[i].grapes %></span>, 
+                        <span class='name'><%= btgReds[i].name %></span>, 
+                        <span><%= btgReds[i].vintage %></span>, 
                         <%- btgReds[i].description %>
                         &nbsp; 
                         <span class='price'><%= btgReds[i].price %></span><br>
