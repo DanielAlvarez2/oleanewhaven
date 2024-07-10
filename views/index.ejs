@@ -28,7 +28,6 @@ main{
     font-family:serif;
     display:grid;
     place-content:center;
-    min-height:calc(100vh - 5.5em);
 }
 #dinner-menu{
     max-width:8.5in;
@@ -106,7 +105,7 @@ main h1{
 <%- include('partials/header') %>
 
 <main>
-<nav>
+<nav id='nav-top'>
     <a class='active-page'>dinner</a>
     <a href='/specials'>specials</a>
     <a href='/dessert'>dessert</a>
@@ -255,4 +254,5 @@ main h1{
         modal.style.display = 'none'
     }
 </script>
+
 <%- include('partials/footer') %>

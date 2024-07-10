@@ -1,15 +1,26 @@
 <footer>
-    <div>
-    &copy;2024 olea restaurant. all rights reserved.
+    <nav id='nav-footer'>
+        <a class='active-page'>dinner</a>
+        <a href='/specials'>specials</a>
+        <a href='/dessert'>dessert</a>
+        <a href='/wine'>wine</a>
+        <a href='/drinks'>drinks</a>
+    </nav>
+
+    <div id='footer-bottom'>
+        <div>
+            &copy;2024 olea restaurant. all rights reserved.
+        </div>
+
+        <div>
+            <% if(req.user){ %>
+                <a href='/logout'>logout</a>
+            <% }else{ %>
+                <a href='/login'>login</a>
+            <% } %>
+        </div>
     </div>
 
-    <div>
-        <% if(req.user){ %>
-            <a href='/logout'>logout</a>
-        <% }else{ %>
-            <a href='/login'>login</a>
-        <% } %>
-    </div>
 </footer>
 </div> <!--#wrapper-->
 </body>
