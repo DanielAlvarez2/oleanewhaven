@@ -118,14 +118,14 @@ main h1{
                     </li>
                 <%}%>
             </ul>
-
+            <br><br>
             <h3>White</h3>
             <ul>
                 <% for (let i=0;i<btgWhites.length;i++){ %>
                     <li onclick='showModal(<%= JSON.stringify(btgWhites[i]) %>)'>
-                        <span><%= btgWhites[i].grapes %></span><br>
-                        <span class='name'><%= btgWhites[i].name %></span><br>
-                        <span><%= btgWhites[i].vintage %></span><br>
+                        <span><%= btgWhites[i].grapes %></span>, 
+                        <span class='name'><%= btgWhites[i].name %></span>, 
+                        <span><%= btgWhites[i].vintage %></span>, 
                         <%- btgWhites[i].description %>
                         &nbsp; 
                         <span class='price'><%= btgWhites[i].price %></span><br>
