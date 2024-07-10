@@ -85,31 +85,19 @@ main h1{
     font-size:3rem;
 }
 
-nav{
-    width:100vw;
-    background:#ccc;
-    position:fixed;
-    left:0;
-    display:flex;
-    justify-content:space-around;
-}
-nav a{
-    text-decoration:none;
-}
-
 
 
 <%- include('partials/header') %>
 
 <main>
-<nav>
+<nav id='nav-top'>
     <a href='/dinner'>dinner</a>
     <a href='/specials'>specials</a>
     <a href='/dessert'>dessert</a>
     <a href='/wine'>wine</a>
     <a class='active-page'>drinks</a>
 </nav>
-<div id='drinks-menu'>
+<div id='drinks-menu' class='menu'>
 
             <h1>olea</h1>
             <hr>
@@ -222,3 +210,8 @@ nav a{
     }
 </script>
 <%- include('partials/footer') %>
+<script>
+    document.querySelector('#footer-drinks').classList.add('active-page')
+</script>
+</body>
+</html>
