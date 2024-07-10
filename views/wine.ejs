@@ -365,6 +365,7 @@ nav a{
     const modalAllergies = document.querySelector('#modal-allergies')
 
     function showModal(item){
+        if (!item.image) return
         console.log(item)
         modalImage.src=item.image
         modalName.innerHTML = item.title
