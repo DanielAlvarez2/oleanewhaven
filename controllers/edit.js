@@ -564,6 +564,36 @@ module.exports={
         }catch(err){
             console.log(err)
         }
+    },
+    getRedSpain: async(req,res)=>{
+        try{
+            const redSpain = await MenuItem.find({
+                $and:[
+                    {section:'red spain'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editRedSpain.ejs',{title:'EDIT RED SPAIN',
+                                           req:req,
+                                           redSpain:redSpain})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getRedFrance: async(req,res)=>{
+        try{
+            const redFrance = await MenuItem.find({
+                $and:[
+                    {section:'red france'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editRedFrance.ejs', {title:'EDIT RED FRANCE',
+                                             req:req,
+                                             redFrance:redFrance})
+        }catch(err){
+            console.log(err)
+        }
     }
 
 

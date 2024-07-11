@@ -28,6 +28,8 @@ router.get('/whiteSpain', editController.getWhiteSpain)
 router.get('/whiteFrance', editController.getWhiteFrance)
 router.get('/whiteItaly', editController.getWhiteItaly)
 router.get('/whiteGermany', editController.getWhiteGermany)
+router.get('/redSpain', editController.getRedSpain)
+router.get('/redFrance', editController.getRedFrance)
 
 router.get('/createMenuItem', editController.createMenuItem)
 router.get('/updateItem/:id', editController.updateItem)
