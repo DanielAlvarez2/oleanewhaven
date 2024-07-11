@@ -22,6 +22,7 @@ router.get('/sangria', editController.getSangria)
 router.get('/nonAlcoholic', editController.getNonAlcoholic)
 router.get('/beer', editController.getBeer)
 router.get('/btg', editController.getBTG)
+router.get('/cavaChampagne', editController.getCavaChampagne)
 
 router.get('/createMenuItem', editController.createMenuItem)
 router.get('/updateItem/:id', editController.updateItem)

@@ -471,6 +471,22 @@ module.exports={
         }catch(err){
             console.log(err)
         }
+    },
+    getCavaChampagne: async(req,res)=>{
+        try{
+            const cavaChampagne = await MenuItem.find({
+                $and:[
+                    {menu:'wine'},
+                    {section:'cava champagne'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editCavaChampagne.ejs',{title:'EDIT CAVA CHAMPAGNE',
+                                                req:req,
+                                                cavaChampagne:cavaChampagne})
+        }catch(err){
+            console.log(err)
+        }
     }
 
 
