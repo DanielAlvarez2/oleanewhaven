@@ -594,6 +594,21 @@ module.exports={
         }catch(err){
             console.log(err)
         }
+    },
+    getRedItaly: async(req,res)=>{
+        try{
+            const redItaly = await MenuItem.find({
+                $and:[
+                    {section:'red italy'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editRedItaly.ejs', {title:'EDIT RED ITALY',
+                                            req:req,
+                                            redItaly:redItaly})
+        }catch(err){
+            console.log(err)
+        }
     }
 
 
