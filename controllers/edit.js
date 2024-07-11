@@ -487,6 +487,22 @@ module.exports={
         }catch(err){
             console.log(err)
         }
+    },
+    getRose: async(req,res)=>{
+        try{
+            const rose = await MenuItem.find({
+               $and:[
+                {menu:'wine'},
+                {section:'rose'},
+                {archived:false}
+               ] 
+            }).sort({sequence:'asc'})
+            res.render('editRose.ejs',{title:'EDIT ROSE',
+                                   req:req,
+                                   rose:rose})
+        }catch(err){
+            console.log(err)
+        }
     }
 
 
