@@ -46,19 +46,32 @@
 
         Replace Image: <span style='color:red;'>*optional</span>
         <br>
-        <input type='file' id='image-file' name='file'>
+        <input type='file' id='image-file' name='file' accept='image/*'>
     <% }else{ %>
         <img src='/no-image.jpg' alt='no image'><br>
         This Menu Item Has No Image<br>
         Add New Image: <span style='color:red;'>*optional</span>
         <br>
-        <input type='file' id='image-file' name='file'>
+        <input type='file' id='image-file' name='file' accept='image/*'><br>
     <% } %>
+
+    <div id='preview'></div>
     <br><br><br><br>
     <button>Save Changes</button>
 </form>
 
 <script>
+    const userImage = document.querySelector('#image-file')
+    const preview = document.querySelector('#preview')
+    userImage.addEventListener('input', ()=>{
+        const url = URL.createObjectURL(userImage.files[0])
+        const img = document.createElement('img')
+        img.src = url
+        preview.innerHTML = ''
+        preview.appendChild(img)
+    })
+
+
     function updateItem(){
         const imageFile = document.querySelector('#image-file').value
         const form = document.querySelector('#edit-item-form')

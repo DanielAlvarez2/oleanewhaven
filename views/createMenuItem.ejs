@@ -116,9 +116,11 @@
                     
                     <div>
                         <label for='image-file'>Image:</label><br>
-                        <input type='file' id='image-file' name='file'><br>
+                        <input type='file' id='image-file' name='file' accept='image/*'><br>
                         (optional)<br>
                     </div>
+
+                    <div id='preview'></div>
                     
                     <button type='submit'>Submit</button>
                 </form>
@@ -132,6 +134,16 @@
 </main>
 
 <script>
+    const userImage = document.querySelector('#image-file')
+    const preview = document.querySelector('#preview')
+    userImage.addEventListener('input', ()=>{
+        const url = URL.createObjectURL(userImage.files[0])
+        const img = document.createElement('img')
+        img.src = url
+        preview.innerHTML = ''
+        preview.appendChild(img)
+    })
+
     const menu = document.querySelector('#menu')
     menu.addEventListener("change", displaySectionMenu)
     const sectionWine = document.querySelector('#section-wine')

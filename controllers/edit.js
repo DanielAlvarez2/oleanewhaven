@@ -14,7 +14,8 @@ module.exports={
         const appetizers = await MenuItem.find({
             $and:[
                 {menu:'dinner'},
-                {section:'appetizers'}
+                {section:'appetizers'},
+                {archived:false}
             ]
         }).sort({sequence:'asc'})
         const entrees = await MenuItem.find({
@@ -238,6 +239,24 @@ module.exports={
     },
     archiveMenuItem: async(req,res)=>{
         try{
+            const currentItem = await MenuItem.findById(req.params.id)
+            const sectionItems = await MenuItem.find({
+                $and:[
+                    {menu:currentItem.menu},
+                    {section:currentItem.section},
+                    {archived:false}
+                ]
+            })
+            for (let i=currentItem.sequence+1;i<=sectionItems.length;i++){
+                await MenuItem.findOneAndUpdate({
+                    $and:[
+                        {menu:currentItem.menu},
+                        {section:currentItem.section},
+                        {sequence:i}
+                    ]},
+                    {sequence:i-1}
+                )
+            }
             await MenuItem.findByIdAndUpdate(
                 {_id:req.params.id},
                 {archived:true}
@@ -262,13 +281,82 @@ module.exports={
             console.log('length: '+sectionItems.length)
             await MenuItem.findByIdAndUpdate(
                 {_id:req.params.id},
-                {archived:false},
-                {sequence:sectionItems.length+1}
+                {archived:false, sequence:sectionItems.length+1}
             )
             res.redirect(req.get('referer'))
         }catch(err){
             console.log(err)
         }
+    },
+    getCharcuterie: async(req,res)=>{
+        try{
+            const charcuterie = await MenuItem.find({
+                $and:[
+                    {menu:'dinner'},
+                    {section:'charcuterie'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editCharcuterie.ejs',{title:'EDIT CHARCUTERIE',
+                                              req:req,
+                                              charcuterie:charcuterie})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getAppetizers: async(req,res)=>{
+        try{
+            const appetizers = await MenuItem.find({
+                $and:[
+                    {menu:'dinner'},
+                    {section:'appetizers'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editAppetizers.ejs',{title:'EDIT APPETIZERS',
+                                             req:req,
+                                             appetizers:appetizers})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getEntrees: async(req,res)=>{
+        try{
+            const entrees = await MenuItem.find({
+                $and:[
+                    {menu:'dinner'},
+                    {section:'entrees'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editEntrees.ejs',{title:'EDIT ENTREES',
+                                          req:req,
+                                          entrees:entrees})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getSides: async(req,res)=>{
+        try{
+            const sides = await MenuItem.find({
+                $and:[
+                    {menu:'dinner'},
+                    {section:'sides'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editSides.ejs', {title:'EDIT SIDES',
+                                        req:req,
+                                        sides:sides})
+        }catch(err){
+            console.log(err)
+        }
     }
+
+
+
+
+
+
 
 }

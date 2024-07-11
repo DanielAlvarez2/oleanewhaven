@@ -1,0 +1,309 @@
+<%- include('partials/headEdit') %>
+
+#top,#bottom{
+    display:flex;
+}
+#top-left, #top-right{
+    width:50%;
+}
+h2{
+    font-family: futura light;
+    font-weight:900;
+    font-size:2rem;
+    margin-top:2em;
+}
+#modal img{
+    max-width:95vw;
+    max-height:75vh;
+    border-radius:25px;
+}
+.name, #modal-name{
+    font-weight:900;
+    font-size:1.3rem;
+    font-family: futura light;
+}
+main{
+    font-family:serif;
+    display:grid;
+    place-content:center;
+    min-height:calc(100vh - 5.5em);
+}
+#dinner-menu{
+    margin:0 auto;
+    max-width:8.5in;
+    min-height:14in;
+    border:1px solid red;
+    background-image: url('menu-background.jpg');
+}
+.price, #modal-price{
+    font-weight:900;
+    font-size:1.2rem;
+}
+.allergies, #modal-allergies{
+    font-family:sans-serif;
+    color:red;
+    font-size:0.9rem;
+}
+body{
+    position:relative;
+}
+#modal{
+    width:100vw;
+    min-height:100vh;
+    background: #888888ee;
+    position: fixed;
+    inset:0;
+    display:none;
+    place-content:center;
+    padding:10px;
+}
+#close-modal-button{
+    font-size:60px;
+    position:absolute;
+    top:5px;
+    right:5px;
+    cursor:pointer;
+    font-weight:900;
+}
+figure{
+    display:table;
+}
+figcaption{
+    background:#ccc;
+    padding:10px;
+    border-radius:25px;
+    display:table-caption;
+    caption-side:bottom;
+}
+
+@media(min-width:8.5in){
+    #dinner-menu{
+        padding:0.5in;
+    }
+    #top-left, #bottom-left{
+        padding-right:0.25in;
+    }
+    #top-right, #bottom-right{
+        padding-left:0.25in;
+    }
+}
+main h1{
+    text-align:left;
+    font-family:futura light;
+    font-size:3rem;
+}
+
+
+.fa-trash{
+    color:red;
+}
+.fa-pen{
+    color:#ffae42;
+}
+button{
+    background:darkblue;
+    display:inline-block;
+    margin:0;
+    padding:0.5em;
+}
+form{
+    display:inline-block;
+}
+
+
+<%- include('partials/header') %>
+
+<main>
+
+<script>
+    function displayDinnerSubMenu(){
+        document.querySelector('#dinner-sub-menu').style.display='block'
+    }
+</script>
+<nav>
+    <li>
+        <div onclick='displayDinnerSubMenu()'>
+            dinner
+        </div>
+        <div id='dinner-sub-menu' style='display:none;'>
+            <ul>
+                <a href='/edit/dinner/charcuterie'><li>Charcuterie</li></a>
+                <a><li>Appetizers</li></a>
+                <a><li>Entrées</li></a>
+                <a><li>Sides</li></a>
+            </ul>
+        </div>
+    </li>
+    <li><a href='/edit/specials'>specials</a></li>
+    <li><a href='/edit/dessert'>dessert</a></li>
+    <li><a href='/edit/wine'>wine</a></li>
+    <li><a href='/edit/drinks'>drinks</a></li>
+    
+    
+    
+    
+    
+</nav>
+
+
+<div class='edit-menu'>
+    <a href='/'>
+        <button>
+            <i class="fa-solid fa-eye"></i>
+            Live Website
+        </button>
+    </a>
+
+    <a href='/edit/createMenuItem'>
+        <button style='margin:0 auto;display:block;'>
+            <i class="fa-solid fa-circle-plus"></i>
+            Add New Item
+        </button>
+    </a>
+
+    <a href='/edit/archives'>
+        <button>
+            <i class="fa-regular fa-folder-open"></i>
+            Archives
+        </button>
+    </a>
+</div><!--#edit-menu-->
+
+<div id='dinner-menu'>
+
+
+    <h1>olea</h1>
+    <hr>
+    <div id="top">
+        <div id='top-left'>
+            <ul>
+                <% for (let i=0;i<sides.length;i++){ %>
+                    <li>
+                        <% if(i!=0) { %>
+                            <a href='/edit/moveUp/<%= sides[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
+                        <% } %>
+                        <div onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
+                            <span class='name'><%= sides[i].name %></span><br>
+                            <%- sides[i].description %>
+                            &nbsp; 
+                            <span class='price'><%= sides[i].price %></span><br>
+                            <span class='allergies'><%- sides[i].allergies %></span><br>
+                        </div>                        
+                        <a href='/edit/updateItem/<%= sides[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= sides[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+
+                        <form method='POST'
+                            action='../edit/archiveMenuItem/<%= sides[i].id %>?_method=PUT'>
+                            <button>
+                                <i class="fa-solid fa-folder-plus"></i>
+                                <span class='archive-text'>Archive</span>
+                            </button>
+                        </form>
+                        
+                        <% if(i!=sides.length-1){ %>
+                            <a href='/edit/moveDown/<%= sides[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>
+                        <% } %>
+                    </li>
+                <%}%>
+            </ul>
+            <br><br><br>
+        </div><!--#top-left-->
+
+        <div id='top-right'>
+        
+        </div><!--#top-right-->
+    </div><!--#top-->
+
+    <div id='bottom'>
+        
+        
+    </div><!--#bottom-->
+
+   
+
+    <div id='modal'>
+        <i class='fa-solid fa-square-xmark x'
+           id='close-modal-button'
+           onclick='closeModal()'></i>
+        <div id='modal-item'>
+            <figure>
+                <img src='' id='modal-image'>
+                <figcaption>
+                    <div id='modal-text'>
+                        <span id='modal-name'></span><br>
+                        <span id='modal-description'></span>&nbsp;
+                        <span id='modal-price'></span><br>
+                        <span id='modal-allergies'></span>
+                    </div>
+                </figcaption>
+            </figure>
+        </div><!--#modal-item-->
+    </div><!--#modal-->
+
+</div><!--#dinner-menu-->
+
+<div class='edit-menu'>
+    <a href='/'>
+        <button>
+            <i class="fa-solid fa-eye"></i>
+            Live Website
+        </button>
+    </a>
+
+    <a href='/edit/createMenuItem'>
+        <button style='margin:0 auto;display:block;'>
+            <i class="fa-solid fa-circle-plus"></i>
+            Add New Item
+        </button>
+    </a>
+
+    <a href='/edit/archives'>
+        <button>
+            <i class="fa-regular fa-folder-open"></i>
+            Archives
+        </button>
+    </a>
+</div><!--#edit-menu-->
+
+
+
+</main>
+
+<script>
+    const modal = document.querySelector('#modal')
+    const modalImage = document.querySelector('#modal-image')
+    const modalName = document.querySelector('#modal-name')
+    const modalDescription = document.querySelector('#modal-description')
+    const modalPrice = document.querySelector('#modal-price')
+    const modalAllergies = document.querySelector('#modal-allergies')
+
+    function showModal(item){
+        console.log(item)
+        modalImage.src=item.image
+        modalName.innerHTML = item.title
+        modalDescription.innerHTML = item.caption
+        modalPrice.innerHTML = item.price
+        modalAllergies.innerHTML = item.allergies
+        modal.style.display = 'grid'
+    }
+    function closeModal(){
+        modal.style.display = 'none'
+    }
+</script>
+<%- include('partials/footer') %>
