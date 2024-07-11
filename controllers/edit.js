@@ -171,8 +171,26 @@ module.exports={
     },
     deleteMenuItem: async (req,res)=>{
         try{
-            let menuItem = await MenuItem.findById({_id:req.params.id})
+            const menuItem = await MenuItem.findById({_id:req.params.id})
             if(menuItem.cloudinaryId) await cloudinary.uploader.destroy(menuItem.cloudinaryId)
+            const sectionItems = await MenuItem.find({
+                $and:[
+                    {menu:menuItem.menu},
+                    {section:menuItem.section},
+                    {archived:false}
+                ]
+            })
+            for (let i=menuItem.sequence+1;i<=sectionItems.length;i++){
+                await MenuItem.findOneAndUpdate({
+                    $and:[
+                        {menu:menuItem.menu},
+                        {section:menuItem.section},
+                        {archived:false},
+                        {sequence:i}
+                    ]},{sequence:i-1}
+                )
+            }
+            
             await MenuItem.deleteOne({_id:req.params.id})
             console.log('Deleted Post')
             res.redirect(req.get('referer'))            
@@ -252,7 +270,8 @@ module.exports={
                     $and:[
                         {menu:currentItem.menu},
                         {section:currentItem.section},
-                        {sequence:i}
+                        {sequence:i},
+                        {archived:false}
                     ]},
                     {sequence:i-1}
                 )

@@ -238,6 +238,7 @@ form{
                             &nbsp; 
                             <span class='price'><%= appetizers[i].price %></span><br>
                             <span class='allergies'><%- appetizers[i].allergies %></span><br>
+                            sequence: <%= appetizers[i].sequence %>
                         </div>                        
                         <a href='/edit/updateItem/<%= appetizers[i].id %>'>
                             <button>
