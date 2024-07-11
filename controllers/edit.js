@@ -503,8 +503,38 @@ module.exports={
         }catch(err){
             console.log(err)
         }
+    },
+    getWhiteSpain: async(req,res)=>{
+        try{
+            const whiteSpain = await MenuItem.find({
+                $and:[
+                    {menu:'wine'},
+                    {section:'white spain'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editWhiteSpain.ejs',{title:'EDIT WHITE SPAIN',
+                                             req:req,
+                                             whiteSpain:whiteSpain})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getWhiteFrance: async(req,res)=>{
+        try{
+            const whiteFrance = await MenuItem.find({
+                $and:[
+                    {section:'white france'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editWhiteFrance.ejs',{title:'EDIT WHITE FRANCE',
+                                              req:req,
+                                              whiteFrance:whiteFrance})
+        }catch(err){
+            console.log(err)
+        }
     }
-
 
 
 
