@@ -26,6 +26,8 @@ router.get('/cavaChampagne', editController.getCavaChampagne)
 router.get('/rose', editController.getRose)
 router.get('/whiteSpain', editController.getWhiteSpain)
 router.get('/whiteFrance', editController.getWhiteFrance)
+router.get('/whiteItaly', editController.getWhiteItaly)
+router.get('/whiteGermany', editController.getWhiteGermany)
 
 router.get('/createMenuItem', editController.createMenuItem)
 router.get('/updateItem/:id', editController.updateItem)

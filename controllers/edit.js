@@ -534,6 +534,36 @@ module.exports={
         }catch(err){
             console.log(err)
         }
+    },
+    getWhiteItaly: async(req,res)=>{
+        try{
+            const whiteItaly = await MenuItem.find({
+                $and:[
+                    {section:'white italy'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editWhiteItaly.ejs', {title:'EDIT WHITE ITALY',
+                                              req:req,
+                                              whiteItaly:whiteItaly})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getWhiteGermany: async(req,res)=>{
+        try{
+            const whiteGermany = await MenuItem.find({
+                $and:[
+                    {section:'white germany'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editWhiteGermany.ejs',{title:'EDIT WHITE GERMANY',
+                                           req:req,
+                                           whiteGermany:whiteGermany})
+        }catch(err){
+            console.log(err)
+        }
     }
 
 
