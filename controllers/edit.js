@@ -423,6 +423,54 @@ module.exports={
         }catch(err){
             console.log(err)
         }
+    },
+    getBTG: async(req,res)=>{
+        try{
+            const btgCava = await MenuItem.find({
+                $and:[
+                    {menu:'wine'},
+                    {section:'btg cava'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            const btgWhites = await MenuItem.find({
+                $and:[
+                    {menu:'wine'},
+                    {section:'btg whites'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            const btgRose = await MenuItem.find({
+                $and:[
+                    {menu:'wine'},
+                    {section:'btg rose'},
+                    {archived: false}
+                ]
+            }).sort({sequence:'asc'})
+            const btgReds = await MenuItem.find({
+                $and:[
+                    {menu:'wine'},
+                    {section:'btg reds'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            const btgSherries = await MenuItem.find({
+                $and:[
+                    {menu:'wine'},
+                    {section:'btg sherries'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editBTG.ejs',{title:'EDIT BTG',
+                                      req:req,
+                                      btgCava:btgCava,
+                                      btgWhites:btgWhites,
+                                      btgRose:btgRose,
+                                      btgReds:btgReds,
+                                      btgSherries:btgSherries})
+        }catch(err){
+            console.log(err)
+        }
     }
 
 

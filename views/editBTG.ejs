@@ -109,10 +109,7 @@ button{
 form{
     display:inline-block;
 }
-#edit-nav li{
-    margin:0;
-    color:black;
-}
+
 
 <%- include('partials/header') %>
 
@@ -120,97 +117,32 @@ form{
 
 <script>
     function displayDinnerSubMenu(){
-        dinnerSubMenu.style.display = 'block'
+        document.querySelector('#dinner-sub-menu').style.display='block'
     }
-    function hideDinnerSubMenu(){
-        dinnerSubMenu.style.display = 'none'
-    }
-
-    function displayDrinksSubMenu(){
-        drinksSubMenu.style.display = 'block'
-    }
-    function hideDrinksSubMenu(){
-        drinksSubMenu.style.display = 'none'
-    }
-    
-    function displayWineSubMenu(){
-        wineSubMenu.style.display = 'block'
-    }
-    function hideWineSubMenu(){
-        wineSubMenu.style.display = 'none'
-    }
-        
 </script>
-<nav id='edit-nav'>
-    <li style='position:relative;'>
-        <div style='color:white;' 
-             onmouseover = 'displayDinnerSubMenu()'
-             onmouseout  = 'hideDinnerSubMenu()'
-             id='dinner-button'>
-             dinner
+<nav>
+    <li>
+        <div onclick='displayDinnerSubMenu()'>
+            dinner
         </div>
-        <div id='dinner-sub-menu' 
-             style='display:none;position:absolute;color:black;'
-             onmouseover = 'displayDinnerSubMenu()'
-             onmouseout = 'hideDinnerSubMenu()'>
+        <div id='dinner-sub-menu' style='display:none;'>
             <ul>
-                <a href='/edit/charcuterie'><li>Charcuterie</li></a>
-                <a href='/edit/appetizers'><li>Appetizers</li></a>
-                <a href='/edit/entrees'><li>Entrées</li></a>
-                <a href='/edit/sides'><li>Sides</li></a>
+                <a href='/edit/dinner/charcuterie'><li>Charcuterie</li></a>
+                <a><li>Appetizers</li></a>
+                <a><li>Entrées</li></a>
+                <a><li>Sides</li></a>
             </ul>
         </div>
     </li>
-    
     <li><a href='/edit/specials'>specials</a></li>
     <li><a href='/edit/dessert'>dessert</a></li>
-
-    <li style='position:relative;'>
-        <div style='color:white'
-             id='wine-button'
-             onmouseover = 'displayWineSubMenu()'
-             onmouseout = 'hideWineSubMenu()'>
-            wine
-        </div>
-        <div id='wine-sub-menu'
-             style='display:none;position:absolute;color:black;'
-             onmouseover = 'displayWineSubMenu()'
-             onmouseout = 'hideWineSubMenu()'>
-            <ul>
-                <a href='/edit/btg'><li>BTG</li></a>
-                <li>Cava & Champagne</li>
-                <li>Rosé</li>
-                <li>White Spain</li>
-                <li>White France</li>
-                <li>White Italy</li>
-                <li>White Germany</li>
-                <li>Red Spain</li>
-                <li>Red France</li>
-                <li>Red Italy</li>
-            </ul>
-        </div>
-    </li>
+    <li><a href='/edit/wine'>wine</a></li>
+    <li><a href='/edit/drinks'>drinks</a></li>
     
-    <li style='position:relative;'>
-        <div style='color:white'
-             onmouseover = 'displayDrinksSubMenu()'
-             onmouseout = 'hideDrinksSubMenu()'>
-            drinks
-        </div>
-        <div id='drinks-sub-menu'
-             style='display:none;position:absolute;color:black;'
-             onmouseover = 'displayDrinksSubMenu()'
-             onmouseout = 'hideDrinksSubMenu()'>
-            <ul>
-                <a href='/edit/craftDrinks'><li>craft drinks</li></a>
-                <a href='/edit/sangria'><li>sangria</li></a>
-                <a href='/edit/nonAlcoholic'><li>non-alcoholic</li></a>
-                <a href='/edit/beer'><li>beer</li></a>
-            </ul>
-        </div>
-    </li>
     
-
+    
+    
+    
 </nav>
 
 
@@ -230,36 +162,49 @@ form{
     </a>
 
     <a href='/edit/archives'>
+
         <button>
             <i class="fa-regular fa-folder-open"></i>
             Archives
+
         </button>
     </a>
 </div><!--#edit-menu-->
 
+
 <div id='dinner-menu'>
 
 
+
+
     <h1>olea</h1>
+
     <hr>
+
     <div id="top">
         <div id='top-left'>
+            <h2>wine by the glass</h2>
+
+            <h3>Cava</h3>
+
             <ul>
-                <% for (let i=0;i<charcuterie.length;i++){ %>
+                <% for (let i=0;i<btgCava.length;i++){ %>
                     <li>
                         <% if(i!=0) { %>
-                            <a href='/edit/moveUp/<%= charcuterie[i].id %>'>
+                            <a href='/edit/moveUp/<%= btgCava[i].id %>'>
                                 <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
                             </a>
                         <% } %>
-                        <div onclick='showModal(<%= JSON.stringify(charcuterie[i]) %>)'>
-                            <span class='name'><%= charcuterie[i].name %></span><br>
-                            <%- charcuterie[i].description %>
+
+                        <div onclick='showModal(<%= JSON.stringify(btgCava[i]) %>)'>
+                            <span class='name'><%= btgCava[i].name %></span><br>
+                            <%- btgCava[i].description %>
                             &nbsp; 
-                            <span class='price'><%= charcuterie[i].price %></span><br>
-                            <span class='allergies'><%- charcuterie[i].allergies %></span><br>
+                            <span class='price'><%= btgCava[i].price %></span><br>
+                            <span class='allergies'><%- btgCava[i].allergies %></span><br>
                         </div>                        
-                        <a href='/edit/updateItem/<%= charcuterie[i].id %>'>
+                        <a href='/edit/updateItem/<%= btgCava[i].id %>'>
+
                             <button>
                                 <i class="fa-solid fa-pen"></i>
                                 <span class='edit-text'>Edit</span>
@@ -267,7 +212,8 @@ form{
                         </a>
 
                         <form method='POST'
-                            action='../edit/deleteMenuItem/<%= charcuterie[i].id %>?_method=DELETE'>
+
+                            action='../edit/deleteMenuItem/<%= btgCava[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -275,97 +221,49 @@ form{
                         </form>
 
                         <form method='POST'
-                            action='../edit/archiveMenuItem/<%= charcuterie[i].id %>?_method=PUT'>
+                            action='../edit/archiveMenuItem/<%= btgCava[i].id %>?_method=PUT'>
                             <button>
                                 <i class="fa-solid fa-folder-plus"></i>
                                 <span class='archive-text'>Archive</span>
                             </button>
                         </form>
                         
-                        <% if(i!=charcuterie.length-1){ %>
-                            <a href='/edit/moveDown/<%= charcuterie[i].id %>'>
+                        <% if(i!=btgCava.length-1){ %>
+                            <a href='/edit/moveDown/<%= btgCava[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
                             </a>
                         <% } %>
                     </li>
                 <%}%>
             </ul>
+
+
             <br><br><br>
+            <h3>White</h3>
             <ul>
-                <% for (let i=0;i<appetizers.length;i++){ %>
+                <% for (let i=0;i<btgWhites.length;i++){ %>
                     <li>
                         <% if(i!=0) { %>
-                            <a href='/edit/moveUp/<%= appetizers[i].id %>'>
-                                <div id='arrow-up'>
-                                    <i class="fa-solid fa-caret-up"></i>
-                                </div>
-                            </a>
-                        <% } %>
-                        <div onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
-                            <span class='name'><%= appetizers[i].name %></span><br>
-                            <%- appetizers[i].description %>
-                            &nbsp;
-                            <span class='price'><%= appetizers[i].price %></span><br>
-                            <span class='allergies'><%- appetizers[i].allergies %></span><br>
-                            sequence: <%= appetizers[i].sequence %>
-                        </div>
-                        <a href='/edit/updateItem/<%= appetizers[i].id %>'>                    
-                            <button>
-                                <i class="fa-solid fa-pen"></i>
-                                <span class='edit-text'>Edit</span>
-                            </button>
-                        </a>
-
-                        <form method='POST' action='../edit/deleteMenuItem/<%= appetizers[i].id %>?_method=DELETE'>
-                            <button>
-                                <i class="fa-solid fa-trash"></i>
-                                <span class='delete-text'>Delete</span>
-                            </button>
-                        </form>
-
-                        <form method='POST'
-                            action='../edit/archiveMenuItem/<%= appetizers[i].id %>?_method=PUT'>
-                            <button>
-                                <i class="fa-solid fa-folder-plus"></i>
-                                <span class='archive-text'>Archive</span>
-                            </button>
-                        </form>
-
-                        <% if(i!=appetizers.length-1){ %>
-                            <a href='/edit/moveDown/<%= appetizers[i].id %>'>
-                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
-                            </a>
-                        <% } %>
-                    </li>
-                <%}%>
-            </ul>
-        </div><!--#top-left-->
-
-        <div id='top-right'>
-            <ul>
-                <% for (let i=0;i<entrees.length;i++){ %>
-                    <li>
-                        <% if(i!=0) { %>
-                            <a href='/edit/moveUp/<%= entrees[i].id %>'>
+                            <a href='/edit/moveUp/<%= btgWhites[i].id %>'>
                                 <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
                             </a>
                         <% } %>
-                        <div onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
-                            <span class='name'><%= entrees[i].name %></span><br>
-                            <%- entrees[i].description %>
-                            &nbsp;
-                            <span class='price'><%= entrees[i].price %></span><br>
-                            <span class='allergies'><%- entrees[i].allergies %></span><br>
-                        </div>
-                        <a href='/edit/updateItem/<%= entrees[i].id %>'>                        
+                        <div onclick='showModal(<%= JSON.stringify(btgWhites[i]) %>)'>
+                            <span class='name'><%= btgWhites[i].name %></span><br>
+                            <%- btgWhites[i].description %>
+                            &nbsp; 
+                            <span class='price'><%= btgWhites[i].price %></span><br>
+                            <span class='allergies'><%- btgWhites[i].allergies %></span><br>
+                        </div>                        
+                        <a href='/edit/updateItem/<%= btgWhites[i].id %>'>
                             <button>
                                 <i class="fa-solid fa-pen"></i>
                                 <span class='edit-text'>Edit</span>
                             </button>
                         </a>
 
-                        <form method='POST' 
-                              action='../edit/deleteMenuItem/<%= entrees[i].id %>?_method=DELETE'>
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= btgWhites[i].id %>?_method=DELETE'>
                             <button>
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
@@ -373,75 +271,185 @@ form{
                         </form>
 
                         <form method='POST'
-                            action='../edit/archiveMenuItem/<%= entrees[i].id %>?_method=PUT'>
+                            action='../edit/archiveMenuItem/<%= btgWhites[i].id %>?_method=PUT'>
                             <button>
                                 <i class="fa-solid fa-folder-plus"></i>
                                 <span class='archive-text'>Archive</span>
                             </button>
                         </form>
-
-
-                        <% if(i!=entrees.length-1){ %>
-                            <a href='/edit/moveDown/<%= entrees[i].id %>'>
+                        
+                        <% if(i!=btgWhites.length-1){ %>
+                            <a href='/edit/moveDown/<%= btgWhites[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
                             </a>
-                        <% } %>                        
+                        <% } %>
                     </li>
                 <%}%>
-            </ul>
+            </ul>            
+
+            <br><br><br>
+            <h3>Rosé</h3>
+            <ul>
+                <% for (let i=0;i<btgRose.length;i++){ %>
+                    <li>
+                        <% if(i!=0) { %>
+                            <a href='/edit/moveUp/<%= btgRose[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
+                        <% } %>
+                        <div onclick='showModal(<%= JSON.stringify(btgRose[i]) %>)'>
+                            <span class='name'><%= btgRose[i].name %></span><br>
+                            <%- btgRose[i].description %>
+                            &nbsp; 
+                            <span class='price'><%= btgRose[i].price %></span><br>
+                            <span class='allergies'><%- btgRose[i].allergies %></span><br>
+                        </div>                        
+                        <a href='/edit/updateItem/<%= btgRose[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= btgRose[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+
+                        <form method='POST'
+                            action='../edit/archiveMenuItem/<%= btgRose[i].id %>?_method=PUT'>
+                            <button>
+                                <i class="fa-solid fa-folder-plus"></i>
+                                <span class='archive-text'>Archive</span>
+                            </button>
+                        </form>
+                        
+                        <% if(i!=btgRose.length-1){ %>
+                            <a href='/edit/moveDown/<%= btgRose[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>
+                        <% } %>
+                    </li>
+                <%}%>
+            </ul>            
+
+            <br><br><br>
+            <h3>Red</h3>
+            <ul>
+                <% for (let i=0;i<btgReds.length;i++){ %>
+                    <li>
+                        <% if(i!=0) { %>
+                            <a href='/edit/moveUp/<%= btgReds[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
+                        <% } %>
+                        <div onclick='showModal(<%= JSON.stringify(btgReds[i]) %>)'>
+                            <span class='name'><%= btgReds[i].name %></span><br>
+                            <%- btgReds[i].description %>
+                            &nbsp; 
+                            <span class='price'><%= btgReds[i].price %></span><br>
+                            <span class='allergies'><%- btgReds[i].allergies %></span><br>
+                        </div>                        
+                        <a href='/edit/updateItem/<%= btgReds[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= btgReds[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+
+                        <form method='POST'
+                            action='../edit/archiveMenuItem/<%= btgReds[i].id %>?_method=PUT'>
+                            <button>
+                                <i class="fa-solid fa-folder-plus"></i>
+                                <span class='archive-text'>Archive</span>
+                            </button>
+                        </form>
+                        
+                        <% if(i!=btgReds.length-1){ %>
+                            <a href='/edit/moveDown/<%= btgReds[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>
+                        <% } %>
+                    </li>
+                <%}%>
+            </ul>            
+
+            <br><br><br>
+            <h3>Sherry</h3>
+            <ul>
+                <% for (let i=0;i<btgSherries.length;i++){ %>
+                    <li>
+                        <% if(i!=0) { %>
+                            <a href='/edit/moveUp/<%= btgSherries[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
+                        <% } %>
+                        <div onclick='showModal(<%= JSON.stringify(btgSherries[i]) %>)'>
+                            <span class='name'><%= btgSherries[i].name %></span><br>
+                            <%- btgSherries[i].description %>
+                            &nbsp; 
+                            <span class='price'><%= btgSherries[i].price %></span><br>
+                            <span class='allergies'><%- btgSherries[i].allergies %></span><br>
+                        </div>                        
+                        <a href='/edit/updateItem/<%= btgSherries[i].id %>'>
+                            <button>
+                                <i class="fa-solid fa-pen"></i>
+                                <span class='edit-text'>Edit</span>
+                            </button>
+                        </a>
+
+                        <form method='POST'
+                            action='../edit/deleteMenuItem/<%= btgSherries[i].id %>?_method=DELETE'>
+                            <button>
+                                <i class="fa-solid fa-trash"></i>
+                                <span class='delete-text'>Delete</span>
+                            </button>
+                        </form>
+
+                        <form method='POST'
+                            action='../edit/archiveMenuItem/<%= btgSherries[i].id %>?_method=PUT'>
+                            <button>
+                                <i class="fa-solid fa-folder-plus"></i>
+                                <span class='archive-text'>Archive</span>
+                            </button>
+                        </form>
+                        
+                        <% if(i!=btgSherries.length-1){ %>
+                            <a href='/edit/moveDown/<%= btgSherries[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>
+                        <% } %>
+                    </li>
+                <%}%>
+            </ul>            
+
+
+
+
+
+
+
+
+
+        </div><!--#top-left-->
+
+        <div id='top-right'>
         
         </div><!--#top-right-->
     </div><!--#top-->
 
-    <h2>sides</h2>
     <div id='bottom'>
-            <ul>
-                <% for (let i=0;i<sides.length;i++){ %>
-                    <li>
-                        <% if(i!=0) { %>
-                            <a href='/edit/moveUp/<%= sides[i].id %>'>
-                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
-                            </a>
-                        <% } %>
-                        <div onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
-                            <span class='name'><%= sides[i].name %></span><br>
-                            <%= sides[i].description %>
-                            &nbsp;
-                            <span class='price'><%= sides[i].price %></span><br>
-                            <span class='allergies'><%- sides[i].allergies %></span><br>
-                        </div>
-                        <a href='/edit/updateItem/<%= sides[i].id %>'>
-                            <button>
-                                <i class="fa-solid fa-pen"></i>
-                                <span class='edit-text'>Edit</span>
-                            </button>
-                        </a>
-
-                        <form method='POST'
-                            action='../edit/deleteMenuItem/<%= sides[i].id %>?_method=DELETE'>
-                            <button>
-                                <i class="fa-solid fa-trash"></i>
-                                <span class='delete-text'>Delete</span>
-                            </button>
-                        </form>
-
-                        <form method='POST'
-                            action='../edit/archiveMenuItem/<%= sides[i].id %>?_method=PUT'>
-                            <button>
-                                <i class="fa-solid fa-folder-plus"></i>
-                                <span class='archive-text'>Archive</span>
-                            </button>
-                        </form>
-
-
-                        <% if(i!=sides.length-1){ %>
-                            <a href='/edit/moveDown/<%= sides[i].id %>'>
-                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
-                            </a>
-                        <% } %>
-                    </li>
-                <%}%>
-            </ul>
         
         
     </div><!--#bottom-->
@@ -503,9 +511,6 @@ form{
     const modalDescription = document.querySelector('#modal-description')
     const modalPrice = document.querySelector('#modal-price')
     const modalAllergies = document.querySelector('#modal-allergies')
-    const dinnerSubMenu = document.querySelector('#dinner-sub-menu')
-    const drinksSubMenu = document.querySelector('#drinks-sub-menu')
-    const wineSubMenu = document.querySelector('#wine-sub-menu')
 
     function showModal(item){
         console.log(item)
@@ -519,7 +524,5 @@ form{
     function closeModal(){
         modal.style.display = 'none'
     }
-
-  
 </script>
 <%- include('partials/footer') %>
