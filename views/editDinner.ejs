@@ -109,7 +109,10 @@ button{
 form{
     display:inline-block;
 }
-
+#edit-nav li{
+    margin:0;
+    color:black;
+}
 
 <%- include('partials/header') %>
 
@@ -117,15 +120,32 @@ form{
 
 <script>
     function displayDinnerSubMenu(){
-        document.querySelector('#dinner-sub-menu').style.display='block'
+        dinnerSubMenu.style.display = 'block'
     }
+    function hideDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'none'
+    }
+
+    function displayDrinksSubMenu(){
+        drinksSubMenu.style.display = 'block'
+    }
+    function hideDrinksSubMenu(){
+        drinksSubMenu.style.display = 'none'
+    }
+    
 </script>
-<nav>
+<nav id='edit-nav'>
     <li style='position:relative;'>
-        <div onclick='displayDinnerSubMenu()'>
-            dinner
+        <div style='color:white;' 
+             onmouseover = 'displayDinnerSubMenu()'
+             onmouseout  = 'hideDinnerSubMenu()'
+             id='dinner-button'>
+             dinner
         </div>
-        <div id='dinner-sub-menu' style='display:none;position:absolute;color:black;'>
+        <div id='dinner-sub-menu' 
+             style='display:none;position:absolute;color:black;'
+             onmouseover = 'displayDinnerSubMenu()'
+             onmouseout = 'hideDinnerSubMenu()'>
             <ul>
                 <a href='/edit/charcuterie'><li>Charcuterie</li></a>
                 <a href='/edit/appetizers'><li>Appetizers</li></a>
@@ -134,15 +154,31 @@ form{
             </ul>
         </div>
     </li>
+    
     <li><a href='/edit/specials'>specials</a></li>
     <li><a href='/edit/dessert'>dessert</a></li>
     <li><a href='/edit/wine'>wine</a></li>
-    <li><a href='/edit/drinks'>drinks</a></li>
     
+    <li style='position:relative;'>
+        <div style='color:white'
+             onmouseover = 'displayDrinksSubMenu()'
+             onmouseout = 'hideDrinksSubMenu()'>
+            drinks
+        </div>
+        <div id='drinks-sub-menu'
+             style='display:none;position:absolute;color:black;'
+             onmouseover = 'displayDrinksSubMenu()'
+             onmouseout = 'hideDrinksSubMenu()'>
+            <ul>
+                <a href='/edit/craftDrinks'><li>craft drinks</li></a>
+                <a href='/edit/sangria'><li>sangria</li></a>
+                <a href='/edit/nonAlcoholic'><li>non-alcoholic</li></a>
+                <a href='/edit/beer'><li>beer</li></a>
+            </ul>
+        </div>
+    </li>
     
-    
-    
-    
+
 </nav>
 
 
@@ -435,6 +471,8 @@ form{
     const modalDescription = document.querySelector('#modal-description')
     const modalPrice = document.querySelector('#modal-price')
     const modalAllergies = document.querySelector('#modal-allergies')
+    const dinnerSubMenu = document.querySelector('#dinner-sub-menu')
+    const drinksSubMenu = document.querySelector('#drinks-sub-menu')
 
     function showModal(item){
         console.log(item)
@@ -448,5 +486,7 @@ form{
     function closeModal(){
         modal.style.display = 'none'
     }
+
+  
 </script>
 <%- include('partials/footer') %>

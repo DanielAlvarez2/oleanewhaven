@@ -351,8 +351,79 @@ module.exports={
         }catch(err){
             console.log(err)
         }
+    },
+    getCraftDrinks: async(req,res)=>{
+        try{
+            const craftDrinks = await MenuItem.find({
+                $and:[
+                    {menu:'drinks'},
+                    {section:'craft drinks'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editCraftDrinks.ejs',{title:'EDIT CRAFT DRINKS',
+                                              req:req,
+                                              craftDrinks:craftDrinks})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getSangria: async(req,res)=>{
+        try{
+            const sangria = await MenuItem.find({
+                $and:[
+                    {menu:'drinks'},
+                    {section:'sangria'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editSangria.ejs', {title:'EDIT SANGRIA',
+                                           req:req,
+                                           sangria:sangria})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getNonAlcoholic: async(req,res)=>{
+        try{
+            const nonAlcoholic = await MenuItem.find({
+                $and:[
+                    {menu:'drinks'},
+                    {section:'non-alcoholic'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editNonAlcoholic.ejs', {title:'EDIT NON-ALCOHOLIC',
+                                                req:req,
+                                                nonAlcoholic:nonAlcoholic})
+        }catch(err){
+            console.log(err)
+        }
+    },
+    getBeer: async(req,res)=>{
+        try{
+            const beerCans = await MenuItem.find({
+                $and:[
+                    {menu:'drinks'},
+                    {section:'beer can'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            const beerDrafts = await MenuItem.find({
+                $and:[
+                    {menu:'drinks'},
+                    {section:'beer draft'},
+                    {archived:false}
+                ]
+            }).sort({sequence:'asc'})
+            res.render('editBeer.ejs',{title:'EDIT BEER',
+                                       req:req,
+                                       beerCans:beerCans,
+                                       beerDrafts:beerDrafts})
+        }catch(err){
+            console.log(err)
+        }
     }
-
 
 
 
