@@ -1,10 +1,5 @@
 <%- include('partials/headEdit') %>
 
-#legal{
-    display:grid;
-    place-content:center;
-    font-size:0.7rem;
-}
 h2{
     font-family: futura light;
     font-weight:900;
@@ -99,31 +94,113 @@ button{
 form{
     display:inline-block;
 }
-
+#dessert-menu{
+    margin:0 auto;
+}
 
 <%- include('partials/header') %>
 
 <main>
-<nav>
-    <a href='/edit/dinner'>dinner</a>
-    <a href='/edit/specials'>specials</a>
-    <a class='active-page'>dessert</a>
-    <a href='/edit/wine'>wine</a>
-    <a href='/edit/drinks'>drinks</a>
+<nav id='edit-nav'>
+    <li style='position:relative;'>
+        <div style='color:white;' 
+             onmouseover = 'displayDinnerSubMenu()'
+             onmouseout  = 'hideDinnerSubMenu()'
+             id='dinner-button'>
+             dinner
+        </div>
+        <div id='dinner-sub-menu' 
+             style='display:none;position:absolute;color:black;'
+             onmouseover = 'displayDinnerSubMenu()'
+             onmouseout = 'hideDinnerSubMenu()'>
+            <ul>
+                <li><a href='/edit/charcuterie'>Charcuterie</a></li>
+                <li><a href='/edit/appetizers'>Appetizers</a></li>
+                <li><a href='/edit/entrees'>Entrées</a></li>
+                <li><a href='/edit/sides'>Sides</a></li>
+            </ul>
+        </div>
+    </li>
+    
+    <li><a href='/edit/specials'>specials</a></li>
+    <li><a href='/edit/dessert'>dessert</a></li>
+
+    <li style='position:relative;'>
+        <div style='color:white'
+             id='wine-button'
+             onmouseover = 'displayWineSubMenu()'
+             onmouseout = 'hideWineSubMenu()'>
+            wine
+        </div>
+        <div id='wine-sub-menu'
+             style='display:none;position:absolute;color:black;'
+             onmouseover = 'displayWineSubMenu()'
+             onmouseout = 'hideWineSubMenu()'>
+            <ul>
+                <li><a href='/edit/btg'>BTG</a></li>
+                <li><a href='/edit/cavaChampagne'>Cava & Champagne</a></li>
+                <li><a href='/edit/rose'>Rosé</a></li>
+                <li><a href='/edit/whiteSpain'>White Spain</a></li>
+                <li><a href='/edit/whiteFrance'>White France</a></li>
+                <li><a href='/edit/whiteItaly'>White Italy</a></li>
+                <li><a href='/edit/whiteGermany'>White Germany</a></li>
+                <li><a href='/edit/redSpain'>Red Spain</a></li>
+                <li><a href='/edit/redFrance'>Red France</a></li>
+                <li><a href='/edit/redItaly'>Red Italy</a></li>
+            </ul>
+        </div>
+    </li>
+    
+    <li style='position:relative;'>
+        <div style='color:white'
+             onmouseover = 'displayDrinksSubMenu()'
+             onmouseout = 'hideDrinksSubMenu()'>
+            drinks
+        </div>
+        <div id='drinks-sub-menu'
+             style='display:none;position:absolute;color:black;'
+             onmouseover = 'displayDrinksSubMenu()'
+             onmouseout = 'hideDrinksSubMenu()'>
+            <ul>
+                <li><a href='/edit/craftDrinks'>craft drinks</a></li>
+                <li><a href='/edit/sangria'>sangria</a></li>
+                <li><a href='/edit/nonAlcoholic'>non-alcoholic</a></li>
+                <li><a href='/edit/beer'>beer</a></li>
+            </ul>
+        </div>
+    </li>
 </nav>
 
 
+<div class='edit-menu'>
+    <a href='/dessert'>
+        <button>
+            <i class="fa-solid fa-eye"></i>
+            Live Website
+        </button>
+    </a>
+
+    <a href='/edit/createMenuItem'>
+        <button style='margin:0 auto;display:block;'>
+            <i class="fa-solid fa-circle-plus"></i>
+            Add New Item
+        </button>
+    </a>
+
+    <a href='/edit/archives'>
+        <button>
+            <i class="fa-regular fa-folder-open"></i>
+            Archives
+        </button>
+    </a>
+</div><!--#edit-menu-->
+
 <div id='dessert-menu'>
 
-<a href='/edit/createMenuItem'>
-<button style='margin:0 auto;display:block;'>
-    <i class="fa-solid fa-circle-plus"></i>
-    Add New Item
-</button>
-</a>
+
     <h1>olea</h1>
     <hr>
-
+    <h2>dessert menu > desserts</h2>
 
             <ul>
                 <% for (let i=0;i<desserts.length;i++){ %>
@@ -153,20 +230,7 @@ form{
             </ul>
 
 
-    <div id='legal'>
-            consumer advisory: consumption of undercooked meat, poultry, eggs, 
-            or seafood may increase the risk of food-borne illnesses<br>
-            please alert your server if you have special dietary requirements<br>
-            all menu items are subject to change according to seasonality
-            and availability
-    </div><!--#legal-->
 
-<a href='/edit/createMenuItem'>    
-<button style='margin:0 auto;display:block;margin-top:1em;'>
-    <i class="fa-solid fa-circle-plus"></i>
-    Add New Item
-</button>
-</a>
     <div id='modal'>
         <i class='fa-solid fa-square-xmark x'
            id='close-modal-button'
@@ -186,8 +250,31 @@ form{
         </div><!--#modal-item-->
     </div><!--#modal-->
 
-</div><!--#specials-menu-->
+</div><!--#dessert-menu-->
 
+
+<div class='edit-menu'>
+    <a href='/dessert'>
+        <button>
+            <i class="fa-solid fa-eye"></i>
+            Live Website
+        </button>
+    </a>
+
+    <a href='/edit/createMenuItem'>
+        <button style='margin:0 auto;display:block;'>
+            <i class="fa-solid fa-circle-plus"></i>
+            Add New Item
+        </button>
+    </a>
+
+    <a href='/edit/archives'>
+        <button>
+            <i class="fa-regular fa-folder-open"></i>
+            Archives
+        </button>
+    </a>
+</div><!--#edit-menu-->
 
 </main>
 
@@ -198,6 +285,9 @@ form{
     const modalDescription = document.querySelector('#modal-description')
     const modalPrice = document.querySelector('#modal-price')
     const modalAllergies = document.querySelector('#modal-allergies')
+    const dinnerSubMenu = document.querySelector('#dinner-sub-menu')
+    const drinksSubMenu = document.querySelector('#drinks-sub-menu')
+    const wineSubMenu = document.querySelector('#wine-sub-menu')
 
     function showModal(item){
         console.log(item)
@@ -210,6 +300,24 @@ form{
     }
     function closeModal(){
         modal.style.display = 'none'
+    }
+    function displayDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'block'
+    }
+    function hideDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'none'
+    }
+    function displayDrinksSubMenu(){
+        drinksSubMenu.style.display = 'block'
+    }
+    function hideDrinksSubMenu(){
+        drinksSubMenu.style.display = 'none'
+    }
+    function displayWineSubMenu(){
+        wineSubMenu.style.display = 'block'
+    }
+    function hideWineSubMenu(){
+        wineSubMenu.style.display = 'none'
     }
 </script>
 <%- include('partials/footer') %>

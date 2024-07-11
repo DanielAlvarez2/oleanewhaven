@@ -109,38 +109,12 @@ button{
 form{
     display:inline-block;
 }
-#edit-nav li{
-    margin:0;
-    color:black;
-}
+
 
 <%- include('partials/header') %>
 
 <main>
 
-<script>
-    function displayDinnerSubMenu(){
-        dinnerSubMenu.style.display = 'block'
-    }
-    function hideDinnerSubMenu(){
-        dinnerSubMenu.style.display = 'none'
-    }
-
-    function displayDrinksSubMenu(){
-        drinksSubMenu.style.display = 'block'
-    }
-    function hideDrinksSubMenu(){
-        drinksSubMenu.style.display = 'none'
-    }
-    
-    function displayWineSubMenu(){
-        wineSubMenu.style.display = 'block'
-    }
-    function hideWineSubMenu(){
-        wineSubMenu.style.display = 'none'
-    }
-        
-</script>
 <nav id='edit-nav'>
     <li style='position:relative;'>
         <div style='color:white;' 
@@ -209,8 +183,6 @@ form{
             </ul>
         </div>
     </li>
-    
-
 </nav>
 
 
@@ -519,7 +491,23 @@ form{
     function closeModal(){
         modal.style.display = 'none'
     }
-
-  
+    function displayDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'block'
+    }
+    function hideDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'none'
+    }
+    function displayDrinksSubMenu(){
+        drinksSubMenu.style.display = 'block'
+    }
+    function hideDrinksSubMenu(){
+        drinksSubMenu.style.display = 'none'
+    }
+    function displayWineSubMenu(){
+        wineSubMenu.style.display = 'block'
+    }
+    function hideWineSubMenu(){
+        wineSubMenu.style.display = 'none'
+    }
 </script>
 <%- include('partials/footer') %>
