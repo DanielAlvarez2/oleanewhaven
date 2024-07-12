@@ -127,7 +127,8 @@ main h1{
         <div id='top-left'>
             <ul>
                 <% for (let i=0;i<charcuterie.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(charcuterie[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(charcuterie[i]) %>)'>
                         <span class='name'><%= charcuterie[i].name %></span><br>
                         <%- charcuterie[i].description %>
                         &nbsp; 
@@ -141,7 +142,8 @@ main h1{
 
             <ul>
                 <% for (let i=0;i<appetizers.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
                         <span class='name'><%= appetizers[i].name %></span><br>
                         <%- appetizers[i].description %>
                         &nbsp;
@@ -157,7 +159,8 @@ main h1{
         <div id='top-right'>
             <ul>
                 <% for (let i=0;i<entrees.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
                         <span class='name'><%= entrees[i].name %></span><br>
                         <%- entrees[i].description %>
                         &nbsp;
@@ -186,7 +189,8 @@ main h1{
         <div id='bottom-left'>
             <ul>
                 <% for (let i=0;i<2;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
                         <span class='name'><%= sides[i].name %></span><br>
                         <%= sides[i].description %>
                         &nbsp;
@@ -202,7 +206,8 @@ main h1{
         <div id='bottom-right'>
             <ul>
                 <% for (let i=2;i<sides.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
                         <span class='name'><%= sides[i].name %></span><br>
                         <%= sides[i].description %>
                         &nbsp;

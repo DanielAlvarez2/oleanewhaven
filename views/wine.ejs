@@ -118,7 +118,8 @@ main h1{
             <h3>Cava</h3>          
             <ul>
                 <% for (let i=0;i<btgCava.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(btgCava[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(btgCava[i]) %>)'>
                         <span><%= btgCava[i].grapes %></span>, 
                         <span class='name'><%= btgCava[i].name %></span>, 
                         <span><%= btgCava[i].vintage %></span>, 
@@ -132,7 +133,8 @@ main h1{
             <h3>White</h3>
             <ul>
                 <% for (let i=0;i<btgWhites.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(btgWhites[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(btgWhites[i]) %>)'>
                         <span><%= btgWhites[i].grapes %></span>, 
                         <span class='name'><%= btgWhites[i].name %></span>, 
                         <span><%= btgWhites[i].vintage %></span>, 
@@ -146,7 +148,8 @@ main h1{
             <h3>Rosé</h3>
             <ul>
                 <% for (let i=0;i<btgRose.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(btgRose[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(btgRose[i]) %>)'>
                         <span><%= btgRose[i].grapes %></span>, 
                         <span class='name'><%= btgRose[i].name %></span>, 
                         <span><%= btgRose[i].vintage %></span>, 
@@ -160,7 +163,8 @@ main h1{
             <h3>Red</h3>
             <ul>
                 <% for (let i=0;i<btgReds.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(btgReds[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(btgReds[i]) %>)'>
                         <span><%= btgReds[i].grapes %></span>, 
                         <span class='name'><%= btgReds[i].name %></span>, 
                         <span><%= btgReds[i].vintage %></span>, 
@@ -174,7 +178,8 @@ main h1{
             <h3>Sherry</h3>
             <ul>
                 <% for (let i=0;i<btgSherries.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(btgSherries[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(btgSherries[i]) %>)'>
                         <span><%= btgSherries[i].grapes %></span>, 
                         <span class='name'><%= btgSherries[i].name %></span>, 
                         <%- btgSherries[i].description %>
@@ -197,7 +202,8 @@ main h1{
             <h3>cava & champagne</h3>          
             <ul>
                 <% for (let i=0;i<cavaChampagne.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(cavaChampagne[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(cavaChampagne[i]) %>)'>
                         <span><%= cavaChampagne[i].grapes %></span><br>
                         <span class='name'><%= cavaChampagne[i].name %></span><br>
                         <span><%= cavaChampagne[i].vintage %></span><br>
@@ -211,7 +217,8 @@ main h1{
             <h3>rosé</h3>          
             <ul>
                 <% for (let i=0;i<rose.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(rose[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(rose[i]) %>)'>
                         <span><%= rose[i].grapes %></span><br>
                         <span class='name'><%= rose[i].name %></span><br>
                         <span><%= rose[i].vintage %></span><br>
@@ -227,7 +234,8 @@ main h1{
             <h4>Spain</h4>          
             <ul>
                 <% for (let i=0;i<whiteSpain.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(whiteSpain[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(whiteSpain[i]) %>)'>
                         <span><%= whiteSpain[i].grapes %></span><br>
                         <span class='name'><%= whiteSpain[i].name %></span><br>
                         <span><%= whiteSpain[i].vintage %></span><br>
@@ -241,7 +249,8 @@ main h1{
             <h4>France</h4>          
             <ul>
                 <% for (let i=0;i<whiteFrance.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(whiteFrance[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(whiteFrance[i]) %>)'>
                         <span><%= whiteFrance[i].grapes %></span><br>
                         <span class='name'><%= whiteFrance[i].name %></span><br>
                         <span><%= whiteFrance[i].vintage %></span><br>
@@ -255,7 +264,8 @@ main h1{
             <h4>Italy</h4>          
             <ul>
                 <% for (let i=0;i<whiteItaly.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(whiteItaly[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(whiteItaly[i]) %>)'>
                         <span><%= whiteItaly[i].grapes %></span><br>
                         <span class='name'><%= whiteItaly[i].name %></span><br>
                         <span><%= whiteItaly[i].vintage %></span><br>
@@ -269,7 +279,8 @@ main h1{
             <h4>Germany</h4>          
             <ul>
                 <% for (let i=0;i<whiteGermany.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(whiteGermany[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(whiteGermany[i]) %>)'>
                         <span><%= whiteGermany[i].grapes %></span><br>
                         <span class='name'><%= whiteGermany[i].name %></span><br>
                         <span><%= whiteGermany[i].vintage %></span><br>
@@ -285,7 +296,8 @@ main h1{
             <h4>Spain</h4>          
             <ul>
                 <% for (let i=0;i<redSpain.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(redSpain[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(redSpain[i]) %>)'>
                         <span><%= redSpain[i].grapes %></span><br>
                         <span class='name'><%= redSpain[i].name %></span><br>
                         <span><%= redSpain[i].vintage %></span><br>
@@ -299,7 +311,8 @@ main h1{
             <h4>France</h4>          
             <ul>
                 <% for (let i=0;i<redFrance.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(redFrance[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(redFrance[i]) %>)'>
                         <span><%= redFrance[i].grapes %></span><br>
                         <span class='name'><%= redFrance[i].name %></span><br>
                         <span><%= redFrance[i].vintage %></span><br>
@@ -313,7 +326,8 @@ main h1{
             <h4>Italy</h4>          
             <ul>
                 <% for (let i=0;i<redItaly.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(redItaly[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(redItaly[i]) %>)'>
                         <span><%= redItaly[i].grapes %></span><br>
                         <span class='name'><%= redItaly[i].name %></span><br>
                         <span><%= redItaly[i].vintage %></span><br>

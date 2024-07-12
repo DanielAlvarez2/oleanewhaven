@@ -111,7 +111,8 @@ main h1{
             <h2>craft drinks</h2>
             <ul>
                 <% for (let i=0;i<craftDrinks.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(craftDrinks[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(craftDrinks[i]) %>)'>
                         <span class='name'><%= craftDrinks[i].name %></span><br>
                         <%- craftDrinks[i].description %>
                         &nbsp; 
@@ -123,7 +124,8 @@ main h1{
             <h2>sangría</h2>
             <ul>
                 <% for (let i=0;i<sangria.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(sangria[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(sangria[i]) %>)'>
                         <span class='name'><%= sangria[i].name %></span><br>
                         <%- sangria[i].description %>
                         &nbsp; 
@@ -135,7 +137,8 @@ main h1{
             <h2>non-alcoholic</h2>
             <ul>
                 <% for (let i=0;i<nonAlcoholic.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(nonAlcoholic[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(nonAlcoholic[i]) %>)'>
                         <span class='name'><%= nonAlcoholic[i].name %></span><br>
                         <%- nonAlcoholic[i].description %>
                         &nbsp; 
@@ -148,7 +151,8 @@ main h1{
             <h3>CAN</h3>
             <ul>
                 <% for (let i=0;i<beerCans.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(beerCans[i]) %>)'>
+                    <li 
+                        class='menu-item'onclick='showModal(<%= JSON.stringify(beerCans[i]) %>)'>
                         <span class='name'><%= beerCans[i].name %></span><br>
                         <%- beerCans[i].description %>
                         &nbsp; 
@@ -160,7 +164,8 @@ main h1{
             <h3>DRAFT</h3>
             <ul>
                 <% for (let i=0;i<beerDrafts.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(beerDrafts[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(beerDrafts[i]) %>)'>
                         <span class='name'><%= beerDrafts[i].name %></span><br>
                         <%- beerDrafts[i].description %>
                         &nbsp; 

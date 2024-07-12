@@ -117,7 +117,9 @@ main h1{
                         <%- desserts[i].description %>
                         &nbsp; 
                         <span class='price'><%= desserts[i].price %></span><br>
-                        <span class='allergies'><%- desserts[i].allergies %></span><br>
+                        <% if(desserts[i].allergies){ %>
+                            <span class='allergies'><%- desserts[i].allergies %></span><br>
+                        <% } %>
                     </li>
                 <%}%>
             </ul>

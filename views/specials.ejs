@@ -114,7 +114,8 @@ main h1{
 
             <ul>
                 <% for (let i=0;i<appetizers.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
                         <span class='name'><%= appetizers[i].name %></span><br>
                         <%- appetizers[i].description %>
                         &nbsp; 
@@ -131,7 +132,8 @@ main h1{
             <% } %>
             <ul>
                 <% for (let i=0;i<entrees.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
                         <span class='name'><%= entrees[i].name %></span><br>
                         <%- entrees[i].description %>
                         &nbsp; 
@@ -148,7 +150,8 @@ main h1{
             <% } %>
             <ul>
                 <% for (let i=0;i<desserts.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(desserts[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(desserts[i]) %>)'>
                         <span class='name'><%= desserts[i].name %></span><br>
                         <%- desserts[i].description %>
                         &nbsp; 
