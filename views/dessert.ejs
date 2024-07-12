@@ -112,7 +112,8 @@ main h1{
             <hr>
             <ul>
                 <% for (let i=0;i<desserts.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(desserts[i]) %>)'>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(desserts[i]) %>)'>
                         <span class='name'><%= desserts[i].name %></span><br>
                         <%- desserts[i].description %>
                         &nbsp; 
