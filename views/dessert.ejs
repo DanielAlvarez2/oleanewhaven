@@ -79,13 +79,18 @@ main h1{
     font-family:futura light;
     font-size:3rem;
 }
-
+#dessert-menu{
+    position: relative;
+}
 
 
 
 <%- include('partials/header') %>
 
+
+
 <main>
+
 <nav id='nav-top'>
     <a href='/dinner'>dinner</a>
     <a href='/specials'>specials</a>
@@ -93,7 +98,13 @@ main h1{
     <a href='/wine'>wine</a>
     <a href='/drinks'>drinks</a>
 </nav>
+
 <div id='dessert-menu' class='menu'>
+
+<a href='/edit/dessert'>
+    <i class="fa-solid fa-gear"></i>
+</a>
+
 
             <h1>olea</h1>
             <hr>
