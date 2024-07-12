@@ -101,9 +101,11 @@ main h1{
 
 <div id='dessert-menu' class='menu'>
 
-<a href='/edit/dessert'>
-    <i class="fa-solid fa-gear"></i>
-</a>
+<% if(req.user){ %>
+    <a href='/edit/dessert'>
+        <i class="fa-solid fa-gear"></i>
+    </a>
+<% } %>
 
 
             <h1>olea</h1>
