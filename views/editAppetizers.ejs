@@ -115,77 +115,7 @@ form{
 
 <main>
 
-<nav id='edit-nav'>
-    <li style='position:relative;'>
-        <div style='color:white;' 
-             onmouseover = 'displayDinnerSubMenu()'
-             onmouseout  = 'hideDinnerSubMenu()'
-             id='dinner-button'>
-             dinner
-        </div>
-        <div id='dinner-sub-menu' 
-             style='display:none;position:absolute;color:black;'
-             onmouseover = 'displayDinnerSubMenu()'
-             onmouseout = 'hideDinnerSubMenu()'>
-            <ul>
-                <li><a href='/edit/charcuterie'>Charcuterie</a></li>
-                <li><a href='/edit/appetizers'>Appetizers</a></li>
-                <li><a href='/edit/entrees'>Entrées</a></li>
-                <li><a href='/edit/sides'>Sides</a></li>
-            </ul>
-        </div>
-    </li>
-    
-    <li><a href='/edit/specials'>specials</a></li>
-    <li><a href='/edit/dessert'>dessert</a></li>
-
-    <li style='position:relative;'>
-        <div style='color:white'
-             id='wine-button'
-             onmouseover = 'displayWineSubMenu()'
-             onmouseout = 'hideWineSubMenu()'>
-            wine
-        </div>
-        <div id='wine-sub-menu'
-             style='display:none;position:absolute;color:black;'
-             onmouseover = 'displayWineSubMenu()'
-             onmouseout = 'hideWineSubMenu()'>
-            <ul>
-                <li><a href='/edit/btg'>BTG</a></li>
-                <li><a href='/edit/cavaChampagne'>Cava & Champagne</a></li>
-                <li><a href='/edit/rose'>Rosé</a></li>
-                <li><a href='/edit/whiteSpain'>White Spain</a></li>
-                <li><a href='/edit/whiteFrance'>White France</a></li>
-                <li><a href='/edit/whiteItaly'>White Italy</a></li>
-                <li><a href='/edit/whiteGermany'>White Germany</a></li>
-                <li><a href='/edit/redSpain'>Red Spain</a></li>
-                <li><a href='/edit/redFrance'>Red France</a></li>
-                <li><a href='/edit/redItaly'>Red Italy</a></li>
-            </ul>
-        </div>
-    </li>
-    
-    <li style='position:relative;'>
-        <div style='color:white'
-             onmouseover = 'displayDrinksSubMenu()'
-             onmouseout = 'hideDrinksSubMenu()'>
-            drinks
-        </div>
-        <div id='drinks-sub-menu'
-             style='display:none;position:absolute;color:black;'
-             onmouseover = 'displayDrinksSubMenu()'
-             onmouseout = 'hideDrinksSubMenu()'>
-            <ul>
-                <li><a href='/edit/craftDrinks'>craft drinks</a></li>
-                <li><a href='/edit/sangria'>sangria</a></li>
-                <li><a href='/edit/nonAlcoholic'>non-alcoholic</a></li>
-                <li><a href='/edit/beer'>beer</a></li>
-            </ul>
-        </div>
-    </li>
-</nav>
-
-
+<%- include('partials/editNav') %>
 
 <div class='edit-menu'>
     <a href='/'>
