@@ -80,12 +80,14 @@ main h1{
 }
 #drinks-menu{
     margin-bottom:3em;
+    position: relative;
 }
 
 
 <%- include('partials/header') %>
 
 <main>
+
 <nav id='nav-top'>
     <a href='/dinner'>dinner</a>
     <a href='/specials'>specials</a>
@@ -93,7 +95,13 @@ main h1{
     <a href='/wine'>wine</a>
     <a class='active-page'>drinks</a>
 </nav>
+
 <div id='drinks-menu' class='menu'>
+
+<a href='/edit/craftDrinks'>
+    <i class="fa-solid fa-gear"></i>
+</a>
+
 
             <h1>olea</h1>
             <hr>
