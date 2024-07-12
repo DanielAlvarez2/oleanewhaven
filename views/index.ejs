@@ -132,7 +132,9 @@ main h1{
                         <%- charcuterie[i].description %>
                         &nbsp; 
                         <span class='price'><%= charcuterie[i].price %></span><br>
-                        <span class='allergies'><%- charcuterie[i].allergies %></span><br>
+                        <% if(charcuterie[i].allergies){ %>
+                            <span class='allergies'><%- charcuterie[i].allergies %></span><br>
+                        <% } %>
                     </li>
                 <%}%>
             </ul>
@@ -144,7 +146,9 @@ main h1{
                         <%- appetizers[i].description %>
                         &nbsp;
                         <span class='price'><%= appetizers[i].price %></span><br>
-                        <span class='allergies'><%- appetizers[i].allergies %></span><br>
+                        <% if(appetizers[i].allergies){ %>
+                            <span class='allergies'><%- appetizers[i].allergies %></span><br>
+                        <% } %>
                     </li>
                 <%}%>
             </ul>
@@ -158,7 +162,9 @@ main h1{
                         <%- entrees[i].description %>
                         &nbsp;
                         <span class='price'><%= entrees[i].price %></span><br>
-                        <span class='allergies'><%- entrees[i].allergies %></span><br>
+                        <% if(entrees[i].allergies){ %>
+                            <span class='allergies'><%- entrees[i].allergies %></span><br>
+                        <% } %>
                     </li>
                 <%}%>
                     <li>
@@ -185,7 +191,9 @@ main h1{
                         <%= sides[i].description %>
                         &nbsp;
                         <span class='price'><%= sides[i].price %></span><br>
-                        <span class='allergies'><%- sides[i].allergies %></span><br>
+                        <% if(sides[i].allergies){ %>
+                            <span class='allergies'><%- sides[i].allergies %></span><br>
+                        <% } %>
                     </li>
                 <%}%>
             </ul>
@@ -199,7 +207,9 @@ main h1{
                         <%= sides[i].description %>
                         &nbsp;
                         <span class='price'><%= sides[i].price %></span><br>
-                        <span class='allergies'><%- sides[i].allergies %></span><br>
+                        <% if(sides[i].allergies){ %>
+                            <span class='allergies'><%- sides[i].allergies %></span><br>
+                        <% } %>
                     </li>
                 <%}%>
             </ul>
