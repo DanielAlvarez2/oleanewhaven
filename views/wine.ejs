@@ -104,9 +104,11 @@ main h1{
 
 <div id='btg-menu' class='menu'>
 
-<a href='/edit/BTG'>
-    <i class="fa-solid fa-gear"></i>
-</a>
+<% if(req.user){ %>
+    <a href='/edit/BTG'>
+        <i class="fa-solid fa-gear"></i>
+    </a>
+<% } %>
 
             <h1>olea</h1>
             <hr>
