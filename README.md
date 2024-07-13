@@ -18,3 +18,9 @@ ensureAuth for all manager portal pages
 confirm logic for updateItem() at bottom of updateItem.ejs
 might be flawed if initial item creation has no pic, then
 user wants to add a pic later?
+
+tabbed components: 
+    dessert: front page / back page
+    specials: letter paper / legal paper
+    
+     
