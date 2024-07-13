@@ -14,6 +14,24 @@
     Section: <%= item.section %><br><br>
     <input type='hidden' id='section' name='section' value='<%= item.section %>'>
 
+    <% if(item.section == 'btg cava' ||
+          item.section == 'btg whites' ||
+          item.section == 'btg rose' ||
+          item.section == 'btg reds' ||
+          item.section == 'btg sherries' ||
+          item.section == 'cava champagne' ||
+          item.section == 'rose' ||
+          item.section == 'white spain' ||
+          item.section == 'white france' ||
+          item.section == 'white italy' ||
+          item.section == 'white germany' ||
+          item.section == 'red spain' ||
+          item.section == 'red france' ||
+          item.section == 'red italy'){ %>
+                Grapes:<br>
+                <input type='text' id='grapes' name='grapes' value='<%= item.grapes %>'><br><br>
+    <% } %>
+
     Name:<br> 
     <input type='text' id='name' name='name' value='<%= item.name %>'>
     <br><br>
