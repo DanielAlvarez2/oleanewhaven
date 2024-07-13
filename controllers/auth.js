@@ -4,7 +4,7 @@ const User = require('../models/User')
 
 exports.getLogin = (req,res)=>{
     if(req.user){
-        return res.redirect('/profile')
+        return res.redirect('/')
     }
     res.render('login.ejs', {title:'Login',req:req})
 }
@@ -39,7 +39,7 @@ exports.postLogin = (req,res,next)=>{
                 return next(err)
             }
             req.flash('success',{msg:'Success! You are logged in.'})
-            res.redirect(req.session.returnTo || '/edit/dinner')
+            res.redirect(req.session.returnTo || '/edit/specials')
         })
     })(req,res,next)
 }

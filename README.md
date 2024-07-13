@@ -5,3 +5,9 @@ Future Features to Implement:
 give ALL menu items a class in the customer portal to allow for global styling css
 
 add the back page of dessert menu
+
+promote special events on menus for seated guests
+NYE, Mothers Day, Valentines Day, Graduation, etc...
+
+Try loading a static html file as index.html to see if it loads faster
+
