@@ -1,15 +1,6 @@
 
 
-<%- include('partials/header') %>
-
-<main>
-
-<%- include('partials/editNav') %>
-
-
-
-
-
+<h1>Update Menu Item</h1>
 
 <form id='edit-item-form'
       method='POST'
@@ -133,31 +124,3 @@
     }
 </script>
 
-
-</main>
-<script>
-    const dinnerSubMenu = document.querySelector('#dinner-sub-menu')
-    const drinksSubMenu = document.querySelector('#drinks-sub-menu')
-    const wineSubMenu = document.querySelector('#wine-sub-menu')
-
-    function displayDinnerSubMenu(){
-        dinnerSubMenu.style.display = 'block'
-    }
-    function hideDinnerSubMenu(){
-        dinnerSubMenu.style.display = 'none'
-    }
-    function displayDrinksSubMenu(){
-        drinksSubMenu.style.display = 'block'
-    }
-    function hideDrinksSubMenu(){
-        drinksSubMenu.style.display = 'none'
-    }
-    function displayWineSubMenu(){
-        wineSubMenu.style.display = 'block'
-    }
-    function hideWineSubMenu(){
-        wineSubMenu.style.display = 'none'
-    }
-</script>
-
-<%- include('partials/footer') %>
