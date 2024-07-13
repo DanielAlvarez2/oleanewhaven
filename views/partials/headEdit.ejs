@@ -23,10 +23,18 @@
         display:flex;
         flex-direction:column;
         min-height:100vh;
-        padding: 0 6px;
     }
-    header,main,footer{
+    header,main{
         background:white;
+    }
+    main{
+        border:1px solid blue;
+        min-height:calc(100svh - 3rem);
+        font-family:serif;
+        display:grid;
+        place-content:center;
+        margin-top:1.5rem;
+        padding: 1.5rem 0;        
     }
     header{
         height:3.5em;
@@ -46,9 +54,14 @@
     }
     footer{
         margin-top:auto;
-        height: 2em;
+        height: 1.5rem;
         display:flex;
         justify-content:space-around;
+        align-items:center;
+        background:black;
+        color:white;
+        font-size:0.8rem;
+        padding-top:3px;
     }
     footer a{
         text-decoration:none;
@@ -56,7 +69,7 @@
     footer a,
     footer a:visited,
     footer a:link{
-        color:black;
+        color:white;
     }
     button, .button{
         font-size:1rem;
@@ -97,9 +110,11 @@
     }
     nav{
         width:100vw;
+        height:1.5rem;
         background:black;
         position:fixed;
         left:0;
+        top:0;
         display:flex;
         justify-content:space-around;
     }
@@ -120,7 +135,6 @@
     .edit-menu{
         display:flex;
         justify-content:space-around;
-        margin-top:2em;
         width:100vw;
     }
     #dinner-sub-menu li,
