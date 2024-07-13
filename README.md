@@ -36,3 +36,6 @@ trying to add navbar and footer results in error
 :id query parameter coming in as menu-background.jpg 
 or FuturaLight.otf
 !!!???
+
+add logic to change where 'view website' button points to in a script at the bottom of each edit page
+
