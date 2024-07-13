@@ -24,7 +24,7 @@
         flex-direction:column;
         min-height:100vh;
     }
-    header,main,footer{
+    header,main{
         background:white;
     }
     header{
@@ -45,17 +45,16 @@
     }
     footer{
         margin-top:auto;
-        height: 3.5em;
+        height: 1.5rem;
         background:#ccc;
         width:100vw;
-    }
-    #footer-bottom{
         display:flex;
         justify-content:space-around;
         align-items:center;
-        padding-top:0.5em;
-        font-size:0.9rem;
+        font-size: 0.8rem;
+        padding-top:3px;
     }
+
     footer a{
         text-decoration:none;
     }
@@ -112,20 +111,22 @@
         background:#ccc;
         display:flex;
         justify-content:space-around;
-        height: 1.5em;
+        height: 1.5rem;
     }
     nav a{
         text-decoration:none;
     }
     main{
         border:1px solid blue;
-        min-height:calc(100svh - 3.5em);
+        min-height:calc(100svh - 3rem);
         font-family:serif;
         display:grid;
         place-content:center;
+        margin-top:1.5rem;
+        padding: 1.5rem 0;
     }
     .menu{
-        margin-top:2em;
+        
     }
     .fa-gear{
         position:absolute;
