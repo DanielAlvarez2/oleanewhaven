@@ -36,6 +36,24 @@
     <input type='text' id='name' name='name' value='<%= item.name %>'>
     <br><br>
 
+    <% if(item.section == 'btg cava' ||
+          item.section == 'btg whites' ||
+          item.section == 'btg rose' ||
+          item.section == 'btg reds' ||
+          item.section == 'cava champagne' ||
+          item.section == 'rose' ||
+          item.section == 'white spain' ||
+          item.section == 'white france' ||
+          item.section == 'white italy' ||
+          item.section == 'white germany' ||
+          item.section == 'red spain' ||
+          item.section == 'red france' ||
+          item.section == 'red italy'){ %>
+                Vintage:<br>
+                <input type='text' id='vintage' name='vintage' value='<%= item.vintage %>'><br><br>
+    <% } %>
+
+
     Description:<br> 
     <textarea id='description' 
               name='description'
