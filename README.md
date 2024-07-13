@@ -27,3 +27,7 @@ tabbed components:
     dessert: front page / back page
     specials: letter paper / legal paper
 
+add logic to deny new accounts access until approved by a manager
+add logic for different roles: manager vs staff
+
+
