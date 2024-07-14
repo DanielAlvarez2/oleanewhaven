@@ -1,106 +1,15 @@
-<%- include('partials/head') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/style.css'>
+    <script src="https://kit.fontawesome.com/21ef82ed30.js" crossorigin="anonymous"></script>
 
-#top,#bottom,#legal{
-    display:flex;
-}
-#top-left, #top-right, 
-#bottom-left, #bottom-right,
-#legal-left, #legal-right{
-    width:50%;
-}
-h2{
-    font-family: futura light;
-    font-weight:900;
-    font-size:2rem;
-    margin-top:2em;
-}
-#modal img{
-    max-width:95vw;
-    max-height:75vh;
-    border-radius:25px;
-}
-.name, #modal-name{
-    font-weight:900;
-    font-size:1.3rem;
-    font-family: futura light;
-}
-
-#dinner-menu{
-    max-width:8.5in;
-    min-height:14in;
-    background-image: url('menu-background.jpg');
-}
-.price, #modal-price{
-    font-weight:900;
-    font-size:1.2rem;
-}
-.allergies, #modal-allergies{
-    font-family:sans-serif;
-    color:red;
-    font-size:0.9rem;
-}
-body{
-    position:relative;
-}
-#modal{
-    width:100vw;
-    min-height:100vh;
-    background: #888888ee;
-    position: fixed;
-    inset:0;
-    display:none;
-    place-content:center;
-    padding:10px;
-}
-#close-modal-button{
-    font-size:60px;
-    position:absolute;
-    top:5px;
-    right:5px;
-    cursor:pointer;
-    font-weight:900;
-}
-figure{
-    display:table;
-}
-figcaption{
-    background:#ccc;
-    padding:10px;
-    border-radius:25px;
-    display:table-caption;
-    caption-side:bottom;
-}
-
-@media(min-width:8.5in){
-    #dinner-menu{
-        padding:0.5in;
-    }
-    #top-left, #bottom-left{
-        padding-right:0.25in;
-    }
-    #top-right, #bottom-right{
-        padding-left:0.25in;
-    }
-}
-main h1{
-    text-align:left;
-    font-family:futura light;
-    font-size:3rem;
-}
-#legal-left{
-    font-family:futura light;
-    font-weight:900;
-    font-size:1.5rem;
-}
-#legal-right{
-    font-size:0.7rem;
-}
-#dinner-menu{
-    position:relative;
-}
-
-<%- include('partials/header') %>
-
+</head>
+<body>
+    <div id="wrapper">
 <main>
 
 

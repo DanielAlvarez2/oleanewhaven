@@ -126,6 +126,18 @@ module.exports={
             console.log(err)
         }
     },
+    updateItem2: async(req,res)=>{
+        try{
+            console.log('updateItem2 req.body: '+JSON.stringify(req.body))
+            const item = await MenuItem.findById(req.body.id)
+            console.log('updateItem2() item: <br>'+item)
+            res.render('updateItem2.ejs',({req:req,
+                                           title:'UPDATE ITEM W STYLE.CSS',
+                                           item:item}))
+        }catch(err){
+            console.log(err)
+        }
+    },
     saveChanges: async(req,res)=>{
         try{
             console.log(req.params.id)

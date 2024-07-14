@@ -34,6 +34,7 @@ router.get('/redItaly', editController.getRedItaly)
 
 router.get('/createMenuItem', editController.createMenuItem)
 router.get('/updateItem/:id', editController.updateItem)
+router.post('/updateItem2', editController.updateItem2)
 router.put('/saveChanges/:id', editController.saveChanges)
 router.put('/saveChangesWpic/:id', upload.single('file'), editController.saveChangesWpic)
 router.delete('/deleteMenuItem/:id', editController.deleteMenuItem)

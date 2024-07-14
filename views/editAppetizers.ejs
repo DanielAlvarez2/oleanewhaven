@@ -119,6 +119,9 @@ form{
 
 <%- include('partials/editMenu') %>
 
+
+
+
 <div id='dinner-menu'>
 
 
@@ -150,6 +153,14 @@ form{
                                 <span class='edit-text'>Edit</span>
                             </button>
                         </a>
+
+    <form action='/edit/updateItem2' method='POST'>
+        <input type=hidden id='item-id' name='id' value='<%= appetizers[i].id %>'>
+        <button>
+            Edit2
+        </button>
+    </form>
+
 
                         <form method='POST'
                             action='../edit/deleteMenuItem/<%= appetizers[i].id %>?_method=DELETE'>

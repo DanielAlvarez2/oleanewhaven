@@ -1,0 +1,228 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: "futura light";
+    src: url("/FuturaLight.otf") format("opentype");
+}
+h1,footer{
+    font-family: futura light;
+}
+#wrapper{
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
+}
+header,main{
+    background:white;
+}
+header{
+    height:3.5em;
+}
+h1{
+    text-align:center;
+}
+h1>a,
+h1>a:visited,
+h1>a:hover,
+h1>a:active{
+    color:black;
+    text-decoration:none;
+    font-size:3rem;
+    font-weight:100;
+
+}
+footer{
+    margin-top:auto;
+    height: 1.5rem;
+    background:#ccc;
+    width:100vw;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    font-size: 0.8rem;
+    padding-top:3px;
+}
+footer a{
+    text-decoration:none;
+}
+footer a,
+footer a:visited,
+footer a:link{
+    color:black;
+}
+button, .button{
+    font-size:1rem;
+    font-family:sans-serif;
+    display: inline-block;
+    background:blue;
+    color:white;
+    padding: 0.5em 1em;
+    border-radius: 15px;
+    box-shadow: 10px 5px 5px grey; 
+    margin: 2em 3em;
+    cursor: pointer;
+}
+input,textarea{
+    padding-left:2px;
+}
+ul{
+    list-style-type:none;
+}
+nav a,
+nav a:visited,
+nav a:link{
+    color:black;
+}
+nav a:hover{
+    color:#ddd;
+    background:#888;
+}
+nav a{
+    padding:2px 5px;
+    font-family:sans-serif;
+    font-size:0.9rem;
+}
+.active-page{
+    background:black;
+    color:white !important;
+    pointer-events:none;
+}
+#nav-top{
+    left:0;
+    top:0;
+    position:fixed;
+    z-index:100;
+}
+nav{
+    width:100vw;
+    background:#ccc;
+    display:flex;
+    justify-content:space-around;
+    height: 1.5rem;
+}
+nav a{
+    text-decoration:none;
+}
+main{
+    border:1px solid blue;
+    min-height:calc(100svh - 3rem);
+    font-family:serif;
+    display:grid;
+    place-content:center;
+    margin-top:1.5rem;
+    padding: 1.5rem 0;
+}
+.menu{
+    
+}
+.fa-gear{
+    position:absolute;
+    top:5px;
+    right:5px;
+    font-size:40px;
+}
+.menu-item{
+    padding:1em 0;
+}
+
+#top,#bottom,#legal{
+    display:flex;
+}
+#top-left, #top-right, 
+#bottom-left, #bottom-right,
+#legal-left, #legal-right{
+    width:50%;
+}
+h2{
+    font-family: futura light;
+    font-weight:900;
+    font-size:2rem;
+    margin-top:2em;
+}
+#modal img{
+    max-width:95vw;
+    max-height:75vh;
+    border-radius:25px;
+}
+.name, #modal-name{
+    font-weight:900;
+    font-size:1.3rem;
+    font-family: futura light;
+}
+
+#dinner-menu{
+    max-width:8.5in;
+    min-height:14in;
+    background-image: url('menu-background.jpg');
+}
+.price, #modal-price{
+    font-weight:900;
+    font-size:1.2rem;
+}
+.allergies, #modal-allergies{
+    font-family:sans-serif;
+    color:red;
+    font-size:0.9rem;
+}
+body{
+    position:relative;
+}
+#modal{
+    width:100vw;
+    min-height:100vh;
+    background: #888888ee;
+    position: fixed;
+    inset:0;
+    display:none;
+    place-content:center;
+    padding:10px;
+}
+#close-modal-button{
+    font-size:60px;
+    position:absolute;
+    top:5px;
+    right:5px;
+    cursor:pointer;
+    font-weight:900;
+}
+figure{
+    display:table;
+}
+figcaption{
+    background:#ccc;
+    padding:10px;
+    border-radius:25px;
+    display:table-caption;
+    caption-side:bottom;
+}
+
+@media(min-width:8.5in){
+    #dinner-menu{
+        padding:0.5in;
+    }
+    #top-left, #bottom-left{
+        padding-right:0.25in;
+    }
+    #top-right, #bottom-right{
+        padding-left:0.25in;
+    }
+}
+main h1{
+    text-align:left;
+    font-family:futura light;
+    font-size:3rem;
+}
+#legal-left{
+    font-family:futura light;
+    font-weight:900;
+    font-size:1.5rem;
+}
+#legal-right{
+    font-size:0.7rem;
+}
+#dinner-menu{
+    position:relative;
+}
