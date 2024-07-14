@@ -39,3 +39,14 @@ or FuturaLight.otf
 
 add logic to change where 'view website' button points to in a script at the bottom of each edit page
 
+Shift Notes Page:
+fish of the day
+cornish hen: sub shitake+oyster mushrooms
+
+daily upload of photo of cover count + shift overview flow
+
+additional info:
+Last Word: fennel+sugar rim
+wine:lt,med,full-bodied oak/no-oak etc.
+cola syrup
+green juice=...
