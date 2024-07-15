@@ -50,3 +50,8 @@ Last Word: fennel+sugar rim
 wine:lt,med,full-bodied oak/no-oak etc.
 cola syrup
 green juice=...
+
+rename routes to make more sense collectively
+
+index.ejs sides display logic: sides.length/2 
+
