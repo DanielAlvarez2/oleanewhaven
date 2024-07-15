@@ -1,91 +1,38 @@
-<%- include('partials/head') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/style.css'>
+    <script src="https://kit.fontawesome.com/21ef82ed30.js" crossorigin="anonymous"></script>
 
 
-h2{
-    font-family: futura light;
-    font-weight:900;
-    font-size:2rem;
-}
-#modal img{
-    max-width:95vw;
-    max-height:75vh;
-    border-radius:25px;
-}
-.name, #modal-name{
-    font-weight:900;
-    font-size:1.3rem;
-    font-family: futura light;
-}
-#dessert-menu{
-    max-width:5.5in;
-    min-height:8.5in;
-    border:1px solid red;
-    position:relative;
-    padding:10px;
-    background-image: url('menu-background.jpg');    
-}
-.price, #modal-price{
-    font-weight:900;
-    font-size:1.2rem;
-}
-.allergies, #modal-allergies{
-    font-family:sans-serif;
-    color:red;
-    font-size:0.9rem;
-}
 
-#modal{
-    width:100vw;
-    min-height:100vh;
-    background: #888888ee;
-    position: fixed;
-    inset:0;
-    display:none;
-    place-content:center;
-    padding:10px;
-}
-#close-modal-button{
-    font-size:60px;
-    position:absolute;
-    top:5px;
-    right:5px;
-    cursor:pointer;
-    font-weight:900;
-}
-figure{
-    display:table;
-}
-figcaption{
-    background:#ccc;
-    padding:10px;
-    border-radius:25px;
-    display:table-caption;
-    caption-side:bottom;
-}
 
-@media(min-width:8.5in){
-    #dinner-menu{
-        padding:0.5in;
+
+
+
+
+
+
+
+<style>
+    #dessert-menu{
+        max-width:5.5in;
+        min-height:8.5in;
+        border:1px solid red;
+        position:relative;
+        padding:10px;
+        background-image: url('menu-background.jpg');    
     }
-    #top-left, #bottom-left{
-        padding-right:0.25in;
-    }
-    #top-right, #bottom-right{
-        padding-left:0.25in;
-    }
-}
-main h1{
-    text-align:left;
-    font-family:futura light;
-    font-size:3rem;
-}
-#dessert-menu{
-    position: relative;
-}
+</style>
+</head>
 
+<body>
 
-
-<%- include('partials/header') %>
+<div id="wrapper">
+ 
 
 
 
