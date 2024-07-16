@@ -4,11 +4,13 @@
             &copy;2024 olea restaurant.
         </div>
 
-        <div>
-            <a href='/users'>
-                <i class="fa-solid fa-user"></i>
-            </a>
-        </div>
+        <% if(req.user.role=='manager'){ %>
+            <div>
+                <a href='/users'>
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </div>
+        <% } %>
 
         <div>
             <% if(req.user){ %>
