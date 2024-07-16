@@ -157,7 +157,7 @@ module.exports={
         const rose = await MenuItem.find({
             $and:[
                 {section:'rose'},
-                {archved:false}
+                {archived:false}
             ]
         }).sort({sequence:'asc'})
         const whiteSpain = await MenuItem.find({
