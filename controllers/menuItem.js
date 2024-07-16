@@ -24,7 +24,7 @@ module.exports = {
                 sequence:existingItems.length+1,
             })
             console.log('Menu Item has been added!')
-            res.redirect('/')
+            res.redirect(`/${req.body.menu}`)
         }catch(err){
             console.log(err)
         }
@@ -53,6 +53,6 @@ module.exports = {
             console.log(err)
         }
         console.log('req.body: '+JSON.stringify(req.body))
-        res.redirect('/')
+        res.redirect(`/${req.body.menu}`)
     }
 }
