@@ -59,6 +59,16 @@
                                 <span class='delete-text'>Delete</span>
                             </button>
                         </form>
+
+                        <form method='POST'
+                            action='../edit/archiveMenuItem/<%= appetizers[i].id %>?_method=PUT'>
+                            <button>
+                                <i class="fa-solid fa-folder-plus"></i>
+                                <span class='archive-text'>Archive</span>
+                            </button>
+                        </form>
+                        
+
                     </li>
                 <%}%>
             </ul>
