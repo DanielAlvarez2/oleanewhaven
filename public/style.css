@@ -10,6 +10,15 @@
 h1,footer{
     font-family: futura light;
 }
+li{
+    border:1px solid green;
+    border-radius: 5px;
+    margin:1em 0;
+    display: block;
+}
+#arrow-up,#arrow-down{
+    text-align:center;
+}
 #wrapper{
     display:flex;
     flex-direction:column;
@@ -100,6 +109,9 @@ nav{
     width:100vw;
     background:#ccc;
     display:flex;
+    position:fixed;
+    left:0;
+    top:0;
     justify-content:space-around;
     height: 1.5rem;
 }
@@ -115,14 +127,15 @@ main{
     margin-top:1.5rem;
     padding: 1.5rem 0;
 }
-.menu{
-    
-}
+
 .fa-gear{
     position:absolute;
     top:5px;
     right:5px;
     font-size:40px;
+}
+.fa-folder-plus{
+    color:grey;
 }
 .menu-item{
     padding:1em 0;
@@ -225,4 +238,54 @@ main h1{
 }
 .menu{
     position:relative;
+}
+.fa-trash{
+    color:red;
+}
+.fa-pen{
+    color:#ffae42;
+}
+button{
+    background:darkblue;
+    display:inline-block;
+    margin:0;
+    padding:0.5em;
+}
+form{
+    display:inline-block;
+}
+.edit-menu{
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    margin: 1rem;
+}
+#dinner-sub-menu li,
+#wine-sub-menu li,
+#drinks-sub-menu li{
+    background: black;
+    padding: 0.5em 0;
+}
+#dinner-sub-menu li{
+    width:6em;
+}
+#wine-sub-menu li{
+    width:10em;
+}
+#drinks-sub-menu li{
+    width: 7em;
+}
+#edit-nav,
+#edit-nav a,
+#edit-nav li{
+    background: black;
+    font-family: futura light;
+    color:white;
+    margin:0;
+    font-size:1rem;
+    z-index: 100;
+}
+#edit-nav a:hover{
+    background:grey;
+    color:black;
 }

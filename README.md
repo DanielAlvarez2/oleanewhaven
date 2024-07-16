@@ -55,3 +55,14 @@ rename routes to make more sense collectively
 
 index.ejs sides display logic: sides.length/2 
 
+SEO: 80% --->
+give EACH PAGE a different meta description
+pagespeed.web.dev
+
+When setting up domain name, use Windows Snipping Tool
+to record video of setup process
+WINDOWS+SHIFT+S
+
+grab favicons
+https://webutility.io/favicon-extractor
+
