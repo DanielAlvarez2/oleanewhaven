@@ -36,6 +36,8 @@
                 <% for (let i=0;i<archives.length;i++){ %>
                     <li><br>
                         <div onclick='showModal(<%= JSON.stringify(archives[i]) %>)'>
+                            <div>Menu: <%= archives[i].menu %></div>
+                            <div>Section: <%= archives[i].section %></div>
                             <span class='name'><%= archives[i].name %></span><br>
                             <%- archives[i].description %>
                             &nbsp; 
