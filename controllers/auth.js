@@ -39,7 +39,9 @@ exports.postLogin = (req,res,next)=>{
                 return next(err)
             }
             if(!user.approved){
-                res.redirect('/newUser')
+                req.session.destroy()
+                req.user=null
+                return res.redirect('/newUser')
             }else{
                 req.flash('success',{msg:'Success! You are logged in.'})
                 res.redirect(req.session.returnTo || '/edit/specials')
