@@ -130,7 +130,6 @@ nav a{
     text-decoration:none;
 }
 main{
-    border:1px solid blue;
     min-height:calc(100svh - 3rem);
     font-family:serif;
     display:grid;
