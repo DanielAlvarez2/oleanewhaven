@@ -34,7 +34,8 @@ module.exports={
         const appetizers = await MenuItem.find({
             $and: [
                     {menu:'specials'},
-                    {section:'appetizers'},   
+                    {section:'appetizers'},
+                    {archived:false}   
                   ],
                 }).sort({sequence:'asc'})
         const entrees = await MenuItem.find({
