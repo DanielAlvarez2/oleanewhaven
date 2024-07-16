@@ -292,3 +292,8 @@ form{
 .edit-main{
     padding:0.5in;
 }
+#footer-edit,
+#footer-edit a{
+    background: black;
+    color:white;
+}
