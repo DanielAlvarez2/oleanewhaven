@@ -1,12 +1,26 @@
-<%- include('partials/head') %>
-
-
-
-<%- include('partials/header') %>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/style.css'>
+    <script src="https://kit.fontawesome.com/21ef82ed30.js" crossorigin="anonymous"></script>
+    <style>
+        .menu{
+            margin:0 auto;
+            max-width:8.5in;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+ 
 <main>
-    <div>
-        <div>
+
+<%- include('partials/editNav') %>
+
 
             <div>
                 <h2>Add a New Menu Item</h2><br>
@@ -103,12 +117,7 @@
                         <label for='allergies'>Allergies:</label><br>
                         <input type='text' id='allergies' name='allergies'>
                     </div><br>
-                    
-                    <div>
-                        <label for='sequence'>Sequence:</label><br>
-                        <input type='text' size='5' id='sequence' name='sequence'>
-                    </div><br>
-                    
+                                        
                     <div>
                         <label for='image-file'>Image:</label><br>
                         <input type='file' id='image-file' name='file' accept='image/*'><br>
@@ -116,16 +125,11 @@
                     </div>
 
                     <div id='preview'></div>
-                    
+                    <br><br>
                     <button type='submit'>Submit</button>
                 </form>
             </div>
 
-
-
-        </div>
-        
-    </div>
 </main>
 
 <script>
@@ -158,6 +162,7 @@
         const sectionDessert = document.querySelector('#section-dessert')
         const sectionDrinks = document.querySelector('#section-drinks')
         const grapesInput = document.querySelector('#grapes-input')
+
         sectionPlaceholder.style.display = 'none'
         sectionPlaceholder.name = ''
         sectionDinner.style.display = 'none'
@@ -208,6 +213,30 @@
         }
         return true;
     }
+
+
+    const dinnerSubMenu = document.querySelector('#dinner-sub-menu')
+    const drinksSubMenu = document.querySelector('#drinks-sub-menu')
+    const wineSubMenu = document.querySelector('#wine-sub-menu')
+
+    function displayDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'block'
+    }
+    function hideDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'none'
+    }
+    function displayDrinksSubMenu(){
+        drinksSubMenu.style.display = 'block'
+    }
+    function hideDrinksSubMenu(){
+        drinksSubMenu.style.display = 'none'
+    }
+    function displayWineSubMenu(){
+        wineSubMenu.style.display = 'block'
+    }
+    function hideWineSubMenu(){
+        wineSubMenu.style.display = 'none'
+    }    
 </script>
 
-<%- include('partials/footer') %>
+<%- include('partials/footerEdit') %>

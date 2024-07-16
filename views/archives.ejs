@@ -1,229 +1,40 @@
-<%- include('partials/headEdit') %>
-
-#top,#bottom{
-    display:flex;
-}
-#top-left, #top-right{
-    width:50%;
-}
-h2{
-    font-family: futura light;
-    font-weight:900;
-    font-size:2rem;
-    margin-top:2em;
-}
-#modal img{
-    max-width:95vw;
-    max-height:75vh;
-    border-radius:25px;
-}
-.name, #modal-name{
-    font-weight:900;
-    font-size:1.3rem;
-    font-family: futura light;
-}
-main{
-    font-family:serif;
-    display:grid;
-    place-content:center;
-    min-height:calc(100vh - 5.5em);
-}
-#dinner-menu{
-    max-width:8.5in;
-    min-height:14in;
-    border:1px solid red;
-    background-image: url('menu-background.jpg');
-}
-.price, #modal-price{
-    font-weight:900;
-    font-size:1.2rem;
-}
-.allergies, #modal-allergies{
-    font-family:sans-serif;
-    color:red;
-    font-size:0.9rem;
-}
-body{
-    position:relative;
-}
-#modal{
-    width:100vw;
-    min-height:100vh;
-    background: #888888ee;
-    position: fixed;
-    inset:0;
-    display:none;
-    place-content:center;
-    padding:10px;
-}
-#close-modal-button{
-    font-size:60px;
-    position:absolute;
-    top:5px;
-    right:5px;
-    cursor:pointer;
-    font-weight:900;
-}
-figure{
-    display:table;
-}
-figcaption{
-    background:#ccc;
-    padding:10px;
-    border-radius:25px;
-    display:table-caption;
-    caption-side:bottom;
-}
-
-@media(min-width:8.5in){
-    #dinner-menu{
-        padding:0.5in;
-    }
-    #top-left, #bottom-left{
-        padding-right:0.25in;
-    }
-    #top-right, #bottom-right{
-        padding-left:0.25in;
-    }
-}
-main h1{
-    text-align:left;
-    font-family:futura light;
-    font-size:3rem;
-}
-
-
-.fa-trash{
-    color:red;
-}
-.fa-pen{
-    color:#ffae42;
-}
-button{
-    background:darkblue;
-    display:inline-block;
-    margin:0;
-    padding:0.5em;
-}
-form{
-    display:inline-block;
-}
-#dinner-menu{
-    margin:0 auto;
-}
-
-
-<%- include('partials/header') %>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/style.css'>
+    <script src="https://kit.fontawesome.com/21ef82ed30.js" crossorigin="anonymous"></script>
+    <style>
+        .menu{
+            margin:0 auto;
+            max-width:8.5in;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+ 
 <main>
 
-<nav id='edit-nav'>
-    <li style='position:relative;'>
-        <div style='color:white;' 
-             onmouseover = 'displayDinnerSubMenu()'
-             onmouseout  = 'hideDinnerSubMenu()'
-             id='dinner-button'>
-             dinner
-        </div>
-        <div id='dinner-sub-menu' 
-             style='display:none;position:absolute;color:black;'
-             onmouseover = 'displayDinnerSubMenu()'
-             onmouseout = 'hideDinnerSubMenu()'>
-            <ul>
-                <li><a href='/edit/charcuterie'>Charcuterie</a></li>
-                <li><a href='/edit/appetizers'>Appetizers</a></li>
-                <li><a href='/edit/entrees'>Entrées</a></li>
-                <li><a href='/edit/sides'>Sides</a></li>
-            </ul>
-        </div>
-    </li>
-    
-    <li><a href='/edit/specials'>specials</a></li>
-    <li><a href='/edit/dessert'>dessert</a></li>
 
-    <li style='position:relative;'>
-        <div style='color:white'
-             id='wine-button'
-             onmouseover = 'displayWineSubMenu()'
-             onmouseout = 'hideWineSubMenu()'>
-            wine
-        </div>
-        <div id='wine-sub-menu'
-             style='display:none;position:absolute;color:black;'
-             onmouseover = 'displayWineSubMenu()'
-             onmouseout = 'hideWineSubMenu()'>
-            <ul>
-                <li><a href='/edit/btg'>BTG</a></li>
-                <li><a href='/edit/cavaChampagne'>Cava & Champagne</a></li>
-                <li><a href='/edit/rose'>Rosé</a></li>
-                <li><a href='/edit/whiteSpain'>White Spain</a></li>
-                <li><a href='/edit/whiteFrance'>White France</a></li>
-                <li><a href='/edit/whiteItaly'>White Italy</a></li>
-                <li><a href='/edit/whiteGermany'>White Germany</a></li>
-                <li><a href='/edit/redSpain'>Red Spain</a></li>
-                <li><a href='/edit/redFrance'>Red France</a></li>
-                <li><a href='/edit/redItaly'>Red Italy</a></li>
-            </ul>
-        </div>
-    </li>
-    
-    <li style='position:relative;'>
-        <div style='color:white'
-             onmouseover = 'displayDrinksSubMenu()'
-             onmouseout = 'hideDrinksSubMenu()'>
-            drinks
-        </div>
-        <div id='drinks-sub-menu'
-             style='display:none;position:absolute;color:black;'
-             onmouseover = 'displayDrinksSubMenu()'
-             onmouseout = 'hideDrinksSubMenu()'>
-            <ul>
-                <li><a href='/edit/craftDrinks'>craft drinks</a></li>
-                <li><a href='/edit/sangria'>sangria</a></li>
-                <li><a href='/edit/nonAlcoholic'>non-alcoholic</a></li>
-                <li><a href='/edit/beer'>beer</a></li>
-            </ul>
-        </div>
-    </li>
-</nav>
+<%- include('partials/editNav') %>
 
 
-<div class='edit-menu'>
-    <a href='/'>
-        <button>
-            <i class="fa-solid fa-eye"></i>
-            Live Website
-        </button>
-    </a>
+<%- include('partials/editMenu') %>
 
-    <a href='/edit/createMenuItem'>
-        <button style='margin:0 auto;display:block;'>
-            <i class="fa-solid fa-circle-plus"></i>
-            Add New Item
-        </button>
-    </a>
 
-    <a href='/edit/archives'>
-
-        <button>
-            <i class="fa-regular fa-folder-open"></i>
-            Archives
-
-        </button>
-    </a>
-</div><!--#edit-menu-->
-
-<div id='dinner-menu'>
-
+<div id='menu' class='menu edit-main'>
 
     <h1>olea</h1>
     <hr>
     <h1>ARCHIVES</h1>
-    <div id="top">
-        <div id='top-left'>
+
             <ul>
                 <% for (let i=0;i<archives.length;i++){ %>
-                    <li>
+                    <li><br>
                         <div onclick='showModal(<%= JSON.stringify(archives[i]) %>)'>
                             <span class='name'><%= archives[i].name %></span><br>
                             <%- archives[i].description %>
@@ -253,22 +64,11 @@ form{
                                 <span class='archive-text'>Unarchive</span>
                             </button>
                         </form>
-                        
+                        <br><br>
                     </li>
                 <%}%>
             </ul>
-            <br><br><br>
-        </div><!--#top-left-->
-
-        <div id='top-right'>
-        
-        </div><!--#top-right-->
-    </div><!--#top-->
-
-    <div id='bottom'>
-        
-        
-    </div><!--#bottom-->
+            
 
    
     <div id='modal'>
@@ -292,29 +92,8 @@ form{
 
 </div><!--#dinner-menu-->
 
+<%- include('partials/editMenu') %>
 
-<div class='edit-menu'>
-    <a href='/'>
-        <button>
-            <i class="fa-solid fa-eye"></i>
-            Live Website
-        </button>
-    </a>
-
-    <a href='/edit/createMenuItem'>
-        <button style='margin:0 auto;display:block;'>
-            <i class="fa-solid fa-circle-plus"></i>
-            Add New Item
-        </button>
-    </a>
-
-    <a href='/edit/archives'>
-        <button>
-            <i class="fa-regular fa-folder-open"></i>
-            Archives
-        </button>
-    </a>
-</div><!--#edit-menu-->
 
 
 
@@ -362,4 +141,4 @@ form{
     }
 </script>
 
-<%- include('partials/footer') %>
+<%- include('partials/footerEdit') %>

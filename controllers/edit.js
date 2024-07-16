@@ -163,7 +163,6 @@ module.exports={
                 description:req.body.description,
                 price:req.body.price,
                 allergies:req.body.allergies,
-                sequence:req.body.sequence,
                 image:result.secure_url,
                 cloudinaryId:result.public_id
             })

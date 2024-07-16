@@ -1,111 +1,125 @@
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-<link rel='stylesheet' href='/style.css'>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/style.css'>
+    <script src="https://kit.fontawesome.com/21ef82ed30.js" crossorigin="anonymous"></script>
+    <style>
+        .menu{
+            margin:0 auto;
+            max-width:8.5in;
+            border:1px solid red;
+        }
+    </style>
 </head>
-
 <body>
+    <div id="wrapper">
+ 
+<main>
 
-<h1>Update Menu Item</h1>
-
-<form id='edit-item-form'
-      method='POST'
-      onsubmit='updateItem()'>
-
-    Item ID:<br>
-    <%= req.params.id %><br><br>
-
-    Menu: <%= item.menu %><br><br>
-    <input type='hidden' id='menu' name='menu' value='<%= item.menu %>'>
-
-    Section: <%= item.section %><br><br>
-    <input type='hidden' id='section' name='section' value='<%= item.section %>'>
-
-    <% if(item.section == 'btg cava' ||
-          item.section == 'btg whites' ||
-          item.section == 'btg rose' ||
-          item.section == 'btg reds' ||
-          item.section == 'btg sherries' ||
-          item.section == 'cava champagne' ||
-          item.section == 'rose' ||
-          item.section == 'white spain' ||
-          item.section == 'white france' ||
-          item.section == 'white italy' ||
-          item.section == 'white germany' ||
-          item.section == 'red spain' ||
-          item.section == 'red france' ||
-          item.section == 'red italy'){ %>
-                Grapes:<br>
-                <input type='text' id='grapes' name='grapes' value='<%= item.grapes %>'><br><br>
-    <% } %>
-
-    Name:<br> 
-    <input type='text' id='name' name='name' value='<%= item.name %>'>
-    <br><br>
-
-    <% if(item.section == 'btg cava' ||
-          item.section == 'btg whites' ||
-          item.section == 'btg rose' ||
-          item.section == 'btg reds' ||
-          item.section == 'cava champagne' ||
-          item.section == 'rose' ||
-          item.section == 'white spain' ||
-          item.section == 'white france' ||
-          item.section == 'white italy' ||
-          item.section == 'white germany' ||
-          item.section == 'red spain' ||
-          item.section == 'red france' ||
-          item.section == 'red italy'){ %>
-                Vintage:<br>
-                <input type='text' id='vintage' name='vintage' value='<%= item.vintage %>'><br><br>
-    <% } %>
+    <%- include('partials/editNav') %>
 
 
-    Description:<br> 
-    <textarea id='description' 
-              name='description'
-              cols='30'
-              rows='7'><%= item.description %></textarea>
-    <br><br>
+    
+        <div>
+            <h1>Update Menu Item</h1>
 
-    Price:<br> 
-    <input type='text' id='price' name='price' value='<%= item.price %>'>
-    <br><br>
+            <form id='edit-item-form'
+                method='POST'
+                onsubmit='updateItem()'>
 
-    Allergies:<br>
-    <input type='text' id='allergies' name='allergies' value='<%= item.allergies %>'>
-    <br><br>
+                Item ID:<br>
+                <%= req.params.id %><br><br>
 
-    Sequence:<br> 
-    <input type='text' id='sequence' name='sequence' value='<%= item.sequence %>'>
-    <br><br>
+                Menu: <%= item.menu %><br><br>
+                <input type='hidden' id='menu' name='menu' value='<%= item.menu %>'>
+
+                Section: <%= item.section %><br><br>
+                <input type='hidden' id='section' name='section' value='<%= item.section %>'>
+
+                <% if(item.section == 'btg cava' ||
+                    item.section == 'btg whites' ||
+                    item.section == 'btg rose' ||
+                    item.section == 'btg reds' ||
+                    item.section == 'btg sherries' ||
+                    item.section == 'cava champagne' ||
+                    item.section == 'rose' ||
+                    item.section == 'white spain' ||
+                    item.section == 'white france' ||
+                    item.section == 'white italy' ||
+                    item.section == 'white germany' ||
+                    item.section == 'red spain' ||
+                    item.section == 'red france' ||
+                    item.section == 'red italy'){ %>
+                            Grapes:<br>
+                            <input type='text' id='grapes' name='grapes' value='<%= item.grapes %>'><br><br>
+                <% } %>
+
+                Name:<br> 
+                <input type='text' id='name' name='name' value='<%= item.name %>'>
+                <br><br>
+
+                <% if(item.section == 'btg cava' ||
+                    item.section == 'btg whites' ||
+                    item.section == 'btg rose' ||
+                    item.section == 'btg reds' ||
+                    item.section == 'cava champagne' ||
+                    item.section == 'rose' ||
+                    item.section == 'white spain' ||
+                    item.section == 'white france' ||
+                    item.section == 'white italy' ||
+                    item.section == 'white germany' ||
+                    item.section == 'red spain' ||
+                    item.section == 'red france' ||
+                    item.section == 'red italy'){ %>
+                            Vintage:<br>
+                            <input type='text' id='vintage' name='vintage' value='<%= item.vintage %>'><br><br>
+                <% } %>
 
 
-    <% if(item.image){ %>
-        <input type='hidden' id='cloudinary-id' name='cloudinaryId' value='<%= item.cloudinaryId %>'>
-        Current Image:<br>
-        <img src='<%= item.image%>'>
-        <br><br>
+                Description:<br> 
+                <textarea id='description' 
+                        name='description'
+                        cols='30'
+                        rows='7'><%= item.description %></textarea>
+                <br><br>
 
-        Replace Image: <span style='color:red;'>*optional</span>
-        <br>
-        <input type='file' id='image-file' name='file' accept='image/*'>
-        
-    <% }else{ %>
-        <img src='/no-image.jpg' alt='no image'><br>
-        This Menu Item Has No Image<br>
-        Add New Image: <span style='color:red;'>*optional</span>
-        <br>
-        <input type='file' id='image-file' name='file' accept='image/*'><br>
-    <% } %>
+                Price:<br> 
+                <input type='text' id='price' name='price' value='<%= item.price %>'>
+                <br><br>
 
-    <br><br>
-    <div id='preview'></div>
-    <br><br><br><br>
-    <button>Save Changes</button>
-</form>
+                Allergies:<br>
+                <input type='text' id='allergies' name='allergies' value='<%= item.allergies %>'>
+                <br><br>
+
+                <% if(item.image){ %>
+                    <input type='hidden' id='cloudinary-id' name='cloudinaryId' value='<%= item.cloudinaryId %>'>
+                    Current Image:<br>
+                    <img src='<%= item.image%>'>
+                    <br><br>
+
+                    Replace Image: <span style='color:red;'>*optional</span>
+                    <br>
+                    <input type='file' id='image-file' name='file' accept='image/*'>
+                    
+                <% }else{ %>
+                    <img src='/no-image.jpg' alt='no image'><br>
+                    This Menu Item Has No Image<br>
+                    Add New Image: <span style='color:red;'>*optional</span>
+                    <br>
+                    <input type='file' id='image-file' name='file' accept='image/*'><br>
+                <% } %>
+
+                <br><br>
+                <div id='preview'></div>
+                <br><br><br><br>
+                <button>Save Changes</button>
+            </form>
+        </div>
+
+</main>        
 
 <script>
     const userImage = document.querySelector('#image-file')
@@ -130,6 +144,32 @@
         }
         return true;
     }
+
+
+
+    const dinnerSubMenu = document.querySelector('#dinner-sub-menu')
+    const drinksSubMenu = document.querySelector('#drinks-sub-menu')
+    const wineSubMenu = document.querySelector('#wine-sub-menu')
+
+    function displayDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'block'
+    }
+    function hideDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'none'
+    }
+    function displayDrinksSubMenu(){
+        drinksSubMenu.style.display = 'block'
+    }
+    function hideDrinksSubMenu(){
+        drinksSubMenu.style.display = 'none'
+    }
+    function displayWineSubMenu(){
+        wineSubMenu.style.display = 'block'
+    }
+    function hideWineSubMenu(){
+        wineSubMenu.style.display = 'none'
+    }     
 </script>
-</body>
-</html>
+
+
+<%- include('partials/footerEdit') %>

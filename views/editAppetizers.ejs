@@ -30,7 +30,8 @@
 
     <h1>olea</h1>
     <hr>
-    <h2>dinner menu > appetizers</h2>
+    <h2>dinner menu</h2>
+    <h3>appetizers</h3>
 
    
             <ul>
@@ -51,7 +52,6 @@
                             &nbsp; 
                             <span class='price'><%= appetizers[i].price %></span><br>
                             <span class='allergies'><%- appetizers[i].allergies %></span><br>
-                            sequence: <%= appetizers[i].sequence %>
                         </div>                        
                         <a href='/edit/updateItem/<%= appetizers[i].id %>'>
                             <button>

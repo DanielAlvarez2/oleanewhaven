@@ -137,10 +137,6 @@ main{
 .fa-folder-plus{
     color:grey;
 }
-.menu-item{
-    padding:1em 0;
-}
-
 #top,#bottom,#legal{
     display:flex;
 }
@@ -153,7 +149,7 @@ h2{
     font-family: futura light;
     font-weight:900;
     font-size:2rem;
-    margin-top:2em;
+    margin-top:1em;
 }
 #modal img{
     max-width:95vw;

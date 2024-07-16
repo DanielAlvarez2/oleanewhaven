@@ -5,6 +5,13 @@ module.exports = {
     createWpic: async(req,res)=>{
         try{   
             const result = await cloudinary.uploader.upload(req.file.path)
+            const existingItems = await MenuItem.find({
+                $and:[
+                    {menu:req.body.menu},
+                    {section:req.body.section},
+                    {archived:false}
+                ]
+            })
             await MenuItem.create({
                 menu:req.body.menu,
                 section:req.body.section,
@@ -14,7 +21,7 @@ module.exports = {
                 description:req.body.description,
                 price:req.body.price,
                 allergies:req.body.allergies,
-                sequence:req.body.sequence,
+                sequence:existingItems.length+1,
             })
             console.log('Menu Item has been added!')
             res.redirect('/')
@@ -24,6 +31,13 @@ module.exports = {
     },
     createNOpic: async(req,res)=>{
         try{
+            const existingItems = await MenuItem.find({
+                $and:[
+                    {menu:req.body.menu},
+                    {section:req.body.section},
+                    {archived:false}
+                ]
+            })
             await MenuItem.create({
                 menu:req.body.menu,
                 section:req.body.section,
@@ -31,7 +45,7 @@ module.exports = {
                 description:req.body.description,
                 price:req.body.price,
                 allergies:req.body.allergies,
-                sequence:req.body.sequence,
+                sequence:existingItems.length+1,
                 grapes:req.body.grapes,
                 vintage:req.body.vintage
             })
