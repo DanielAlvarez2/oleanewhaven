@@ -38,8 +38,12 @@ exports.postLogin = (req,res,next)=>{
             if(err){
                 return next(err)
             }
-            req.flash('success',{msg:'Success! You are logged in.'})
-            res.redirect(req.session.returnTo || '/edit/specials')
+            if(!user.approved){
+                res.redirect('/newUser')
+            }else{
+                req.flash('success',{msg:'Success! You are logged in.'})
+                res.redirect(req.session.returnTo || '/edit/specials')
+            }
         })
     })(req,res,next)
 }
@@ -60,7 +64,8 @@ exports.getSignup = (req,res)=>{
     if(req.user){
         return res.redirect('/profile')
     }
-    res.render('signup.ejs',{title:'Create Account'})
+    res.render('signup.ejs',{title:'Create Account',
+                             req:req})
 }
 
 
@@ -91,7 +96,10 @@ exports.postSignup = (req,res,next)=>{
     })
 
     User.findOne(
-        {$or: [{email:req.body.email},{userName:req.body.userName}]},
+        {$or: [
+            {email:req.body.email},
+            {userName:req.body.userName}
+        ]},
         (err,existingUser)=>{
             if(err){
                 return next(err)
@@ -110,7 +118,7 @@ exports.postSignup = (req,res,next)=>{
                     if(err){
                         return next(err)
                     }
-                    res.redirect('/profile')
+                    res.redirect('/newUser')
                 })
             })
         }

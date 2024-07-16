@@ -1,6 +1,7 @@
 const Post = require('../models/Post')
 const Wine = require('../models/Wine')
 const MenuItem = require('../models/MenuItem')
+const User = require('../models/User')
 
 module.exports={
     getIndex:async(req,res)=>{
@@ -218,5 +219,13 @@ module.exports={
                                redFrance:redFrance,
                                redItaly:redItaly,
                                req:req})
+    },
+    getUsers: async(req,res)=>{
+        const allUsers = await User.find()
+        console.log(allUsers)
+        res.redirect(req.get('referer'))
+    },
+    newUser: async(req,res)=>{
+        res.render('newUser.ejs',{title:'NEW USER',req:req})
     }
 }
