@@ -66,3 +66,7 @@ WINDOWS+SHIFT+S
 grab favicons
 https://webutility.io/favicon-extractor
 
+promote on social media:
+"Just posted today's specials at oleanewhaven.com/specials"
+Add a small mention of next upcoming event on specials page
+

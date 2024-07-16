@@ -14,7 +14,7 @@
 <main>
 
 
-<nav id='nav-top'>
+<nav id='nav-top' class='no-print'>
     <a class='active-page'>dinner</a>
     <a href='/specials'>specials</a>
     <a href='/dessert'>dessert</a>
@@ -26,7 +26,7 @@
 
 <% if(req.user){ %>
     <a href='/edit/charcuterie'>
-        <i class="fa-solid fa-gear"></i>
+        <i class="fa-solid fa-gear no-print"></i>
     </a>
 <% } %>
 
@@ -40,11 +40,11 @@
                     <li class='menu-item'
                         onclick='showModal(<%= JSON.stringify(charcuterie[i]) %>)'>
                         <span class='name'><%= charcuterie[i].name %></span><br>
-                        <%- charcuterie[i].description %>
+                        <span class='description'><%- charcuterie[i].description %></span>
                         &nbsp; 
                         <span class='price'><%= charcuterie[i].price %></span><br>
                         <% if(charcuterie[i].allergies){ %>
-                            <span class='allergies'><%- charcuterie[i].allergies %></span><br>
+                            <span class='allergies no-print'><%- charcuterie[i].allergies %></span><br>
                         <% } %>
                     </li>
                 <%}%>
@@ -55,11 +55,11 @@
                     <li class='menu-item'
                         onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
                         <span class='name'><%= appetizers[i].name %></span><br>
-                        <%- appetizers[i].description %>
+                        <span class='description'><%- appetizers[i].description %></span>
                         &nbsp;
                         <span class='price'><%= appetizers[i].price %></span><br>
                         <% if(appetizers[i].allergies){ %>
-                            <span class='allergies'><%- appetizers[i].allergies %></span><br>
+                            <span class='allergies no-print'><%- appetizers[i].allergies %></span><br>
                         <% } %>
                     </li>
                 <%}%>
@@ -72,11 +72,11 @@
                     <li class='menu-item'
                         onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
                         <span class='name'><%= entrees[i].name %></span><br>
-                        <%- entrees[i].description %>
+                        <span class='description'><%- entrees[i].description %></span>
                         &nbsp;
                         <span class='price'><%= entrees[i].price %></span><br>
                         <% if(entrees[i].allergies){ %>
-                            <span class='allergies'><%- entrees[i].allergies %></span><br>
+                            <span class='allergies no-print'><%- entrees[i].allergies %></span><br>
                         <% } %>
                     </li>
                 <%}%>
@@ -102,11 +102,11 @@
                     <li class='menu-item'
                         onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
                         <span class='name'><%= sides[i].name %></span><br>
-                        <%= sides[i].description %>
+                        <span class='description'><%= sides[i].description %></span>
                         &nbsp;
                         <span class='price'><%= sides[i].price %></span><br>
                         <% if(sides[i].allergies){ %>
-                            <span class='allergies'><%- sides[i].allergies %></span><br>
+                            <span class='allergies no-print'><%- sides[i].allergies %></span><br>
                         <% } %>
                     </li>
                 <%}%>
@@ -119,11 +119,11 @@
                     <li class='menu-item'
                         onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
                         <span class='name'><%= sides[i].name %></span><br>
-                        <%= sides[i].description %>
+                        <span class='description'><%= sides[i].description %></span>
                         &nbsp;
                         <span class='price'><%= sides[i].price %></span><br>
                         <% if(sides[i].allergies){ %>
-                            <span class='allergies'><%- sides[i].allergies %></span><br>
+                            <span class='allergies no-print'><%- sides[i].allergies %></span><br>
                         <% } %>
                     </li>
                 <%}%>
@@ -143,6 +143,10 @@
         </div>
     </div><!--#legal-->
 
+
+</div><!--#dinner-menu-->
+
+
     <div id='modal'>
         <i class='fa-solid fa-square-xmark x'
            id='close-modal-button'
@@ -161,7 +165,6 @@
             </figure>
         </div><!--#modal-item-->
     </div><!--#modal-->
-</div><!--#dinner-menu-->
 </main>
 
 <script>
@@ -189,8 +192,6 @@
 </script>
 
 <%- include('partials/footer') %>
-<script>
-    document.querySelector('#footer-dinner').classList.add('active-page')
-</script>
+
 </body>
 </html>
