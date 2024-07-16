@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/style.css'>
+    <script src="https://kit.fontawesome.com/21ef82ed30.js" crossorigin="anonymous"></script>
+
+    <style>
+        .menu{
+            max-width:5.5in;
+            min-height:8.5in;
+            border:1px solid red;
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+ 
+<main>
+
+<nav id='nav-top'>
+    <a href='/dinner'>dinner</a>
+    <a href='/specials'>specials</a>
+    <a href='/dessert'>dessert</a>
+    <a class='active-page'>wine</a>
+    <a href='/drinks'>drinks</a>
+</nav>
+
+<div id='btg-menu' class='menu'>
+
+<% if(req.user){ %>
+    <a href='/edit/BTG'>
+        <i class="fa-solid fa-gear"></i>
+    </a>
+<% } %>
+
+            <h1>olea</h1>
+            <hr>
+
+            <h2>wine by the glass</h2> 
+            <br><br>
+            <h3>Cava</h3>          
+            <ul>
+                <% for (let i=0;i<btgCava.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(btgCava[i]) %>)'>
+                        <span><%= btgCava[i].grapes %></span>, 
+                        <span class='name'><%= btgCava[i].name %></span>, 
+                        <span><%= btgCava[i].vintage %></span>, 
+                        <%- btgCava[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgCava[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            <br><br>
+            <h3>White</h3>
+            <ul>
+                <% for (let i=0;i<btgWhites.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(btgWhites[i]) %>)'>
+                        <span><%= btgWhites[i].grapes %></span>, 
+                        <span class='name'><%= btgWhites[i].name %></span>, 
+                        <span><%= btgWhites[i].vintage %></span>, 
+                        <%- btgWhites[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgWhites[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            <br><br>
+            <h3>Rosé</h3>
+            <ul>
+                <% for (let i=0;i<btgRose.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(btgRose[i]) %>)'>
+                        <span><%= btgRose[i].grapes %></span>, 
+                        <span class='name'><%= btgRose[i].name %></span>, 
+                        <span><%= btgRose[i].vintage %></span>, 
+                        <%- btgRose[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgRose[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            <br><br>
+            <h3>Red</h3>
+            <ul>
+                <% for (let i=0;i<btgReds.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(btgReds[i]) %>)'>
+                        <span><%= btgReds[i].grapes %></span>, 
+                        <span class='name'><%= btgReds[i].name %></span>, 
+                        <span><%= btgReds[i].vintage %></span>, 
+                        <%- btgReds[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgReds[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            <br><br>
+            <h3>Sherry</h3>
+            <ul>
+                <% for (let i=0;i<btgSherries.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(btgSherries[i]) %>)'>
+                        <span><%= btgSherries[i].grapes %></span>, 
+                        <span class='name'><%= btgSherries[i].name %></span>, 
+                        <%- btgSherries[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= btgSherries[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+   
+</div><!--#btg-menu-->
+
+<br><br>
+
+<div id='btb-menu' class='menu' style='margin-top:3em;'>
+
+            <h1>olea</h1>
+            <hr>
+
+            <h2>wine by the bottle</h2> 
+            <h3>cava & champagne</h3>          
+            <ul>
+                <% for (let i=0;i<cavaChampagne.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(cavaChampagne[i]) %>)'>
+                        <span><%= cavaChampagne[i].grapes %></span><br>
+                        <span class='name'><%= cavaChampagne[i].name %></span><br>
+                        <span><%= cavaChampagne[i].vintage %></span><br>
+                        <%- cavaChampagne[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= cavaChampagne[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h3>rosé</h3>          
+            <ul>
+                <% for (let i=0;i<rose.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(rose[i]) %>)'>
+                        <span><%= rose[i].grapes %></span><br>
+                        <span class='name'><%= rose[i].name %></span><br>
+                        <span><%= rose[i].vintage %></span><br>
+                        <%- rose[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= rose[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h3>white</h3>
+
+            <h4>Spain</h4>          
+            <ul>
+                <% for (let i=0;i<whiteSpain.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(whiteSpain[i]) %>)'>
+                        <span><%= whiteSpain[i].grapes %></span><br>
+                        <span class='name'><%= whiteSpain[i].name %></span><br>
+                        <span><%= whiteSpain[i].vintage %></span><br>
+                        <%- whiteSpain[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteSpain[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h4>France</h4>          
+            <ul>
+                <% for (let i=0;i<whiteFrance.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(whiteFrance[i]) %>)'>
+                        <span><%= whiteFrance[i].grapes %></span><br>
+                        <span class='name'><%= whiteFrance[i].name %></span><br>
+                        <span><%= whiteFrance[i].vintage %></span><br>
+                        <%- whiteFrance[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteFrance[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h4>Italy</h4>          
+            <ul>
+                <% for (let i=0;i<whiteItaly.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(whiteItaly[i]) %>)'>
+                        <span><%= whiteItaly[i].grapes %></span><br>
+                        <span class='name'><%= whiteItaly[i].name %></span><br>
+                        <span><%= whiteItaly[i].vintage %></span><br>
+                        <%- whiteItaly[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteItaly[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h4>Germany</h4>          
+            <ul>
+                <% for (let i=0;i<whiteGermany.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(whiteGermany[i]) %>)'>
+                        <span><%= whiteGermany[i].grapes %></span><br>
+                        <span class='name'><%= whiteGermany[i].name %></span><br>
+                        <span><%= whiteGermany[i].vintage %></span><br>
+                        <%- whiteGermany[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= whiteGermany[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+
+            <h3>red</h3>
+
+            <h4>Spain</h4>          
+            <ul>
+                <% for (let i=0;i<redSpain.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(redSpain[i]) %>)'>
+                        <span><%= redSpain[i].grapes %></span><br>
+                        <span class='name'><%= redSpain[i].name %></span><br>
+                        <span><%= redSpain[i].vintage %></span><br>
+                        <%- redSpain[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= redSpain[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h4>France</h4>          
+            <ul>
+                <% for (let i=0;i<redFrance.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(redFrance[i]) %>)'>
+                        <span><%= redFrance[i].grapes %></span><br>
+                        <span class='name'><%= redFrance[i].name %></span><br>
+                        <span><%= redFrance[i].vintage %></span><br>
+                        <%- redFrance[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= redFrance[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+            <h4>Italy</h4>          
+            <ul>
+                <% for (let i=0;i<redItaly.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(redItaly[i]) %>)'>
+                        <span><%= redItaly[i].grapes %></span><br>
+                        <span class='name'><%= redItaly[i].name %></span><br>
+                        <span><%= redItaly[i].vintage %></span><br>
+                        <%- redItaly[i].description %>
+                        &nbsp; 
+                        <span class='price'><%= redItaly[i].price %></span><br>
+                    </li>
+                <%}%>
+            </ul>
+            
+
+
+
+
+
+
+
+
+            
+</div><!--#btb-menu-->
+
+    <div id='modal'>
+        <i class='fa-solid fa-square-xmark x'
+           id='close-modal-button'
+           onclick='closeModal()'></i>
+        <div id='modal-item'>
+            <figure>
+                <img src='' id='modal-image'>
+                <figcaption>
+                    <div id='modal-text'>
+                        <span id='modal-name'></span><br>
+                        <span id='modal-description'></span>&nbsp;
+                        <span id='modal-price'></span><br>
+                        <span id='modal-allergies'></span>
+                    </div>
+                </figcaption>
+            </figure>
+        </div><!--#modal-item-->
+    </div><!--#modal-->
+</main>
+
+<script>
+    const modal = document.querySelector('#modal')
+    const modalImage = document.querySelector('#modal-image')
+    const modalName = document.querySelector('#modal-name')
+    const modalDescription = document.querySelector('#modal-description')
+    const modalPrice = document.querySelector('#modal-price')
+    const modalAllergies = document.querySelector('#modal-allergies')
+
+    function showModal(item){
+        if (!item.image) return
+        console.log(item)
+        modalImage.src=item.image
+        modalName.innerHTML = item.title
+        modalDescription.innerHTML = item.caption
+        modalPrice.innerHTML = item.price
+        modalAllergies.innerHTML = item.allergies
+        modal.style.display = 'grid'
+    }
+    function closeModal(){
+        modal.style.display = 'none'
+    }
+</script>
+<%- include('partials/footer') %>
+<script>
+    document.querySelector('#footer-wine').classList.add('active-page')
+</script>
+</body>
+</html>

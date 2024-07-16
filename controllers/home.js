@@ -199,7 +199,7 @@ module.exports={
         const redItaly = await MenuItem.find({
             $and:[
                 {section:'red italy'},
-                {archived:fasle}
+                {archived:false}
             ]
         }).sort({sequence:'asc'})
         res.render('wine.ejs',{title:'WINE',
