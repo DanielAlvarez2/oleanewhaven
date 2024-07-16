@@ -13,16 +13,23 @@ module.exports={
         const appetizers = await MenuItem.find({
             $and: [
                 {menu:'dinner'},
-                {section:'appetizers'}
+                {section:'appetizers'},
+                {archived:false}
             ]
             }).sort({sequence:'asc'})
         const entrees = await MenuItem.find({
             $and: [
                 {menu:'dinner'},
-                {section:'entrees'}
+                {section:'entrees'},
+                {archived:false}
             ]
             }).sort({sequence:'asc'})
-        const sides = await MenuItem.find({section:'sides'}).sort({sequence:'asc'})
+        const sides = await MenuItem.find({
+            $and:[
+                {section:'sides'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
         res.render('index.ejs',{req:req,
                                 title:'HOME PAGE', 
                                 charcuterie:charcuterie, 
@@ -42,12 +49,14 @@ module.exports={
             $and: [
                     {menu:'specials'},
                     {section:'entrees'},
+                    {archived:false}
                   ],
                 }).sort({sequence:'asc'})
         const desserts = await MenuItem.find({
             $and:[
                 {menu:'specials'},
-                {section:'desserts'}
+                {section:'desserts'},
+                {archived:false}
             ]
         }).sort({sequence:'asc'})        
         res.render('specials.ejs', 
@@ -61,7 +70,8 @@ module.exports={
         const desserts = await MenuItem.find({
             $and: [
                     {menu:'dessert'},
-                    {section:'desserts'}
+                    {section:'desserts'},
+                    {archived:false}
             ],
         }).sort({sequence:'asc'})
         res.render('dessert.ejs',{title:'DESSERTS',
@@ -69,11 +79,36 @@ module.exports={
                                   req:req})
     },
     getDrinks: async(req,res)=>{
-        const craftDrinks = await MenuItem.find({section:'craft drinks'}).sort({sequence:'asc'})
-        const sangria = await MenuItem.find({section:'sangria'}).sort({sequence:'asc'})
-        const nonAlcoholic = await MenuItem.find({section:'non-alcoholic'}).sort({sequence:'asc'})
-        const beerCans = await MenuItem.find({section:'beer can'}).sort({sequence:'asc'})
-        const beerDrafts = await MenuItem.find({section:'beer draft'}).sort({sequence:'asc'})
+        const craftDrinks = await MenuItem.find({
+            $and:[
+                {section:'craft drinks'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const sangria = await MenuItem.find({
+            $and:[
+                {section:'sangria'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const nonAlcoholic = await MenuItem.find({
+            $and:[
+                {section:'non-alcoholic'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const beerCans = await MenuItem.find({
+            $and:[
+                {section:'beer can'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const beerDrafts = await MenuItem.find({
+            $and:[
+                {section:'beer draft'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
         res.render('drinks.ejs',{title:'COCKTAILS',
                                  craftDrinks:craftDrinks,
                                  sangria:sangria,
@@ -83,20 +118,90 @@ module.exports={
                                  req:req})
     },
     getWine: async(req,res)=>{
-        const btgCava = await MenuItem.find({section:'btg cava'}).sort({sequence:'asc'})
-        const btgWhites = await MenuItem.find({section:'btg whites'}).sort({sequence:'asc'})
-        const btgRose = await MenuItem.find({section:'btg rose'}).sort({sequence:'asc'})
-        const btgReds = await MenuItem.find({section:'btg reds'}).sort({sequence:'asc'})
-        const btgSherries = await MenuItem.find({section:'btg sherries'}).sort({sequence:'asc'})
-        const cavaChampagne = await MenuItem.find({section:'cava champagne'}).sort({sequence:'asc'})
-        const rose = await MenuItem.find({section:'rose'}).sort({sequence:'asc'})
-        const whiteSpain = await MenuItem.find({section:'white spain'}).sort({sequence:'asc'})
-        const whiteFrance = await MenuItem.find({section:'white france'}).sort({sequence:'asc'})
-        const whiteItaly = await MenuItem.find({section:'white italy'}).sort({sequence:'asc'})
-        const whiteGermany = await MenuItem.find({section:'white germany'}).sort({sequence:'asc'})
-        const redSpain = await MenuItem.find({section:'red spain'}).sort({sequence:'asc'})
-        const redFrance = await MenuItem.find({section:'red france'}).sort({sequence:'asc'})
-        const redItaly = await MenuItem.find({section:'red italy'}).sort({sequence:'asc'})
+        const btgCava = await MenuItem.find({
+            $and:[
+                {section:'btg cava'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const btgWhites = await MenuItem.find({
+            $and:[
+                {section:'btg whites'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const btgRose = await MenuItem.find({
+            $and:[
+                {section:'btg rose'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const btgReds = await MenuItem.find({
+            $and:[
+                {section:'btg reds'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const btgSherries = await MenuItem.find({
+            $and:[
+                {section:'btg sherries'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const cavaChampagne = await MenuItem.find({
+            $and:[                
+                {section:'cava champagne'},
+                {archived:false}
+            ]            
+        }).sort({sequence:'asc'})
+        const rose = await MenuItem.find({
+            $and:[
+                {section:'rose'},
+                {archved:false}
+            ]
+        }).sort({sequence:'asc'})
+        const whiteSpain = await MenuItem.find({
+            $and:[
+                {section:'white spain'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const whiteFrance = await MenuItem.find({
+            $and:[
+                {section:'white france'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const whiteItaly = await MenuItem.find({
+            $and:[
+                {section:'white italy'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const whiteGermany = await MenuItem.find({
+            $and:[
+                {section:'white germany'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const redSpain = await MenuItem.find({
+            $and:[
+                {section:'red spain'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const redFrance = await MenuItem.find({
+            $and:[
+                {section:'red france'},
+                {archived:false}
+            ]
+        }).sort({sequence:'asc'})
+        const redItaly = await MenuItem.find({
+            $and:[
+                {section:'red italy'},
+                {archived:fasle}
+            ]
+        }).sort({sequence:'asc'})
         res.render('wine.ejs',{title:'WINE',
                                btgCava:btgCava,
                                btgWhites:btgWhites,
