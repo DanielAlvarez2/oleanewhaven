@@ -43,6 +43,10 @@
                             <a href='/edit/moveUp/<%= beerCans[i].id %>'>
                                 <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= beerCans[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>                            
                         <% } %>
 
                         <div onclick='showModal(<%= JSON.stringify(beerCans[i]) %>)'>
@@ -81,6 +85,10 @@
                             <a href='/edit/moveDown/<%= beerCans[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= beerCans[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>                            
                         <% } %>
                     </li>
                 <%}%>
@@ -94,6 +102,10 @@
                             <a href='/edit/moveUp/<%= beerDrafts[i].id %>'>
                                 <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= beerDrafts[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>                            
                         <% } %>
                         <div onclick='showModal(<%= JSON.stringify(beerDrafts[i]) %>)'>
                             <span class='name'><%= beerDrafts[i].name %></span><br>
@@ -129,6 +141,10 @@
                             <a href='/edit/moveDown/<%= beerDrafts[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= beerDrafts[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>                            
                         <% } %>
                     </li>
                 <%}%>

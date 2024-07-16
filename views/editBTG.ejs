@@ -44,6 +44,10 @@
                             <a href='/edit/moveUp/<%= btgCava[i].id %>'>
                                 <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= btgCava[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
                         <% } %>
 
                         <div onclick='showModal(<%= JSON.stringify(btgCava[i]) %>)'>
@@ -84,6 +88,10 @@
                             <a href='/edit/moveDown/<%= btgCava[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= btgCava[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>                            
                         <% } %>
                     </li>
                 <%}%>
@@ -99,6 +107,10 @@
                             <a href='/edit/moveUp/<%= btgWhites[i].id %>'>
                                 <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= btgWhites[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>                            
                         <% } %>
                         <div onclick='showModal(<%= JSON.stringify(btgWhites[i]) %>)'>
                             <%= btgWhites[i].grapes %>
@@ -136,6 +148,10 @@
                             <a href='/edit/moveDown/<%= btgWhites[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= btgWhites[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>                            
                         <% } %>
                     </li>
                 <%}%>
@@ -150,6 +166,10 @@
                             <a href='/edit/moveUp/<%= btgRose[i].id %>'>
                                 <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= btgRose[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>                            
                         <% } %>
                         <div onclick='showModal(<%= JSON.stringify(btgRose[i]) %>)'>
                             <%= btgRose[i].grapes %>                          
@@ -187,6 +207,10 @@
                             <a href='/edit/moveDown/<%= btgRose[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= btgRose[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>                            
                         <% } %>
                     </li>
                 <%}%>
@@ -201,6 +225,10 @@
                             <a href='/edit/moveUp/<%= btgReds[i].id %>'>
                                 <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= btgReds[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>                            
                         <% } %>
                         <div onclick='showModal(<%= JSON.stringify(btgReds[i]) %>)'>
                             <%= btgReds[i].grapes %>
@@ -238,6 +266,10 @@
                             <a href='/edit/moveDown/<%= btgReds[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= btgReds[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>                            
                         <% } %>
                     </li>
                 <%}%>
@@ -252,6 +284,10 @@
                             <a href='/edit/moveUp/<%= btgSherries[i].id %>'>
                                 <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= btgSherries[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>                            
                         <% } %>
                         <div onclick='showModal(<%= JSON.stringify(btgSherries[i]) %>)'>
                             <%= btgSherries[i].grapes %>
@@ -288,6 +324,10 @@
                             <a href='/edit/moveDown/<%= btgSherries[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= btgSherries[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>                            
                         <% } %>
                     </li>
                 <%}%>

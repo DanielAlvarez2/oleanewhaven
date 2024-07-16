@@ -40,6 +40,10 @@
                             <a href='/edit/moveUp/<%= nonAlcoholic[i].id %>'>
                                 <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= nonAlcoholic[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>                            
                         <% } %>
                         <div onclick='showModal(<%= JSON.stringify(nonAlcoholic[i]) %>)'>
                             <span class='name'><%= nonAlcoholic[i].name %></span><br>
@@ -75,6 +79,10 @@
                             <a href='/edit/moveDown/<%= nonAlcoholic[i].id %>'>
                                 <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
                             </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= nonAlcoholic[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>                            
                         <% } %>
                     </li>
                 <%}%>

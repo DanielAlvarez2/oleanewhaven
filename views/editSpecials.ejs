@@ -38,13 +38,23 @@
 
             <ul>
                 <% for (let i=0;i<appetizers.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
-                        <span class='name'><%= appetizers[i].name %></span><br>
-                        <%- appetizers[i].description %>
-                        &nbsp; 
-                        <span class='price'><%= appetizers[i].price %></span><br>
-                        <span class='allergies'><%- appetizers[i].allergies %></span><br>
-                        
+                    <li>
+                        <% if(i!=0) { %>
+                            <a href='/edit/moveUp/<%= appetizers[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= appetizers[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
+                        <% } %>                        
+                        <div onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
+                            <span class='name'><%= appetizers[i].name %></span><br>
+                            <%- appetizers[i].description %>
+                            &nbsp; 
+                            <span class='price'><%= appetizers[i].price %></span><br>
+                            <span class='allergies'><%- appetizers[i].allergies %></span><br>
+                        </div>
                         <a href='/edit/updateItem/<%= appetizers[i].id %>'>
                             <button>
                                 <i class="fa-solid fa-pen"></i>
@@ -67,6 +77,15 @@
                                 <span class='archive-text'>Archive</span>
                             </button>
                         </form>
+                        <% if(i!=appetizers.length-1){ %>
+                            <a href='/edit/moveDown/<%= appetizers[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= appetizers[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>
+                        <% } %>
                         
 
                     </li>
@@ -80,13 +99,24 @@
 
             <ul>
                 <% for (let i=0;i<entrees.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
-                        <span class='name'><%= entrees[i].name %></span><br>
-                        <%- entrees[i].description %>
-                        &nbsp;
-                        <span class='price'><%= entrees[i].price %></span><br>
-                        <span class='allergies'><%- entrees[i].allergies %></span><br>
-                        
+                    <li>
+                        <% if(i!=0) { %>
+                            <a href='/edit/moveUp/<%= entrees[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= entrees[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
+                        <% } %>
+                        <div onclick='showModal(<%= JSON.stringify(entrees[i]) %>)'>
+                            <span class='name'><%= entrees[i].name %></span><br>
+                            <%- entrees[i].description %>
+                            &nbsp;
+                            <span class='price'><%= entrees[i].price %></span><br>
+                            <span class='allergies'><%- entrees[i].allergies %></span><br>
+                        </div>  
+
                         <a href='/edit/updateItem/<%= entrees[i].id %>'>                        
                             <button>
                                 <i class="fa-solid fa-pen"></i>
@@ -100,6 +130,7 @@
                                 <i class="fa-solid fa-trash"></i>
                                 <span class='delete-text'>Delete</span>
                             </button>
+                        </form>
 
                         <form method='POST'
                             action='../edit/archiveMenuItem/<%= entrees[i].id %>?_method=PUT'>
@@ -109,8 +140,17 @@
                             </button>
                         </form>
                         
+                        <% if(i!=entrees.length-1){ %>
+                            <a href='/edit/moveDown/<%= entrees[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= entrees[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>
+                        <% } %>
 
-                        </form>
+                        
                     </li>
                 <%}%>
             </ul>
@@ -121,13 +161,23 @@
         
             <ul>
                 <% for (let i=0;i<desserts.length;i++){ %>
-                    <li onclick='showModal(<%= JSON.stringify(desserts[i]) %>)'>
-                        <span class='name'><%= desserts[i].name %></span><br>
-                        <%= desserts[i].description %>
-                        &nbsp;
-                        <span class='price'><%= desserts[i].price %></span><br>
-                        <span class='allergies'><%- desserts[i].allergies %></span><br>
-
+                    <li>
+                        <% if(i!=0) { %>
+                            <a href='/edit/moveUp/<%= desserts[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveUp/<%= desserts[i].id %>'>
+                                <div id='arrow-up'><i class="fa-solid fa-caret-up"></i></div>
+                            </a>
+                        <% } %>                    
+                        <div onclick='showModal(<%= JSON.stringify(desserts[i]) %>)'>
+                            <span class='name'><%= desserts[i].name %></span><br>
+                            <%= desserts[i].description %>
+                            &nbsp;
+                            <span class='price'><%= desserts[i].price %></span><br>
+                            <span class='allergies'><%- desserts[i].allergies %></span><br>
+                        </div>
                         <a href='/edit/updateItem/<%= desserts[i].id %>'>
                             <button>
                                 <i class="fa-solid fa-pen"></i>
@@ -150,6 +200,15 @@
                                 <span class='archive-text'>Archive</span>
                             </button>
                         </form>
+                        <% if(i!=desserts.length-1){ %>
+                            <a href='/edit/moveDown/<%= desserts[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>
+                        <% }else{ %>
+                            <a style='visibility:hidden;' href='/edit/moveDown/<%= desserts[i].id %>'>
+                                <div id='arrow-down'><i class="fa-solid fa-caret-down"></i></div>                        
+                            </a>
+                        <% } %>
                         
 
                     </li>
