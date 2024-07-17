@@ -31,13 +31,6 @@ add logic to deny new accounts access until approved by a manager
 add logic for different roles: manager vs staff
 
 
-updateItem.ejs
-trying to add navbar and footer results in error
-:id query parameter coming in as menu-background.jpg 
-or FuturaLight.otf
-!!!???
-
-add logic to change where 'view website' button points to in a script at the bottom of each edit page
 
 Shift Notes Page:
 fish of the day
