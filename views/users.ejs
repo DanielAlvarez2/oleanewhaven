@@ -39,14 +39,18 @@
         Created: <%= JSON.stringify(allUsers[i].createdAt).substring(1,11) %><br>
         Role: <%= allUsers[i].role %><br>
         <% if(!allUsers[i].approved){ %>
-            <button style='background:green;'>Approve</button>
+            <form method='POST'
+                  action='/approveUser'>
+                <input type='hidden' name='id' value='<%= allUsers[i]._id %>'>
+                <button style='background:green;'>Approve</button>
+            </form>
         <% } %>
         <form method='POST'
               action='/deleteUser'>
             <input type='hidden' name='id' value='<%= allUsers[i]._id %>'>
             <button style='background:red;'>Delete</button>
         </form>
-        <br><br>
+        <br><br><br>
     <% } %>
 
    

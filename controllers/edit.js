@@ -73,6 +73,7 @@ module.exports={
                                        desserts:desserts})
     },
     getDessert: async(req,res)=>{
+        if(!req.user) res.redirect('/dessert')
         const desserts = await MenuItem.find({
             $and:[
                 {menu:'dessert'},
@@ -430,6 +431,7 @@ module.exports={
         }
     },
     getCharcuterie: async(req,res)=>{
+        if(!req.user) res.redirect('/')
         try{
             const charcuterie = await MenuItem.find({
                 $and:[
@@ -446,6 +448,7 @@ module.exports={
         }
     },
     getAppetizers: async(req,res)=>{
+        if(!req.user) res.redirect('/')
         try{
             const appetizers = await MenuItem.find({
                 $and:[
@@ -462,6 +465,7 @@ module.exports={
         }
     },
     getEntrees: async(req,res)=>{
+        if(!req.user) res.redirect('/')
         try{
             const entrees = await MenuItem.find({
                 $and:[
@@ -478,6 +482,7 @@ module.exports={
         }
     },
     getSides: async(req,res)=>{
+        if(!req.user) res.redirect('/')
         try{
             const sides = await MenuItem.find({
                 $and:[
@@ -494,6 +499,7 @@ module.exports={
         }
     },
     getCraftDrinks: async(req,res)=>{
+        if(!req.user) res.redirect('/drinks')
         try{
             const craftDrinks = await MenuItem.find({
                 $and:[
@@ -510,6 +516,7 @@ module.exports={
         }
     },
     getSangria: async(req,res)=>{
+        if(!req.user) res.redirect('/drinks')
         try{
             const sangria = await MenuItem.find({
                 $and:[
@@ -526,6 +533,7 @@ module.exports={
         }
     },
     getNonAlcoholic: async(req,res)=>{
+        if(!req,user) res.redirect('/drinks')
         try{
             const nonAlcoholic = await MenuItem.find({
                 $and:[
@@ -542,6 +550,7 @@ module.exports={
         }
     },
     getBeer: async(req,res)=>{
+        if(!req.user) res.redirect('/drinks')
         try{
             const beerCans = await MenuItem.find({
                 $and:[
@@ -566,6 +575,7 @@ module.exports={
         }
     },
     getBTG: async(req,res)=>{
+        if(!req.user) res.redirect('/wine')
         try{
             const btgCava = await MenuItem.find({
                 $and:[
@@ -614,6 +624,7 @@ module.exports={
         }
     },
     getCavaChampagne: async(req,res)=>{
+        if(!req.user) res.redirect('/wine')
         try{
             const cavaChampagne = await MenuItem.find({
                 $and:[
@@ -630,6 +641,7 @@ module.exports={
         }
     },
     getRose: async(req,res)=>{
+        if(!req.user) res.redirect('/wine')
         try{
             const rose = await MenuItem.find({
                $and:[
@@ -646,6 +658,7 @@ module.exports={
         }
     },
     getWhiteSpain: async(req,res)=>{
+        if(!req.user) res.redirect('/wine')
         try{
             const whiteSpain = await MenuItem.find({
                 $and:[
@@ -662,6 +675,7 @@ module.exports={
         }
     },
     getWhiteFrance: async(req,res)=>{
+        if(!req.user) res.redirect('/wine')
         try{
             const whiteFrance = await MenuItem.find({
                 $and:[
@@ -677,6 +691,7 @@ module.exports={
         }
     },
     getWhiteItaly: async(req,res)=>{
+        if(!req.user) res.redirect('/wine')
         try{
             const whiteItaly = await MenuItem.find({
                 $and:[
@@ -692,6 +707,7 @@ module.exports={
         }
     },
     getWhiteGermany: async(req,res)=>{
+        if(!req.user) res.redirect('/wine')
         try{
             const whiteGermany = await MenuItem.find({
                 $and:[
@@ -707,6 +723,7 @@ module.exports={
         }
     },
     getRedSpain: async(req,res)=>{
+        if(!req.user) res.redirect('/wine')
         try{
             const redSpain = await MenuItem.find({
                 $and:[
@@ -722,6 +739,7 @@ module.exports={
         }
     },
     getRedFrance: async(req,res)=>{
+        if(!req.user) res.redirect('/wine')
         try{
             const redFrance = await MenuItem.find({
                 $and:[
@@ -737,6 +755,7 @@ module.exports={
         }
     },
     getRedItaly: async(req,res)=>{
+        if(!req.user) res.redirect('/wine')
         try{
             const redItaly = await MenuItem.find({
                 $and:[

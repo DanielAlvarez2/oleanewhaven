@@ -235,5 +235,12 @@ module.exports={
         await User.findByIdAndDelete(req.body.id)
         console.log('User Deleted')
         res.redirect(req.get('referer'))
+    },
+    approveUser: async(req,res)=>{
+        await User.findByIdAndUpdate(
+            req.body.id,
+            {approved:true,role:'manager'},
+        )
+        res.redirect(req.get('referer'))
     }
 }
