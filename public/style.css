@@ -149,6 +149,7 @@ main{
 }
 #top,#bottom,#legal{
     display:flex;
+    column-gap:5px;
 }
 #top-left, #top-right, 
 #bottom-left, #bottom-right,
