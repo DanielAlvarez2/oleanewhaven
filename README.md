@@ -18,11 +18,6 @@ NYE, Mothers Day, Valentines Day, Graduation, etc...
 
 Try loading a static html file as index.html to see if it loads faster
 
-fix footers in seated guest portal and also in managers portal
-
-ensureAuth for all manager portal pages
-
-
 tabbed components: 
     dessert: front page / back page
     specials: letter paper / legal paper
