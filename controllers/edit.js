@@ -284,6 +284,7 @@ module.exports={
         }
     },
     createMenuItem: (req,res)=>{
+        if(!req.user) res.redirect('/')
         try{
             res.render('createMenuItem.ejs',{title:'CREATE MENU ITEM',
                                              req:req,
@@ -368,6 +369,7 @@ module.exports={
         }
     },
     getArchives: async(req,res)=>{
+        if(!req.user) res.redirect('/')
         try{
             const archives = await MenuItem.find({archived:true})
             res.render('archives.ejs',{title:'ARCHIVES',
