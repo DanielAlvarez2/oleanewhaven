@@ -63,3 +63,17 @@ promote on social media:
 "Just posted today's specials at oleanewhaven.com/specials"
 Add a small mention of next upcoming event on specials page
 
+
+
+
+
+BENEFITS
+90+yr old man
+daughter had to explain every menu item to him verbally
+I showed him photos. Much easier
+
+Many Asian students don't speak ANY English.
+Photos of menu items are very helpful
+
+Young children love looking at menu item photos, especially desserts
+
