@@ -120,6 +120,8 @@ exports.postSignup = (req,res,next)=>{
                     if(err){
                         return next(err)
                     }
+                    req.session.destroy()
+                    req.user = null
                     res.redirect('/newUser')
                 })
             })

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/style.css'>
+    <script src="https://kit.fontawesome.com/21ef82ed30.js" crossorigin="anonymous"></script>
+    <style>
+        .menu{
+            margin:0 auto;
+            max-width:8.5in;
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+ 
+<main>
+
+
+<%- include('partials/editNav') %>
+
+
+
+<div id='menu' class='menu edit-main'>
+
+
+
+    <h1>olea</h1>
+    <hr>
+    <h2>Manage Users</h2> 
+    <br><br>
+    
+    <% for(let i=0;i<allUsers.length;i++){ %>
+        User Name: <%= allUsers[i].userName %><br>
+        Email: <%= allUsers[i].email %><br>
+        Created: <%= JSON.stringify(allUsers[i].createdAt).substring(1,11) %><br>
+        Role: <%= allUsers[i].role %><br>
+        <% if(!allUsers[i].approved){ %>
+            <button style='background:green;'>Approve</button>
+        <% } %>
+        <form method='POST'
+              action='/deleteUser'>
+            <input type='hidden' name='id' value='<%= allUsers[i]._id %>'>
+            <button style='background:red;'>Delete</button>
+        </form>
+        <br><br>
+    <% } %>
+
+   
+
+
+</div><!--#menu-->
+
+
+
+
+
+
+</main>
+<script>
+    
+  
+    const dinnerSubMenu = document.querySelector('#dinner-sub-menu')
+    const drinksSubMenu = document.querySelector('#drinks-sub-menu')
+    const wineSubMenu = document.querySelector('#wine-sub-menu')
+
+    
+    function displayDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'block'
+    }
+    function hideDinnerSubMenu(){
+        dinnerSubMenu.style.display = 'none'
+    }
+    function displayDrinksSubMenu(){
+        drinksSubMenu.style.display = 'block'
+    }
+    function hideDrinksSubMenu(){
+        drinksSubMenu.style.display = 'none'
+    }
+    function displayWineSubMenu(){
+        wineSubMenu.style.display = 'block'
+    }
+    function hideWineSubMenu(){
+        wineSubMenu.style.display = 'none'
+    }
+
+   
+</script>
+
+<%- include('partials/footerEdit') %>

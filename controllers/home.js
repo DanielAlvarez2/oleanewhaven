@@ -221,11 +221,19 @@ module.exports={
                                req:req})
     },
     getUsers: async(req,res)=>{
+        if(!req.user) res.redirect('/')
         const allUsers = await User.find()
         console.log(allUsers)
-        res.redirect(req.get('referer'))
+        res.render('users.ejs',{title:'USERS',
+                                req:req,
+                                allUsers:allUsers})
     },
     newUser: async(req,res)=>{
         res.render('newUser.ejs',{title:'NEW USER',req:req})
+    },
+    deleteUser: async(req,res)=>{
+        await User.findByIdAndDelete(req.body.id)
+        console.log('User Deleted')
+        res.redirect(req.get('referer'))
     }
 }

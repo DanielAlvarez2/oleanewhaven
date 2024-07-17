@@ -40,6 +40,11 @@ module.exports={
                                      title:'EDIT DINNER MENU'})
     },
     getSpecials: async (req,res)=>{
+        if(req.user.role != 'manager'){
+            req.session.destroy()
+            req.user = null
+            res.redirect('/')
+        }
         const appetizers = await MenuItem.find({
             $and:[
                 {menu:'specials'},

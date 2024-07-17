@@ -1,25 +1,19 @@
-<%- include('partials/head') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/style.css'>
+    <script src="https://kit.fontawesome.com/21ef82ed30.js" crossorigin="anonymous"></script>
 
-main{
-    display:grid;
-    place-content:center;
-    min-height: calc(100vh - 5em)
-}
-nav{
-    width:100vw;
-    background:#ccc;
-    position:fixed;
-    left:0;
-    display:flex;
-    justify-content:space-around;
-}
-nav a{
-    text-decoration:none;
-}
-
-<%- include('partials/header') %>
-
+    
+</head>
+<body>
+    <div id="wrapper">
+ 
 <main>
+
 <nav>
     <a href='/dinner'>dinner</a>
     <a href='/specials'>specials</a>
@@ -63,7 +57,9 @@ nav a{
                     <input type='password' id='exampleInputPassword1' name='password'>
                 </div><br><br>
           
-                <button type='submit'>Submit</button><br>
+                <button type='submit'>Submit</button>
+                
+                <br><br><br>
 
 
             <a href='/signup'>Create New Account</a>
