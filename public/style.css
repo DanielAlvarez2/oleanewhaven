@@ -177,11 +177,7 @@ h2{
     font-family: serif;
 }
 
-#dinner-menu{
-    max-width:8.5in;
-    min-height:14in;
-    background-image: url('menu-background.jpg');
-}
+
 .price, #modal-price{
     font-weight:900;
     font-size:0.9rem;
@@ -223,6 +219,15 @@ figcaption{
     caption-side:bottom;
 }
 
+
+
+#dinner-menu{
+    padding:5px;
+    max-width:8.5in;
+    min-height:14in;
+    background-image: url('/menu-background.jpg');
+}
+
 @media(min-width:8.5in){
     #dinner-menu{
         padding:0.3in 0.52in 0.5in;
@@ -234,6 +239,8 @@ figcaption{
         padding-left:0.25in;
     }
 }
+
+
 main h1{
     text-align:left;
     font-family:futura light;
