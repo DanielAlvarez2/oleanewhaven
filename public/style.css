@@ -3,6 +3,10 @@
     padding:0;
     box-sizing: border-box;
 }
+img{
+    max-width:90vw;
+    max-width:90svw;
+}
 @media print{
     .no-print{
         display: none !important;
