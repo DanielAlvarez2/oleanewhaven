@@ -194,6 +194,9 @@ h2{
 }
 body{
     position:relative;
+    max-width: 100vw;
+    max-width: 100svw;
+    overflow-x: hidden;
 }
 #modal{
     width:100%;
