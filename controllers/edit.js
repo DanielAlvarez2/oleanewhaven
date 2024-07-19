@@ -535,7 +535,7 @@ module.exports={
         }
     },
     getNonAlcoholic: async(req,res)=>{
-        if(!req,user) res.redirect('/drinks')
+        if(!req.user) res.redirect('/drinks')
         try{
             const nonAlcoholic = await MenuItem.find({
                 $and:[

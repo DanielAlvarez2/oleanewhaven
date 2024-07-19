@@ -313,6 +313,11 @@ form{
     background:grey;
     color:black;
 }
+#edit-nav{
+    position:fixed;
+    top:0;
+    left:0;
+}
 .edit-main{
     padding:0.5in;
 }

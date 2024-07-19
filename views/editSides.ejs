@@ -134,10 +134,11 @@
     const wineSubMenu = document.querySelector('#wine-sub-menu')
 
     function showModal(item){
+        if(!item.image) return        
         console.log(item)
         modalImage.src=item.image
-        modalName.innerHTML = item.title
-        modalDescription.innerHTML = item.caption
+        modalName.innerHTML = item.name
+        modalDescription.innerHTML = item.description
         modalPrice.innerHTML = item.price
         modalAllergies.innerHTML = item.allergies
         modal.style.display = 'grid'
