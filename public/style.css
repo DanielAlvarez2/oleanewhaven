@@ -62,7 +62,7 @@ footer{
     margin-top:auto;
     height: 1.5rem;
     background:#ccc;
-    width:100vw;
+    width:100%;
     display:flex;
     justify-content:space-around;
     align-items:center;
@@ -121,7 +121,7 @@ nav a{
     z-index:100;
 }
 nav{
-    width:100vw;
+    width:100%;
     background:#ccc;
     display:flex;
     position:fixed;
@@ -196,7 +196,7 @@ body{
     position:relative;
 }
 #modal{
-    width:100vw;
+    width:100%;
     min-height:100vh;
     background: #888888ee;
     position: fixed;
@@ -281,7 +281,7 @@ form{
 .edit-menu{
     display: flex;
     justify-content: space-around;
-    width: 100vw;
+    width: 100%;
     margin: 1rem;
 }
 #dinner-sub-menu li,
