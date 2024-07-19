@@ -281,7 +281,7 @@ button{
 form{
     display:inline-block;
 }
-.edit-menu{
+.edit-menu-buttons{
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -321,8 +321,11 @@ form{
     top:0;
     left:0;
 }
-.edit-main{
-    padding:0.5in;
+.edit-menu{
+    padding:0.5em;
+}
+.edit-menu li{
+    border:1px solid grey;
 }
 #footer-edit,
 #footer-edit a{
