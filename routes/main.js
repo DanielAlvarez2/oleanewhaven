@@ -5,6 +5,7 @@ const homeController = require('../controllers/home')
 const postsController = require('../controllers/posts')
 const {ensureAuth, ensureGuest} = require('../middleware/auth')
 
+router.get('/clone', homeController.getClone)
 
 router.get('/',homeController.getIndex)
 router.get('/dinner',homeController.getIndex)
