@@ -10,13 +10,72 @@
             padding:0;
             box-sizing:border-box;
         }
+        @font-face{
+            font-family:"futura light";
+            src: url("/FuturaLight.otf") format("opentype");
+        }
+        @font-face{
+            font-family:"futura medium";
+            src: url("/FuturaMedium.otf") format("opentype");
+        }        
         #wrapper{
             width:8.5in;
             height:14in;
             border:1px solid black;
+            padding:0.5in;
+            font-size:0.98rem;
         }
         #top,#bottom{
             display:flex;
+        }
+        #top-left,
+        #top-right,
+        #bottom-left,
+        #bottom-right{
+            width:50%
+        }
+        h1{
+            font-family: futura light;
+            font-size:3.2rem;
+            font-weight:100;
+        }
+        li{
+            list-style-type:none;
+            padding: 2mm 5mm;
+        }
+        hr{
+            margin-bottom:5mm;
+        }
+        h2{
+            padding:0 0 5mm 5mm;
+            font-family: futura medium;
+            font-weight:100;
+        }
+        footer{
+            display:flex;
+            padding-top:1cm;
+        }
+        #chef{
+            font-size:0.9rem;
+            width:70%;
+        }
+        #legal{
+            font-size:0.7rem;
+        }
+        .name{
+            font-size:1.1rem;
+            font-weight:500;
+            font-family: futura medium;
+        }
+        .price{
+            font-weight:900;
+        }
+        .italics{
+            font-style: italic;
+        }
+        .box{
+            border:1px solid black;
+            padding:2mm 0;
         }
     </style>
 </head>
@@ -26,19 +85,21 @@
         <hr>
         <div id='top'>
             <div id='top-left'>
+
+            <div class='box'>
                 <% for(i=0;i<charcuterie.length;i++){ %>
                     <li>
-                        <%= charcuterie[i].name %><br>
+                        <span class='name'><%= charcuterie[i].name %></span><br>
                         <%= charcuterie[i].description %>
-                        <%= charcuterie[i].price %>
+                        <span class='price'><%= charcuterie[i].price %></span>
                     </li>
                 <% } %>
-
+            </div><!--.box-->
                 <% for(i=0;i<appetizers.length;i++){ %>
                     <li>
-                        <%= appetizers[i].name %><br>
+                        <span class='name'><%= appetizers[i].name %></span><br>
                         <%= appetizers[i].description %>
-                        <%= appetizers[i].price %>
+                        <span class='price'><%= appetizers[i].price %></span>
                     </li>
                 <% } %>                
             </div><!--#top-left-->
@@ -46,21 +107,42 @@
             <div id='top-right'>
                 <% for(i=0;i<entrees.length;i++){ %>
                     <li>
-                        <%= entrees[i].name %><br>
+                        <span class='name'><%= entrees[i].name %></span><br>
                         <%= entrees[i].description %>
-                        <%= entrees[i].price %>
+                        <span class='price'><%= entrees[i].price %></span>
                     </li>
-                <% } %>           
+                <% } %>  
+
+            <div class='box'>
+                <li>
+                    <span class='name'>chef's tasting menu</span>
+                    <span class='italics'>six courses</span>
+                    <span class='price'>98</span>
+                    <span class='italics'> / person</span><br>
+
+                    <span class='italics bold'>24-hours notice and reservation required</span><br>
+                    full table participation<br>
+                    available tuesday through thursday<br>
+                    <span class='italics'>optional wine pairing available</span>
+                    <span class='price'>52</span>
+                    <span class='italics'> / person</span><br>
+                    
+                </li>        
+                </div><!--.box--> 
             </div><!--#top-right-->
         </div><!--#top-->
 
+        <h2>sides</h2>
+
+            <div class='box'>
         <div id='bottom'>
+
             <div id='bottom-left'>
                 <% for(i=0;i<2;i++){ %>
                     <li>
-                        <%= sides[i].name %><br>
+                        <span class='name'><%= sides[i].name %></span><br>
                         <%= sides[i].description %>
-                        <%= sides[i].price %>
+                        <span class='price'><%= sides[i].price %></span>
                     </li>
                 <% } %>           
             </div><!--#bottom-left-->
@@ -68,13 +150,27 @@
             <div id='bottom-right'>
                 <% for(i=2;i<4;i++){ %>
                     <li>
-                        <%= sides[i].name %><br>
+                        <span class='name'><%= sides[i].name %></span><br>
                         <%= sides[i].description %>
-                        <%= sides[i].price %>
+                        <span class='price'><%= sides[i].price %></span>
                     </li>
                 <% } %>           
             </div><!--#bottom-right-->
         </div><!--#bottom-->
+            </div><!--.box-->
+
+
+        <footer>
+            <span id='chef' class='name'>manuel romero, chef</span>
+
+            <div id='legal'>
+                consumer advisory: consumption of undercooked meat, poultry, eggs, or seafood 
+                may increase the risk of food-borne illnesse<br>
+                please alert your server if you have special dietary requirements<br>
+                all menu items are subject to change according to seasonality and availability
+            </div>
+        </footer>
+
     </div><!--#wrapper-->
 </body>
 </html>
