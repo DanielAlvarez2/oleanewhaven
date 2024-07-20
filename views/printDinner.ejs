@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Dinner Menu</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        #wrapper{
+            width:8.5in;
+            height:14in;
+            border:1px solid black;
+        }
+        #top,#bottom{
+            display:flex;
+        }
+    </style>
+</head>
+<body>
+    <div id='wrapper'>
+        <h1>olea</h1>
+        <hr>
+        <div id='top'>
+            <div id='top-left'>
+                <% for(i=0;i<charcuterie.length;i++){ %>
+                    <li>
+                        <%= charcuterie[i].name %><br>
+                        <%= charcuterie[i].description %>
+                        <%= charcuterie[i].price %>
+                    </li>
+                <% } %>
+
+                <% for(i=0;i<appetizers.length;i++){ %>
+                    <li>
+                        <%= appetizers[i].name %><br>
+                        <%= appetizers[i].description %>
+                        <%= appetizers[i].price %>
+                    </li>
+                <% } %>                
+            </div><!--#top-left-->
+
+            <div id='top-right'>
+                <% for(i=0;i<entrees.length;i++){ %>
+                    <li>
+                        <%= entrees[i].name %><br>
+                        <%= entrees[i].description %>
+                        <%= entrees[i].price %>
+                    </li>
+                <% } %>           
+            </div><!--#top-right-->
+        </div><!--#top-->
+
+        <div id='bottom'>
+            <div id='bottom-left'>
+                <% for(i=0;i<2;i++){ %>
+                    <li>
+                        <%= sides[i].name %><br>
+                        <%= sides[i].description %>
+                        <%= sides[i].price %>
+                    </li>
+                <% } %>           
+            </div><!--#bottom-left-->
+
+            <div id='bottom-right'>
+                <% for(i=2;i<4;i++){ %>
+                    <li>
+                        <%= sides[i].name %><br>
+                        <%= sides[i].description %>
+                        <%= sides[i].price %>
+                    </li>
+                <% } %>           
+            </div><!--#bottom-right-->
+        </div><!--#bottom-->
+    </div><!--#wrapper-->
+</body>
+</html>

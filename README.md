@@ -25,6 +25,7 @@ tabbed components:
 add logic to deny new accounts access until approved by a manager
 add logic for different roles: manager vs staff
 
+move to .env and change
 
 
 Shift Notes Page:
