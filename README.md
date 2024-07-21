@@ -16,8 +16,6 @@ add the back page of dessert menu
 promote special events on menus for seated guests
 NYE, Mothers Day, Valentines Day, Graduation, etc...
 
-Try loading a static html file as index.html to see if it loads faster
-
 tabbed components: 
     dessert: front page / back page
     specials: letter paper / legal paper
@@ -27,6 +25,15 @@ add logic for different roles: manager vs staff
 
 move to .env and change
 
+make gear icon stay black, or blue?
+
+add liquors +print
+
+404 PAGE!!!!
+
+sidework checklist: count all menus eod(dinner, specials, dessert, wine lists)
+
+grab futura heavy from old site
 
 Shift Notes Page:
 fish of the day
@@ -72,4 +79,8 @@ Many Asian students don't speak ANY English.
 Photos of menu items are very helpful
 
 Young children love looking at menu item photos, especially desserts
+
+improvmx.com free email aliases for your domain name
+
+
 
