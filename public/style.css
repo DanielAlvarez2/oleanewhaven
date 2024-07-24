@@ -285,7 +285,7 @@ form{
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin: 1rem;
+    margin: 1rem 0;
 }
 #dinner-sub-menu li,
 #wine-sub-menu li,
