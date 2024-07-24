@@ -38,4 +38,8 @@ app.use('/edit', editRoutes)
 app.use('/print', printRoutes)
 app.use('/post', postRoutes)
 app.use('/menuItem', menuItemRoutes)
+
+app.use(function(req,res){
+    res.status(404).render('error404.ejs',{title:'404'})
+})
 app.listen(process.env.PORT, ()=> console.log(`Server Running: PORT ${process.env.PORT}`))
