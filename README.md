@@ -1,7 +1,7 @@
 
+add front-end validation on ALL forms
 
-
-
+make edit page items skinny (1 line) to fix up/down clunkiness?
 
 Future Features to Implement:
 
@@ -29,7 +29,7 @@ make gear icon stay black, or blue?
 
 add liquors +print
 
-404 PAGE!!!!
+404 PAGE change to look like official page
 
 sidework checklist: count all menus eod(dinner, specials, dessert, wine lists)
 
