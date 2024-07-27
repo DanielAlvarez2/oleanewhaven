@@ -1,4 +1,8 @@
 
+
+
+check cross-browser compatibility on iOS
+
 add front-end validation on ALL forms
 
 make edit page items skinny (1 line) to fix up/down clunkiness?
