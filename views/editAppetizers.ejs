@@ -51,15 +51,16 @@
                             &nbsp; 
                             <span class='price'><%= appetizers[i].price %></span><br>
                             <span class='allergies'><%- appetizers[i].allergies %></span><br>
-                        </div>                        
+                        </div>          
+
+
+
                         <a href='/edit/updateItem/<%= appetizers[i].id %>'>
                             <button>
                                 <i class="fa-solid fa-pen"></i>
                                 <span class='edit-text'>Edit</span>
                             </button>
                         </a>
-
-
 
                         <form method='POST'
                             action='../edit/deleteMenuItem/<%= appetizers[i].id %>?_method=DELETE'>

@@ -16,7 +16,7 @@ exports.postLogin = (req,res,next)=>{
     if(!validator.isEmail(req.body.email))
         validationErrors.push({msg:'Please enter a valid email address.'})
     if(validator.isEmpty(req.body.password))
-        validationErrors.push({msg:'Password cannot be blank,'})
+        validationErrors.push({msg:'Password cannot be blank.'})
 
     if(validationErrors.length){
         req.flash('errors', validationErrors)
