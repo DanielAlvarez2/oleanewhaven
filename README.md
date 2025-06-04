@@ -70,7 +70,7 @@ promote on social media:
 "Just posted today's specials at oleanewhaven.com/specials"
 Add a small mention of next upcoming event on specials page
 
-
+add ability for end-user to crud the chef's tasting menu info
 
 
 
