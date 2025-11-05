@@ -84,6 +84,20 @@
             
             <h3>desserts <span>choose one</span></h3>
 
+            <ul>
+                <% for (let i=0;i<rwDesserts.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(rwDesserts[i]) %>)'>
+                        <span class='name'><%= rwDesserts[i].name %></span><br>
+                        <span class='description'><%- rwDesserts[i].description %></span>
+                        <% if(rwDesserts[i].allergies){ %>
+                            <div class='allergies no-print'><%- rwDesserts[i].allergies %></div>
+                        <% } %>
+                    </li>
+                <%}%>
+            </ul>
+
+
         </div><!--#top-left-->
 
 
