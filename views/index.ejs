@@ -71,20 +71,6 @@
             
             <h3>desserts <span>choose one</span></h3>
 
-            <ul>
-                <% for (let i=0;i<appetizers.length;i++){ %>
-                    <li class='menu-item'
-                        onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
-                        <span class='name'><%= appetizers[i].name %></span><br>
-                        <span class='description'><%- appetizers[i].description %></span>
-                        &nbsp;
-                        <span class='price'><%= appetizers[i].price %></span><br>
-                        <% if(appetizers[i].allergies){ %>
-                            <span class='allergies no-print'><%- appetizers[i].allergies %></span><br>
-                        <% } %>
-                    </li>
-                <%}%>
-            </ul>
         </div><!--#top-left-->
 
         <div id='top-right'>
