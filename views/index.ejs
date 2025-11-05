@@ -71,6 +71,8 @@
 
         <div id='top-right'>
 
+            <h2>appetizers</h2>
+
             <ul>
                 <% for (let i=0;i<appetizers.length;i++){ %>
                     <li class='menu-item'
@@ -86,6 +88,8 @@
                 <%}%>
             </ul>
 
+            <h2>entrées</h2>
+
             <ul>
                 <% for (let i=0;i<entrees.length;i++){ %>
                     <li class='menu-item'
@@ -100,6 +104,8 @@
                     </li>
                 <%}%>
             </ul>
+
+            <h2>sides</h2>
 
             <ul>
                 <% for (let i=0;i<4;i++){ %>
@@ -119,43 +125,6 @@
         </div><!--#top-right-->
     </div><!--#top-->
 
-    <h2>sides</h2>
-    <div id='bottom'>
-        <div id='bottom-left'>
-            <ul>
-                <% for (let i=0;i<2;i++){ %>
-                    <li class='menu-item'
-                        onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
-                        <span class='name'><%= sides[i].name %></span><br>
-                        <span class='description'><%= sides[i].description %></span>
-                        &nbsp;
-                        <span class='price'><%= sides[i].price %></span><br>
-                        <% if(sides[i].allergies){ %>
-                            <span class='allergies no-print'><%- sides[i].allergies %></span><br>
-                        <% } %>
-                    </li>
-                <%}%>
-            </ul>
-        </div><!--#bottom-left-->
-        
-        <div id='bottom-right'>
-            <ul>
-                <% for (let i=2;i<sides.length;i++){ %>
-                    <li class='menu-item'
-                        onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
-                        <span class='name'><%= sides[i].name %></span><br>
-                        <span class='description'><%= sides[i].description %></span>
-                        &nbsp;
-                        <span class='price'><%= sides[i].price %></span><br>
-                        <% if(sides[i].allergies){ %>
-                            <span class='allergies no-print'><%- sides[i].allergies %></span><br>
-                        <% } %>
-                    </li>
-                <%}%>
-            </ul>
-        
-        </div><!--#bottom-right-->
-    </div><!--#bottom-->
 
     <div id='legal'>
         <div id='legal-left'>manuel romero, chef</div>
