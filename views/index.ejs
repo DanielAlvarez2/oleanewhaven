@@ -41,18 +41,21 @@
 
 
     <div id="top">
-        <div id='top-left' style="border:1px solid black;">
+        <div id='top-left' style="  border:1px solid black;
+                                    padding: 0 3px;">
 
             <h2>New Haven Restaurant Week</h2>
-            November 2-15, 2025<br>
+            November 2-15, 2025<br><br>
 
             $55 three-courses<br>
-            (one prix fixe menu per person, no substitutions, beverage, tax and gratuity not included)<br>
+            (one prix fixe menu per person, no substitutions, 
+            beverage, tax and gratuity not included)<br><br>
 
             add $35 for wine pairing<br>
-            (wine 3 oz. / dessert 1.5 oz.)<br>
+            (wine 3 oz. / dessert 1.5 oz.)<br><br>
 
-            <h3>appetizers <span>choose one</span></h3>
+            <h3>appetizers</h3>
+            choose one<br><br>
 
             <ul>
                 <% for (let i=0;i<rwAppetizers.length;i++){ %>
@@ -67,7 +70,8 @@
                 <%}%>
             </ul>
             
-            <h3>entrées <span>choose one</span></h3>
+            <h3>entrées</h3>
+            choose one<br><br>
 
             <ul>
                 <% for (let i=0;i<rwEntrees.length;i++){ %>
@@ -82,8 +86,8 @@
                 <%}%>
             </ul>
             
-            <h3>desserts <span>choose one</span></h3>
-
+            <h3>desserts</h3>
+            choose one<br><br>
             <ul>
                 <% for (let i=0;i<rwDesserts.length;i++){ %>
                     <li class='menu-item'
