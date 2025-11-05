@@ -15,7 +15,7 @@ module.exports={
         const rwEntrees = await MenuItem.find({
             $and:[
                 {menu:'restaurant-week'},
-                {section:'entrées'},
+                {section:'entrees'},
                 {arhived:false}
             ]
         })
