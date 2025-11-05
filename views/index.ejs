@@ -210,7 +210,11 @@
         modalImage.alt = item.name
         modalName.innerHTML = item.name
         modalDescription.innerHTML = item.description
-        modalPrice.innerHTML = item.price
+        if (!item.price){
+            modalPrice.innerHTML = item.price
+        }else{
+            modalPrice.innerHTML = ''
+        }
         modalAllergies.innerHTML = item.allergies
         modal.style.display = 'grid'
     }
