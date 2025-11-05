@@ -32,6 +32,7 @@
                         <label for='menu'>Menu:</label><br>
                         <select id='menu' name='menu' required>
                             <option disabled selected value>Select a Menu...</option>
+                            <option value='restaurant-week'>Restaurant Week</option>
                             <option value='dinner'>Dinner</option>
                             <option value='specials'>Specials</option>
                             <option value='dessert'>Dessert</option>
@@ -51,6 +52,12 @@
                             <option value='appetizers'>Appetizers</option>
                             <option value='entrees'>Entrées</option>
                             <option value='sides'>Sides</option>
+                        </select>
+                        <select id="section-restaurant-week" name="section" style="display:none;">
+                            <option>Select a Section...</option>
+                            <option value="appetizers">Appetizers</option>
+                            <option value="entrées">Entrées</option>
+                            <option value="desserts">Desserts</option>
                         </select>
                         <select id='section-specials' name='section' style='display:none;'>
                             <option>Select a Section...</option>
@@ -158,6 +165,7 @@
     function displaySectionMenu(){
         const sectionPlaceholder = document.querySelector('#section-placeholder')
         const sectionDinner = document.querySelector('#section-dinner')
+        const sectionRestaurantWeek = document.querySelector('#section-restaurant-week')
         const sectionSpecials = document.querySelector('#section-specials')
         const sectionDessert = document.querySelector('#section-dessert')
         const sectionDrinks = document.querySelector('#section-drinks')
@@ -167,6 +175,8 @@
         sectionPlaceholder.name = ''
         sectionDinner.style.display = 'none'
         sectionDinner.name = ''
+        sectionRestaurantWeek.style.display = 'none'
+        sectionRestaurantWeek.name = ''
         sectionSpecials.style.display = 'none'
         sectionSpecials.name = ''
         sectionDessert.style.display = 'none'
@@ -180,6 +190,10 @@
         if (menu.value == 'dinner'){
             sectionDinner.style.display = 'block'
             sectionDinner.name = 'section'
+        }
+        if (menu.value == 'restaurant-week'){
+            sectionRestaurantWeek.style.display = 'block'
+            sectionRestaurantWeek.name = 'section'
         }
         if (menu.value == 'specials'){
             sectionSpecials.style.display = 'block'
