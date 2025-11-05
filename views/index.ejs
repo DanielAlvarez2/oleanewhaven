@@ -58,15 +58,14 @@
             
             <h3>desserts <span>choose one</span></h3>
             <ul>
-                <% for (let i=0;i<charcuterie.length;i++){ %>
+                <% for (let i=0;i<rwAppetizers.length;i++){ %>
                     <li class='menu-item'
-                        onclick='showModal(<%= JSON.stringify(charcuterie[i]) %>)'>
-                        <span class='name'><%= charcuterie[i].name %></span><br>
-                        <span class='description'><%- charcuterie[i].description %></span>
+                        onclick='showModal(<%= JSON.stringify(rwAppetizers[i]) %>)'>
+                        <span class='name'><%= rwAppetizers[i].name %></span><br>
+                        <span class='description'><%- rwAppetizers[i].description %></span>
                         &nbsp; 
-                        <span class='price'><%= charcuterie[i].price %></span><br>
-                        <% if(charcuterie[i].allergies){ %>
-                            <span class='allergies no-print'><%- charcuterie[i].allergies %></span><br>
+                        <% if(rwAppetizers[i].allergies){ %>
+                            <span class='allergies no-print'><%- rwAppetizers[i].allergies %></span><br>
                         <% } %>
                     </li>
                 <%}%>
