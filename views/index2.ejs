@@ -70,22 +70,6 @@
         </div><!--#top-left-->
 
         <div id='top-right'>
-
-            <ul>
-                <% for (let i=0;i<appetizers.length;i++){ %>
-                    <li class='menu-item'
-                        onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
-                        <span class='name'><%= appetizers[i].name %></span><br>
-                        <span class='description'><%- appetizers[i].description %></span>
-                        &nbsp;
-                        <span class='price'><%= appetizers[i].price %></span><br>
-                        <% if(appetizers[i].allergies){ %>
-                            <span class='allergies no-print'><%- appetizers[i].allergies %></span><br>
-                        <% } %>
-                    </li>
-                <%}%>
-            </ul>
-
             <ul>
                 <% for (let i=0;i<entrees.length;i++){ %>
                     <li class='menu-item'
@@ -99,23 +83,16 @@
                         <% } %>
                     </li>
                 <%}%>
-            </ul>
-
-            <ul>
-                <% for (let i=0;i<4;i++){ %>
-                    <li class='menu-item'
-                        onclick='showModal(<%= JSON.stringify(sides[i]) %>)'>
-                        <span class='name'><%= sides[i].name %></span><br>
-                        <span class='description'><%= sides[i].description %></span>
-                        &nbsp;
-                        <span class='price'><%= sides[i].price %></span><br>
-                        <% if(sides[i].allergies){ %>
-                            <span class='allergies no-print'><%- sides[i].allergies %></span><br>
-                        <% } %>
+                    <li>
+                        <span class='name'>chef's tasting menu</span> <span class='price'>105</span> / person<br>
+                        <b><span style="font-style:italic">48-hours notice and reservation required</span></b><br>
+                        six courses<br>
+                        full table participation<br>
+                        available tuesday through thursday<br>
+                        <span style='font-style:italic;'>optional wine pairing <span class='price'>52</span> / person</span>
                     </li>
-                <%}%>
             </ul>
-            
+        
         </div><!--#top-right-->
     </div><!--#top-->
 
