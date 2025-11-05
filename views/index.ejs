@@ -76,6 +76,21 @@
             <h3>appetizers</h3>
 
             <ul>
+                <% for (let i=0;i<charcuterie.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(charcuterie[i]) %>)'>
+                        <span class='name'><%= charcuterie[i].name %></span><br>
+                        <span class='description'><%- charcuterie[i].description %></span>
+                        &nbsp; 
+                        <span class='price'><%= charcuterie[i].price %></span><br>
+                        <% if(charcuterie[i].allergies){ %>
+                            <span class='allergies no-print'><%- charcuterie[i].allergies %></span><br>
+                        <% } %>
+                    </li>
+                <%}%>
+            </ul>
+
+            <ul>
                 <% for (let i=0;i<appetizers.length;i++){ %>
                     <li class='menu-item'
                         onclick='showModal(<%= JSON.stringify(appetizers[i]) %>)'>
