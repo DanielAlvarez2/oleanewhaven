@@ -5,6 +5,27 @@ const User = require('../models/User')
 
 module.exports={
     getIndex:async(req,res)=>{
+        const rwAppetizers = await MenuItem.find({
+            $and:[
+                {menu:'restaurant-week'},
+                {section:'appetizers'},
+                {archived:false}
+            ]
+        })
+        const rwEntrées = await MenuItem.find({
+            $and:[
+                {menu:'restaurant-week'},
+                {section:'entrées'},
+                {arhived:false}
+            ]
+        })
+        const rwDesserts = await MenuItem.find({
+            $and:[
+                {menu:'restaurant-week'},
+                {section:'desserts'},
+                {archived:false}
+            ]
+        })
         const charcuterie = await MenuItem.find({
             $and:[
                 {section:'charcuterie'},
@@ -36,7 +57,11 @@ module.exports={
                                 charcuterie:charcuterie, 
                                 appetizers:appetizers,
                                 entrees:entrees,
-                                sides:sides})
+                                sides:sides,
+                                rwAppetizers,
+                                rwEntrées,
+                                rwDesserts
+                            })
     },
     getSpecials: async(req,res)=>{
         const appetizers = await MenuItem.find({
