@@ -68,6 +68,19 @@
             </ul>
             
             <h3>entrées <span>choose one</span></h3>
+
+            <ul>
+                <% for (let i=0;i<rwEntrées.length;i++){ %>
+                    <li class='menu-item'
+                        onclick='showModal(<%= JSON.stringify(rwEntrées[i]) %>)'>
+                        <span class='name'><%= rwEntrées[i].name %></span><br>
+                        <span class='description'><%- rwEntrées[i].description %></span>
+                        <% if(rwEntrées[i].allergies){ %>
+                            <div class='allergies no-print'><%- rwEntrées[i].allergies %></div>
+                        <% } %>
+                    </li>
+                <%}%>
+            </ul>
             
             <h3>desserts <span>choose one</span></h3>
 
