@@ -63,9 +63,8 @@
                         onclick='showModal(<%= JSON.stringify(rwAppetizers[i]) %>)'>
                         <span class='name'><%= rwAppetizers[i].name %></span><br>
                         <span class='description'><%- rwAppetizers[i].description %></span>
-                        &nbsp; 
                         <% if(rwAppetizers[i].allergies){ %>
-                            <span class='allergies no-print'><%- rwAppetizers[i].allergies %></span><br>
+                            <div class='allergies no-print'><%- rwAppetizers[i].allergies %></div>
                         <% } %>
                     </li>
                 <%}%>
