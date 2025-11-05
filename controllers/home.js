@@ -12,7 +12,7 @@ module.exports={
                 {archived:false}
             ]
         })
-        const rwEntrées = await MenuItem.find({
+        const rwEntrees = await MenuItem.find({
             $and:[
                 {menu:'restaurant-week'},
                 {section:'entrées'},
@@ -59,7 +59,7 @@ module.exports={
                                 entrees:entrees,
                                 sides:sides,
                                 rwAppetizers,
-                                rwEntrées,
+                                rwEntrees,
                                 rwDesserts
                             })
     },
