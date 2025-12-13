@@ -59,6 +59,10 @@ SEO: 80% --->
 give EACH PAGE a different meta description
 pagespeed.web.dev
 
+error msg: 'cannot print menus form Safari Browser, please use a different browser for printing'  
+
+Chrome Dev Tools: Lighthouse Ratings: Performance, Accessibility, Best Practices, SEO  
+   
 When setting up domain name, use Windows Snipping Tool
 to record video of setup process
 WINDOWS+SHIFT+S
